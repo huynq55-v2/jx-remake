@@ -11,4 +11,4 @@ serde_json = "1.0"
 encoding_rs = "0.8" # Để đọc GBK
 csv = "1.4" # Để đọc file tab-delimited
 rand = "0.8"
-minifb = "0.24"
+macroquad = "0.4"

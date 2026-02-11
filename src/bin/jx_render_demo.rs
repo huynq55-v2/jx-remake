@@ -1,20 +1,21 @@
 use std::collections::HashMap;
 use std::fs::{self, File};
 use std::io::BufReader;
-use std::time::{Duration, Instant};
+use std::time::Instant;
 
-use minifb::{Key, Window, WindowOptions};
-use rand::RngCore; // Import RngCore để dùng next_u32
+use macroquad::prelude::*;
 use serde::Deserialize;
 
-use jx_remake::client::spr::SprFile;
+use jx_remake::client::spr::{SprColor, SprFile, SprFrameInfo};
 use jx_remake::common::pak::PakReader;
 
 // --- CẤU HÌNH MÀN HÌNH ---
-const WIN_WIDTH: usize = 1024;
-const WIN_HEIGHT: usize = 768;
-const CENTER_X: i32 = (WIN_WIDTH / 2) as i32 + 100; // Dịch nhân vật sang phải để nhường chỗ cho Menu
-const CENTER_Y: i32 = (WIN_HEIGHT / 2) as i32;
+const WIN_WIDTH: f32 = 1024.0;
+const WIN_HEIGHT: f32 = 768.0;
+const CENTER_X: f32 = WIN_WIDTH / 2.0 + 100.0;
+const CENTER_Y: f32 = WIN_HEIGHT / 2.0;
+const FONT_SIZE: u16 = 20;
+const LINE_HEIGHT: f32 = 28.0;
 
 // --- DATA STRUCTURES (JSON) ---
 #[derive(Deserialize, Debug)]
@@ -34,19 +35,27 @@ struct MetaData {
 struct PlayerParts {
     head: HashMap<String, PartData>,
     body: HashMap<String, PartData>,
+    #[allow(dead_code)]
     hair: HashMap<String, PartData>,
+    #[allow(dead_code)]
     shoulder: HashMap<String, PartData>,
+    #[allow(dead_code)]
     hand_left: HashMap<String, PartData>,
+    #[allow(dead_code)]
     hand_right: HashMap<String, PartData>,
+    #[allow(dead_code)]
     weapon_left: HashMap<String, PartData>,
     weapon_right: HashMap<String, PartData>,
+    #[allow(dead_code)]
     horse_front: HashMap<String, PartData>,
     horse_middle: HashMap<String, PartData>,
+    #[allow(dead_code)]
     horse_back: HashMap<String, PartData>,
 }
 
 #[derive(Deserialize, Debug, Clone)]
 struct PartData {
+    #[allow(dead_code)]
     id: String,
     actions: HashMap<String, ActionData>,
 }
@@ -74,12 +83,12 @@ struct AppState {
     npc_idx: usize,
 
     // UI State
-    selected_row: usize, // Dòng menu đang chọn
+    selected_row: usize,
 
-    // Cache Lists (Sorted IDs để duyệt Left/Right)
+    // Cache Lists (Sorted IDs)
     lists: AssetLists,
 
-    // Render Data
+    // Render Data - Textures thay vì raw SprFile
     loaded_parts: Vec<LoadedPart>,
 }
 
@@ -98,15 +107,64 @@ struct AssetLists {
     npcs: Vec<String>,
 }
 
+struct LoadedFrame {
+    texture: Texture2D,
+    offset_x: f32,
+    offset_y: f32,
+}
+
 struct LoadedPart {
     name: String,
-    spr: SprFile,
-    info: (usize, usize, usize), // Frames, Dirs, Interval
+    frames: Vec<LoadedFrame>,
+    info: (usize, usize, usize), // TotalFrames, Dirs, Interval
+}
+
+// --- Chuyển SPR frame thành Texture2D ---
+fn spr_frame_to_texture(frame: &SprFrameInfo, palette: &[SprColor]) -> Texture2D {
+    let w = frame.width as u32;
+    let h = frame.height as u32;
+    let mut rgba = vec![0u8; (w * h * 4) as usize];
+
+    for y in 0..h {
+        for x in 0..w {
+            let pi = (y * w + x) as usize;
+            if pi < frame.decoded_indices.len() {
+                let alpha = frame.alpha_map[pi];
+                if alpha > 0 {
+                    let c = &palette[frame.decoded_indices[pi] as usize];
+                    let offset = pi * 4;
+                    rgba[offset] = c.r;
+                    rgba[offset + 1] = c.g;
+                    rgba[offset + 2] = c.b;
+                    rgba[offset + 3] = alpha;
+                }
+            }
+        }
+    }
+
+    let img = Image {
+        bytes: rgba,
+        width: w as u16,
+        height: h as u16,
+    };
+    let tex = Texture2D::from_image(&img);
+    tex.set_filter(FilterMode::Nearest); // Pixel art style
+    tex
 }
 
 // --- MAIN ---
+fn window_conf() -> Conf {
+    Conf {
+        window_title: "JX Viewer - Arrows to Control - ESC to Exit".to_string(),
+        window_width: WIN_WIDTH as i32,
+        window_height: WIN_HEIGHT as i32,
+        window_resizable: false,
+        ..Default::default()
+    }
+}
 
-fn main() {
+#[macroquad::main(window_conf)]
+async fn main() {
     // 1. Init Data
     println!("⏳ Loading Assets...");
     let assets = load_assets();
@@ -120,7 +178,7 @@ fn main() {
         body_idx: 0,
         head_idx: 0,
         weapon_idx: 0,
-        horse_idx: 0, // 0 = No Horse
+        horse_idx: 0,
         npc_idx: 0,
         selected_row: 0,
         lists,
@@ -130,64 +188,91 @@ fn main() {
     // Load nhân vật lần đầu
     reload_character(&mut state, &assets, &mut pak_readers);
 
-    // 2. Window
-    let mut window = Window::new(
-        "JX Viewer - Arrows to Control - ESC to Exit",
-        WIN_WIDTH,
-        WIN_HEIGHT,
-        WindowOptions::default(),
-    )
-    .unwrap();
-    window.limit_update_rate(Some(Duration::from_micros(16600)));
-
-    let mut buffer: Vec<u32> = vec![0; WIN_WIDTH * WIN_HEIGHT];
+    let mut current_frame: usize = 0;
     let mut last_tick = Instant::now();
-    let mut current_frame = 0;
-    let mut accum_time = 0;
-    let dir = 0; // Hướng nhìn (0-7)
+    let mut accum_time: u64 = 0;
+    let dir: usize = 0; // Hướng nhìn (0-7)
 
-    while window.is_open() && !window.is_key_down(Key::Escape) {
-        // --- LOGIC INPUT ---
+    // Key repeat timer
+    let mut key_repeat_timer: f64 = 0.0;
+    let key_repeat_delay = 0.25; // Delay đầu tiên
+    let key_repeat_rate = 0.08; // Tốc độ lặp
+    let mut key_held_time: f64 = 0.0;
+
+    loop {
+        // --- EXIT ---
+        if is_key_pressed(KeyCode::Escape) {
+            break;
+        }
+
+        let dt = get_frame_time() as f64;
+
+        // --- INPUT ---
         let mut changed = false;
 
-        // Navigation (Up/Down)
-        if window.is_key_pressed(Key::Up, minifb::KeyRepeat::Yes) {
+        // Navigation Up/Down
+        if is_key_pressed(KeyCode::Up) {
             if state.selected_row > 0 {
                 state.selected_row -= 1;
             }
         }
-        if window.is_key_pressed(Key::Down, minifb::KeyRepeat::Yes) {
-            let max_row = if state.char_type_idx == 2 { 2 } else { 5 }; // NPC menu it dong hon
+        if is_key_pressed(KeyCode::Down) {
+            let max_row = if state.char_type_idx == 2 { 2 } else { 5 };
             if state.selected_row < max_row {
                 state.selected_row += 1;
             }
         }
 
-        // Modification (Left/Right)
-        let delta: i32 = if window.is_key_pressed(Key::Left, minifb::KeyRepeat::Yes) {
-            -1
-        } else if window.is_key_pressed(Key::Right, minifb::KeyRepeat::Yes) {
-            1
+        // Left/Right with key repeat
+        let left_pressed = is_key_pressed(KeyCode::Left);
+        let right_pressed = is_key_pressed(KeyCode::Right);
+        let left_held = is_key_down(KeyCode::Left);
+        let right_held = is_key_down(KeyCode::Right);
+
+        let mut delta: i32 = 0;
+
+        if left_pressed {
+            delta = -1;
+            key_held_time = 0.0;
+            key_repeat_timer = 0.0;
+        } else if right_pressed {
+            delta = 1;
+            key_held_time = 0.0;
+            key_repeat_timer = 0.0;
+        } else if left_held || right_held {
+            key_held_time += dt;
+            if key_held_time > key_repeat_delay {
+                key_repeat_timer += dt;
+                if key_repeat_timer >= key_repeat_rate {
+                    key_repeat_timer -= key_repeat_rate;
+                    delta = if left_held { -1 } else { 1 };
+                }
+            }
         } else {
-            0
-        };
+            key_held_time = 0.0;
+            key_repeat_timer = 0.0;
+        }
 
         if delta != 0 {
             changed = true;
             match state.selected_row {
                 0 => {
-                    // TYPE
                     state.char_type_idx = wrap_idx(state.char_type_idx, delta, 3);
+                    // Reset sub-indices khi đổi type
+                    state.body_idx = 0;
+                    state.head_idx = 0;
+                    state.weapon_idx = 0;
+                    state.horse_idx = 0;
+                    state.npc_idx = 0;
+                    state.selected_row = 0;
                 }
                 1 => {
-                    // ACTION
                     state.action_idx = wrap_idx(state.action_idx, delta, state.lists.actions.len());
                 }
                 _ => {
                     if state.char_type_idx == 2 {
                         // NPC MODE
                         if state.selected_row == 2 {
-                            // NPC ID
                             state.npc_idx = wrap_idx(state.npc_idx, delta, state.lists.npcs.len());
                         }
                     } else {
@@ -218,7 +303,7 @@ fn main() {
 
         if changed {
             reload_character(&mut state, &assets, &mut pak_readers);
-            current_frame = 0; // Reset animation
+            current_frame = 0;
         }
 
         // --- ANIMATION TIMER ---
@@ -232,26 +317,21 @@ fn main() {
         accum_time += last_tick.elapsed().as_millis() as u64;
         last_tick = Instant::now();
 
-        if accum_time >= (interval * 55) {
+        if accum_time >= interval * 55 {
             current_frame += 1;
             accum_time = 0;
         }
 
         // --- RENDER ---
-        // 1. Clear Screen
-        for p in buffer.iter_mut() {
-            *p = 0xFF202020;
-        } // Dark Grey
+        clear_background(Color::from_rgba(32, 32, 32, 255));
 
-        // 2. Draw Character
-        draw_character(&mut buffer, &state, dir, current_frame);
+        // 1. Draw Character (Textures)
+        draw_character(&state, dir, current_frame);
 
-        // 3. Draw UI
-        draw_ui(&mut buffer, &state);
+        // 2. Draw UI
+        draw_ui(&state);
 
-        window
-            .update_with_buffer(&buffer, WIN_WIDTH, WIN_HEIGHT)
-            .unwrap();
+        next_frame().await;
     }
 }
 
@@ -322,8 +402,7 @@ fn load_paks() -> Vec<PakReader> {
         }
     }
     if readers.is_empty() {
-        println!("⚠️ WARNING: No .pak files found in 'data/' directory!");
-        println!("   The demo needs PAK files (e.g. settings.pak, spr.pak) to load assets.");
+        println!("⚠️ WARNING: No .pak files found in 'data/pak/' directory!");
     } else {
         println!("✅ Loaded {} PAK files.", readers.len());
     }
@@ -332,8 +411,7 @@ fn load_paks() -> Vec<PakReader> {
 
 fn build_asset_lists(assets: &GameAssets) -> AssetLists {
     let mut actions: Vec<String> = assets.meta.action_map_debug.keys().cloned().collect();
-    actions.sort(); // Sort alpha
-    // Ensure "run" or "stand" is prioritized if needed, but sort is fine.
+    actions.sort();
 
     let sort_keys = |map: &HashMap<String, PartData>| -> Vec<String> {
         let mut v: Vec<String> = map.keys().cloned().collect();
@@ -363,15 +441,14 @@ fn reload_character(state: &mut AppState, assets: &GameAssets, readers: &mut [Pa
     state.loaded_parts.clear();
 
     let action = &state.lists.actions[state.action_idx];
-    let mut parts_to_load = Vec::new();
+    let mut parts_to_load: Vec<(&str, &PartData, &str)> = Vec::new();
 
     if state.char_type_idx == 2 {
         // NPC
         if let Some(id) = state.lists.npcs.get(state.npc_idx) {
             if let Some(data) = assets.npcs.get(id) {
-                // NPC fallback action logic
                 let act = if data.actions.contains_key(action) {
-                    action
+                    action.as_str()
                 } else {
                     "stand"
                 };
@@ -381,7 +458,7 @@ fn reload_character(state: &mut AppState, assets: &GameAssets, readers: &mut [Pa
     } else {
         // Player
         let is_male = state.char_type_idx == 0;
-        let (p_body, p_head, p_wep, p_horse) = if is_male {
+        let (p_body, p_head, p_wep, _p_horse) = if is_male {
             (
                 &assets.male.body,
                 &assets.male.head,
@@ -397,7 +474,6 @@ fn reload_character(state: &mut AppState, assets: &GameAssets, readers: &mut [Pa
             )
         };
 
-        // Helper
         // Body
         let body_list = get_body_list(state);
         if let Some(id) = body_list.get(state.body_idx) {
@@ -427,35 +503,46 @@ fn reload_character(state: &mut AppState, assets: &GameAssets, readers: &mut [Pa
                 }
             }
         }
-
-        // Horse (Multi-part) logic omitted for brevity, adding just body if horse_idx > 0
-        // Trong thực tế cần load horse_front, horse_back từ cùng ID horse_middle
     }
 
     // LOAD FILES
-    let mut rng = rand::thread_rng();
+    let mut counter: u32 = 0;
     for (p_name, data, act) in parts_to_load {
         if let Some(act_data) = data.actions.get(act) {
             let mut found = false;
             for reader in readers.iter_mut() {
                 if let Some(entry) = reader.find_file(&act_data.full_path) {
                     found = true;
-                    // println!("   Found {} in {}", act_data.full_path, reader.file_path);
                     let entry_copy = *entry;
                     if let Ok(bytes) = reader.read_entry_data(&entry_copy) {
-                        // Temp file fix
-                        let tmp = format!("tmp_{}_{}.spr", p_name, rng.next_u32());
+                        // Temp file workaround (SprFile::load cần file path)
+                        counter += 1;
+                        let tmp = format!("tmp_{}_{}.spr", p_name, counter);
                         fs::write(&tmp, &bytes).unwrap();
                         if let Ok(spr) = SprFile::load(&tmp) {
                             // Parse Info
                             let info_parts: Vec<&str> = act_data.info.split(',').collect();
-                            let frames = info_parts.get(0).unwrap_or(&"0").parse().unwrap_or(0);
-                            let dirs = info_parts.get(1).unwrap_or(&"0").parse().unwrap_or(0);
-                            let interval = info_parts.get(2).unwrap_or(&"0").parse().unwrap_or(0);
+                            let frames: usize =
+                                info_parts.first().unwrap_or(&"0").parse().unwrap_or(0);
+                            let dirs: usize =
+                                info_parts.get(1).unwrap_or(&"0").parse().unwrap_or(0);
+                            let interval: usize =
+                                info_parts.get(2).unwrap_or(&"0").parse().unwrap_or(0);
+
+                            // Chuyển tất cả frames thành Texture2D
+                            let loaded_frames: Vec<LoadedFrame> = spr
+                                .frames
+                                .iter()
+                                .map(|f| LoadedFrame {
+                                    texture: spr_frame_to_texture(f, &spr.palette),
+                                    offset_x: f.offset_x as f32,
+                                    offset_y: f.offset_y as f32,
+                                })
+                                .collect();
 
                             state.loaded_parts.push(LoadedPart {
                                 name: p_name.to_string(),
-                                spr,
+                                frames: loaded_frames,
                                 info: (frames, dirs, interval),
                             });
                         }
@@ -473,13 +560,21 @@ fn reload_character(state: &mut AppState, assets: &GameAssets, readers: &mut [Pa
 
 // --- DRAWING ---
 
-fn draw_character(buffer: &mut [u32], state: &AppState, dir: usize, frame_tick: usize) {
+fn draw_character(state: &AppState, dir: usize, frame_tick: usize) {
     if state.loaded_parts.is_empty() {
+        // Hiển thị thông báo khi chưa có gì
+        draw_text(
+            "No character loaded",
+            CENTER_X - 100.0,
+            CENTER_Y,
+            24.0,
+            Color::from_rgba(150, 150, 150, 255),
+        );
         return;
     }
 
-    // Z-Order Simple
-    let z_order = vec!["body", "npc_body", "head", "weapon_right"];
+    // Z-Order
+    let z_order = ["body", "npc_body", "head", "weapon_right"];
 
     let mut map: HashMap<&str, &LoadedPart> = HashMap::new();
     for p in &state.loaded_parts {
@@ -488,86 +583,118 @@ fn draw_character(buffer: &mut [u32], state: &AppState, dir: usize, frame_tick: 
 
     for name in z_order {
         if let Some(part) = map.get(name) {
-            let (frames, dirs, _) = part.info;
-            if frames == 0 || dirs == 0 {
+            let (total_frames, dirs, _) = part.info;
+            if total_frames == 0 || dirs == 0 {
                 continue;
             }
-            let fpd = frames / dirs;
+            let fpd = total_frames / dirs;
+            if fpd == 0 {
+                continue;
+            }
             let idx = (dir * fpd) + (frame_tick % fpd);
 
-            if let Some(frame) = part.spr.frames.get(idx) {
-                let w = frame.width as i32;
-                let h = frame.height as i32;
-                let off_x = CENTER_X + frame.offset_x as i32;
-                let off_y = CENTER_Y + frame.offset_y as i32;
-
-                for y in 0..h {
-                    for x in 0..w {
-                        let sx = off_x + x;
-                        let sy = off_y + y;
-                        if sx < 0 || sx >= WIN_WIDTH as i32 || sy < 0 || sy >= WIN_HEIGHT as i32 {
-                            continue;
-                        }
-
-                        let pi = (y * w + x) as usize;
-                        if pi < frame.decoded_indices.len() {
-                            let alpha = frame.alpha_map[pi];
-                            if alpha > 0 {
-                                let c = part.spr.palette[frame.decoded_indices[pi] as usize];
-                                // Draw pixel (No blending for perf)
-                                buffer[(sy as usize) * WIN_WIDTH + (sx as usize)] =
-                                    ((c.r as u32) << 16) | ((c.g as u32) << 8) | (c.b as u32);
-                            }
-                        }
-                    }
-                }
+            if let Some(frame) = part.frames.get(idx) {
+                let x = CENTER_X + frame.offset_x;
+                let y = CENTER_Y + frame.offset_y;
+                draw_texture(&frame.texture, x, y, WHITE);
             }
         }
     }
 }
 
-// --- UI DRAWING (SIMPLE BITMAP FONT) ---
-fn draw_ui(buffer: &mut [u32], state: &AppState) {
-    let yellow = 0xFFFF00;
-    let white = 0xFFFFFF;
-    let gray = 0xAAAAAA;
+// --- UI DRAWING ---
+fn draw_ui(state: &AppState) {
+    let yellow = Color::from_rgba(255, 220, 50, 255);
+    let white = Color::from_rgba(240, 240, 240, 255);
+    let gray = Color::from_rgba(160, 160, 160, 255);
+    let bg_color = Color::from_rgba(0, 0, 0, 180);
+    let highlight_bg = Color::from_rgba(255, 200, 0, 40);
 
-    let types = vec!["Male", "Female", "NPC"];
+    let types = ["Male", "Female", "NPC"];
+    let font_size = FONT_SIZE as f32;
 
-    // Helper draw text
-    let mut y = 20;
-    let x = 20;
+    // Panel background
+    let panel_x = 10.0;
+    let panel_y = 10.0;
+    let panel_w = 340.0;
+    let panel_h = if state.char_type_idx == 2 {
+        210.0
+    } else {
+        300.0
+    };
+    draw_rectangle(panel_x, panel_y, panel_w, panel_h, bg_color);
+    draw_rectangle_lines(
+        panel_x,
+        panel_y,
+        panel_w,
+        panel_h,
+        1.0,
+        Color::from_rgba(80, 80, 80, 255),
+    );
 
-    draw_string(buffer, x, y, "JX VIEWER CONTROLS:", yellow);
-    y += 15;
-    draw_string(buffer, x, y, "Up/Down : Select Item", gray);
-    y += 10;
-    draw_string(buffer, x, y, "Left/Right: Change Value", gray);
-    y += 20;
+    let mut y = 35.0;
+    let x = 25.0;
+
+    // Title
+    draw_text("JX VIEWER", x, y, font_size + 4.0, yellow);
+    y += LINE_HEIGHT;
+    draw_text("Up/Down: Select  |  Left/Right: Change", x, y, 14.0, gray);
+    y += LINE_HEIGHT + 4.0;
+
+    // --- Separator ---
+    draw_line(
+        panel_x + 5.0,
+        y - 10.0,
+        panel_x + panel_w - 5.0,
+        y - 10.0,
+        1.0,
+        Color::from_rgba(80, 80, 80, 255),
+    );
 
     // Menu Items
-    let items = vec![
-        format!("Type:   <{}>", types[state.char_type_idx]),
-        format!(
-            "Action: <{}>",
-            state
-                .lists
-                .actions
-                .get(state.action_idx)
-                .unwrap_or(&"???".to_string())
-        ),
-    ];
+    let mut row: usize = 0;
 
-    // Common items
-    for (i, text) in items.iter().enumerate() {
-        let color = if state.selected_row == i {
-            yellow
-        } else {
-            white
-        };
-        draw_string(buffer, x, y, text, color);
-        y += 15;
-    }
+    // Row 0: Type
+    let label = format!("  << {} >>", types[state.char_type_idx]);
+    draw_menu_row(
+        x,
+        y,
+        panel_x,
+        panel_w,
+        &label,
+        "Type:",
+        row == state.selected_row,
+        yellow,
+        white,
+        highlight_bg,
+        font_size,
+    );
+    y += LINE_HEIGHT;
+    row += 1;
+
+    // Row 1: Action
+    let action_name = state
+        .lists
+        .actions
+        .get(state.action_idx)
+        .map(|s| s.as_str())
+        .unwrap_or("???");
+    let label = format!("  << {} >>", action_name);
+    draw_menu_row(
+        x,
+        y,
+        panel_x,
+        panel_w,
+        &label,
+        "Action:",
+        row == state.selected_row,
+        yellow,
+        white,
+        highlight_bg,
+        font_size,
+    );
+    y += LINE_HEIGHT;
+    row += 1;
 
     if state.char_type_idx == 2 {
         // NPC Menu
@@ -577,12 +704,20 @@ fn draw_ui(buffer: &mut [u32], state: &AppState) {
             .get(state.npc_idx)
             .map(|s| s.as_str())
             .unwrap_or("None");
-        let color = if state.selected_row == 2 {
-            yellow
-        } else {
-            white
-        };
-        draw_string(buffer, x, y, &format!("NPC ID: <{}>", npc_id), color);
+        let label = format!("  << {} >>", npc_id);
+        draw_menu_row(
+            x,
+            y,
+            panel_x,
+            panel_w,
+            &label,
+            "NPC:",
+            row == state.selected_row,
+            yellow,
+            white,
+            highlight_bg,
+            font_size,
+        );
     } else {
         // Player Menu
         let h_list = get_head_list(state);
@@ -590,71 +725,91 @@ fn draw_ui(buffer: &mut [u32], state: &AppState) {
         let w_list = get_weapon_list(state);
         let horse_list = get_horse_list(state);
 
-        let p_items = vec![
-            format!(
-                "Head:   <{}>",
-                h_list.get(state.head_idx).unwrap_or(&"-".to_string())
+        let parts = [
+            (
+                "Head:",
+                h_list
+                    .get(state.head_idx)
+                    .map(|s| s.as_str())
+                    .unwrap_or("-"),
             ),
-            format!(
-                "Body:   <{}>",
-                b_list.get(state.body_idx).unwrap_or(&"-".to_string())
+            (
+                "Body:",
+                b_list
+                    .get(state.body_idx)
+                    .map(|s| s.as_str())
+                    .unwrap_or("-"),
             ),
-            format!(
-                "Weapon: <{}>",
-                w_list.get(state.weapon_idx).unwrap_or(&"-".to_string())
+            (
+                "Weapon:",
+                w_list
+                    .get(state.weapon_idx)
+                    .map(|s| s.as_str())
+                    .unwrap_or("-"),
             ),
-            format!(
-                "Horse:  <{}>",
-                horse_list.get(state.horse_idx).unwrap_or(&"-".to_string())
+            (
+                "Horse:",
+                horse_list
+                    .get(state.horse_idx)
+                    .map(|s| s.as_str())
+                    .unwrap_or("-"),
             ),
         ];
 
-        for (i, text) in p_items.iter().enumerate() {
-            let color = if state.selected_row == (i + 2) {
-                yellow
-            } else {
-                white
-            };
-            draw_string(buffer, x, y, text, color);
-            y += 15;
+        for (i, (name, value)) in parts.iter().enumerate() {
+            let label = format!("  << {} >>", value);
+            draw_menu_row(
+                x,
+                y,
+                panel_x,
+                panel_w,
+                &label,
+                name,
+                (row + i) == state.selected_row,
+                yellow,
+                white,
+                highlight_bg,
+                font_size,
+            );
+            y += LINE_HEIGHT;
         }
     }
+
+    // Footer info
+    let fps = get_fps();
+    let info = format!("FPS: {} | Parts: {}", fps, state.loaded_parts.len());
+    draw_text(&info, 10.0, WIN_HEIGHT - 10.0, 16.0, gray);
 }
 
-// Minimal 5x7 ASCII Font Bitmap (Hardcoded A-Z, 0-9 for demo)
-// Để tiết kiệm dòng code, mình dùng thuật toán vẽ pixel đơn giản.
-// Thực tế bạn nên load file font bitmap. Ở đây mình vẽ ô vuông đại diện text.
-fn draw_string(buffer: &mut [u32], x: usize, y: usize, text: &str, color: u32) {
-    // Demo: Chỉ vẽ các ký tự cơ bản bằng các chấm pixel nếu không có font
-    // Vì không thể paste 200 dòng hex font vào đây, mình dùng minifb_fonts nếu có,
-    // hoặc vẽ text "giả" (placeholder).
-
-    // TẠM THỜI: Dùng thư viện có sẵn hoặc vẽ pixel art đơn giản
-    // Để code chạy được ngay mà không cần file font:
-    let mut cursor_x = x;
-    for c in text.chars() {
-        if c == ' ' {
-            cursor_x += 6;
-            continue;
-        }
-        // Vẽ 1 ô vuông đại diện ký tự (Thay bằng font thật sau)
-        for dy in 0..7 {
-            for dx in 0..5 {
-                if should_draw_pixel(c, dx, dy) {
-                    let px = cursor_x + dx;
-                    let py = y + dy;
-                    if px < WIN_WIDTH && py < WIN_HEIGHT {
-                        buffer[py * WIN_WIDTH + px] = color;
-                    }
-                }
-            }
-        }
-        cursor_x += 7;
+fn draw_menu_row(
+    x: f32,
+    y: f32,
+    panel_x: f32,
+    panel_w: f32,
+    value: &str,
+    label: &str,
+    selected: bool,
+    sel_color: Color,
+    normal_color: Color,
+    highlight_bg: Color,
+    font_size: f32,
+) {
+    if selected {
+        // Highlight background
+        draw_rectangle(
+            panel_x + 2.0,
+            y - font_size + 4.0,
+            panel_w - 4.0,
+            LINE_HEIGHT,
+            highlight_bg,
+        );
+        // Arrow indicator
+        draw_text(">", x - 12.0, y, font_size, sel_color);
     }
-}
 
-// Hàm giả lập font (Rất cơ bản)
-fn should_draw_pixel(_c: char, dx: usize, dy: usize) -> bool {
-    // Vẽ khung chữ nhật rỗng 5x7
-    dx == 0 || dx == 4 || dy == 0 || dy == 6
+    let color = if selected { sel_color } else { normal_color };
+    draw_text(label, x, y, font_size, color);
+
+    // Value (right-aligned)
+    draw_text(value, x + 80.0, y, font_size, color);
 }
