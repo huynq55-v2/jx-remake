@@ -14,8 +14,8 @@ fn main() {
 
     // Parse tay để linh hoạt hơn (support --p dir pak1 pak2...)
     for arg in args.iter().skip(1) {
-        if arg == "-f" || arg == "--f" {
-            mode = "f";
+        if arg == "-l" || arg == "--l" {
+            mode = "l";
             continue;
         }
         if arg == "-p" || arg == "--p" {
@@ -24,7 +24,7 @@ fn main() {
         }
 
         match mode {
-            "f" => filelist_path = Some(arg.clone()),
+            "l" => filelist_path = Some(arg.clone()),
             "p" => pak_paths.push(arg.clone()),
             _ => {}
         }
@@ -159,9 +159,9 @@ fn save_file_to_disk(path_str: &str, data: &[u8]) -> io::Result<()> {
 
 fn print_usage() {
     println!("Usage:");
-    println!("  jx_unpack -f <filelist.txt> -p <pak_path_or_dir> [pak_path_2 ...]");
+    println!("  jx_unpack -l <filelist.txt> -p <pak_path_or_dir> [pak_path_2 ...]");
     println!("\nExamples:");
-    println!("  jx_unpack -f list.txt -p settings.pak");
-    println!("  jx_unpack -f list.txt -p update01.pak update02.pak");
-    println!("  jx_unpack -f list.txt -p C:\\Game\\Client\\");
+    println!("  jx_unpack -l list.txt -p settings.pak");
+    println!("  jx_unpack -l list.txt -p update01.pak update02.pak");
+    println!("  jx_unpack -l list.txt -p C:\\Game\\Client\\");
 }

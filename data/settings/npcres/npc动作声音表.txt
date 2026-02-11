@@ -1,4 +1,4 @@
-npcÁĞ±í	Õ½¶·Õ¾Á¢	ÆÕÍ¨Õ¾Á¢1	ÆÕÍ¨Õ¾Á¢2	Õ½¶·ĞĞ×ß	ÆÕÍ¨ĞĞ×ß	Õ½¶·ÅÜ²½	ÆÕÍ¨ÅÜ²½	ÊÜÉË	ËÀÍö	¹¥»÷1	¹¥»÷2	Ä§·¨	´ò×ø	ÌøÔ¾
+npcåˆ—è¡¨	æˆ˜æ–—ç«™ç«‹	æ™®é€šç«™ç«‹1	æ™®é€šç«™ç«‹2	æˆ˜æ–—è¡Œèµ°	æ™®é€šè¡Œèµ°	æˆ˜æ–—è·‘æ­¥	æ™®é€šè·‘æ­¥	å—ä¼¤	æ­»äº¡	æ”»å‡»1	æ”»å‡»2	é­”æ³•	æ‰“å	è·³è·ƒ
 enemy003								sound_e003_bat.wav	sound_e003_die.wav	sound_e003_at.wav	sound_e003_at.wav	sound_e003_at.wav		
 enemy004								sound_e004_bat.wav	sound_e004_die.wav	sound_e004_at.wav	sound_e004_at.wav	sound_e004_at.wav		
 enemy005								sound_e005_bat.wav	sound_e005_die.wav	sound_e005_at.wav	sound_e005_at.wav	sound_e005_at.wav		
