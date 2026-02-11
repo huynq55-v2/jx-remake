@@ -1,5 +1,6 @@
-ĞòºÅ	²¿¼ş×é³É	²¿¼ş1	²¿¼ş2	²¿¼ş3	²¿¼ş4
-0	§Çu kh«i	Head	Hair		
-1	Trang bŞ 	Shoulder	Body	LeftHand	RightHead
-2	Vò khİ 	LeftWeapon	RightWeapon		
-3	Ngùa	HorseFront	HorseMiddle	HorseBack	
+Ã©Å©ÂºÃ…	Â²Â¿áº³á»µÃ¬á»™Â³áº«	Â²Â¿áº³á»µ1	Â²Â¿áº³á»µ2	Â²Â¿áº³á»µ3	Â²Â¿áº³á»µ4
+0	Äáº§u khÃ´i	Head	Hair		
+1	Trang bá»‹ 	Shoulder	Body	LeftHand	RightHead
+2	VÅ© khÃ­ 	LeftWeapon	RightWeapon		
+3	Ngá»±a	HorseFront	HorseMiddle	HorseBack	
+

@@ -566,3 +566,4 @@ enemy222	enemy222_st01.spr	enemy222_st02.spr	enemy222_st02.spr	enemy222_wlk.spr	
 enemy223	enemy223_st01.spr	enemy223_st02.spr	enemy223_st02.spr	enemy223_wlk.spr	enemy223_wlk.spr	enemy223_wlk.spr	enemy223_wlk.spr	enemy223_bat.spr	enemy223_die.spr	enemy223_at.spr	enemy223_at.spr	enemy223_at.spr	enemy223_st02.spr	enemy223_wlk.spr
 enemy224	enemy224_st01.spr	enemy224_st02.spr	enemy224_st02.spr	enemy224_wlk.spr	enemy224_wlk.spr	enemy224_wlk.spr	enemy224_wlk.spr	enemy224_bat.spr	enemy224_die.spr	enemy224_at01.spr	enemy224_at02.spr	enemy224_at02.spr	enemy224_st02.spr	enemy224_wlk.spr
 passerby208	passerby208.spr	passerby208.spr	passerby208.spr											
+

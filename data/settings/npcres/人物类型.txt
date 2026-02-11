@@ -1,6 +1,6 @@
 CharacterName	CharacterType	ResFilePath	PartFileName	WeaponActionTab1	WeaponActionTab2	ActionRenderOrderTab	Head	Hair	Shoulder	Body	LeftHand	RightHead	LeftWeapon	RightWeapon	HorseFront	HorseMiddle	HorseBack
-MainMan	SpecialNpc	spr\npcres\man	ฤะึ๗ฝวฒฟผþมะฑํ.txt	ฤะึ๗ฝวฮดฦ๏ยํนุมชฑํ.txt	ฤะึ๗ฝวฦ๏ยํนุมชฑํ.txt	ฤะึ๗ฝวฬ๙อผหณะ๒ฑํ.txt	ฤะึ๗ฝวอทฒฟ.txt	ฤะึ๗ฝวทขะอ.txt	ฤะึ๗ฝวผ็ฐ๒.txt	ฤะึ๗ฝวว๛ฬๅ.txt	ฤะึ๗ฝวื๓สึ.txt	ฤะึ๗ฝวำาสึ.txt	ฤะึ๗ฝวื๓สึฮไฦ๗.txt	ฤะึ๗ฝวำาสึฮไฦ๗.txt	ฤะึ๗ฝวยํวฐ.txt	ฤะึ๗ฝวยํึะ.txt	ฤะึ๗ฝวยํบ๓.txt
-MainLady	SpecialNpc	spr\npcres\woman	ลฎึ๗ฝวฒฟผþมะฑํ.txt	ลฎึ๗ฝวฮดฦ๏ยํนุมชฑํ.txt	ลฎึ๗ฝวฦ๏ยํนุมชฑํ.txt	ลฎึ๗ฝวฬ๙อผหณะ๒ฑํ.txt	ลฎึ๗ฝวอทฒฟ.txt	ลฎึ๗ฝวทขะอ.txt	ลฎึ๗ฝวผ็ฐ๒.txt	ลฎึ๗ฝวว๛ฬๅ.txt	ลฎึ๗ฝวื๓สึ.txt	ลฎึ๗ฝวำาสึ.txt	ลฎึ๗ฝวื๓สึฮไฦ๗.txt	ลฎึ๗ฝวำาสึฮไฦ๗.txt	ลฎึ๗ฝวยํวฐ.txt	ลฎึ๗ฝวยํึะ.txt	ลฎึ๗ฝวยํบ๓.txt
+MainMan	SpecialNpc	spr\npcres\man	รรฉแปแปฏแบตแบงยฒยฟแบณแปตรรฉยฑแป.txt	รรฉแปแปฏแบตแบงแบปยดแบทรนรแปแบกแปรรชยฑแป.txt	รรฉแปแปฏแบตแบงแบทรนรแปแบกแปรรชยฑแป.txt	รรฉแปแปฏแบตแบงรจแปฑรแบณแบญยณรฉลฉยฑแป.txt	รรฉแปแปฏแบตแบงรรฃยฒยฟ.txt	รรฉแปแปฏแบตแบงรฃรรฉร.txt	รรฉแปแปฏแบตแบงแบณแป—ยฐลฉ.txt	รรฉแปแปฏแบตแบงแบงแปทรจแป“.txt	รรฉแปแปฏแบตแบงรฌรบแบฅแป.txt	รรฉแปแปฏแบตแบงแปแปแบฅแป.txt	รรฉแปแปฏแบตแบงรฌรบแบฅแปแบปแปแบทแปฏ.txt	รรฉแปแปฏแบตแบงแปแปแบฅแปแบปแปแบทแปฏ.txt	รรฉแปแปฏแบตแบงรแปแบงยฐ.txt	รรฉแปแปฏแบตแบงรแปแปรฉ.txt	รรฉแปแปฏแบตแบงรแปยบรบ.txt
+MainLady	SpecialNpc	spr\npcres\woman	ร…ฤ‘แปแปฏแบตแบงยฒยฟแบณแปตรรฉยฑแป.txt	ร…ฤ‘แปแปฏแบตแบงแบปยดแบทรนรแปแบกแปรรชยฑแป.txt	ร…ฤ‘แปแปฏแบตแบงแบทรนรแปแบกแปรรชยฑแป.txt	ร…ฤ‘แปแปฏแบตแบงรจแปฑรแบณแบญยณรฉลฉยฑแป.txt	ร…ฤ‘แปแปฏแบตแบงรรฃยฒยฟ.txt	ร…ฤ‘แปแปฏแบตแบงรฃรรฉร.txt	ร…ฤ‘แปแปฏแบตแบงแบณแป—ยฐลฉ.txt	ร…ฤ‘แปแปฏแบตแบงแบงแปทรจแป“.txt	ร…ฤ‘แปแปฏแบตแบงรฌรบแบฅแป.txt	ร…ฤ‘แปแปฏแบตแบงแปแปแบฅแป.txt	ร…ฤ‘แปแปฏแบตแบงรฌรบแบฅแปแบปแปแบทแปฏ.txt	ร…ฤ‘แปแปฏแบตแบงแปแปแบฅแปแบปแปแบทแปฏ.txt	ร…ฤ‘แปแปฏแบตแบงรแปแบงยฐ.txt	ร…ฤ‘แปแปฏแบตแบงรแปแปรฉ.txt	ร…ฤ‘แปแปฏแบตแบงรแปยบรบ.txt
 enemy003	NormalNpc	spr\npcres\enemy\enemy003															
 enemy004	NormalNpc	spr\npcres\enemy\enemy004															
 enemy005	NormalNpc	spr\npcres\enemy\enemy005															
@@ -569,3 +569,4 @@ enemy222	NormalNpc	spr\npcres\enemy\enemy222
 enemy223	NormalNpc	spr\npcres\enemy\enemy223
 enemy224	NormalNpc	spr\npcres\enemy\enemy224
 passerby208	NormalNpc	spr\npcres\passerby\passerby208
+
