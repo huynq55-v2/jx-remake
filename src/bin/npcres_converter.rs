@@ -1,8 +1,6 @@
-use encoding_rs::GBK;
 use serde::Serialize;
 use std::collections::HashMap;
-use std::fs::{self, File};
-use std::io::Read;
+use std::fs::{self};
 use std::path::Path;
 
 // --- JSON Structures ---
@@ -23,12 +21,24 @@ struct MetaData {
 
 #[derive(Serialize, Default)]
 struct PlayerParts {
-    // Đổi u32 thành String cho tất cả các bộ phận
-    head: HashMap<String, PartData>,
-    body: HashMap<String, PartData>,
-    weapon_left: HashMap<String, PartData>,
-    weapon_right: HashMap<String, PartData>,
-    horse: HashMap<String, PartData>,
+    // Phần cơ bản
+    head: HashMap<String, PartData>, // 头部 - Đầu
+    body: HashMap<String, PartData>, // 躯体 - Thân (Áo)
+
+    // Phần chi tiết (Layering)
+    hair: HashMap<String, PartData>, // 发型 - Tóc (Vẽ đè lên đầu hoặc sau đầu tùy mũ)
+    shoulder: HashMap<String, PartData>, // 肩膀 - Vai (Giáp vai)
+    hand_left: HashMap<String, PartData>, // 左手 - Tay trái (Cánh tay)
+    hand_right: HashMap<String, PartData>, // 右手 - Tay phải (Cánh tay)
+
+    // Vũ khí
+    weapon_left: HashMap<String, PartData>, // 左手武器 - Vũ khí trái (Khiên/Song đao)
+    weapon_right: HashMap<String, PartData>, // 右手武器 - Vũ khí phải (Kiếm/Đao/Thương...)
+
+    // Ngựa (Chia 3 lớp để nhân vật ngồi ở giữa)
+    horse_front: HashMap<String, PartData>,  // 马前 - Đầu ngựa
+    horse_middle: HashMap<String, PartData>, // 马中 - Thân ngựa (Người ngồi lên đây)
+    horse_back: HashMap<String, PartData>,   // 马后 - Đuôi ngựa
 }
 
 #[derive(Serialize)]
@@ -47,53 +57,98 @@ struct ActionData {
 }
 
 fn main() {
-    // Đường dẫn folder npcres (Bạn sửa lại cho đúng máy bạn)
+    // Đường dẫn folder npcres
     let base_path = "data/settings/npcres";
 
-    let action_map = load_action_map(); // Load cứng hoặc đọc file
-
-    // QUAN TRỌNG: Load bảng đường dẫn gốc từ "人物类型.txt"
+    // Load Mapping
+    let action_map = load_action_map();
+    // Load Root Paths từ 人物类型.txt
     let root_paths = load_root_paths(format!("{}/人物类型.txt", base_path));
 
     let mut assets = GameAssets::default();
     assets.meta.action_map_debug = action_map.iter().map(|(k, v)| (v.clone(), *k)).collect();
 
-    // 2. Xử lý nhân vật Nam (Male) - "Zip" các cặp file
+    // ---------------------------------------------------------
+    // 2. Xử lý Nhân vật NAM (Male) - Load đủ 11 bộ phận
+    // ---------------------------------------------------------
     println!("⚙️ Processing Male Assets...");
+
+    // Cơ thể & Đầu tóc
     assets.male.body = process_pair(base_path, "男主角躯体", &action_map, &root_paths);
     assets.male.head = process_pair(base_path, "男主角头部", &action_map, &root_paths);
+    assets.male.hair = process_pair(base_path, "男主角发型", &action_map, &root_paths);
+    assets.male.shoulder = process_pair(base_path, "男主角肩膀", &action_map, &root_paths);
+
+    // Tay chân
+    assets.male.hand_left = process_pair(base_path, "男主角左手", &action_map, &root_paths);
+    assets.male.hand_right = process_pair(base_path, "男主角右手", &action_map, &root_paths);
+
+    // Vũ khí
+    assets.male.weapon_left = process_pair(base_path, "男主角左手武器", &action_map, &root_paths);
     assets.male.weapon_right = process_pair(base_path, "男主角右手武器", &action_map, &root_paths);
-    // ... làm tiếp cho các bộ phận khác
 
-    // 3. Xử lý nhân vật Nữ (Female)
+    // Ngựa (3 phần)
+    assets.male.horse_front = process_pair(base_path, "男主角马前", &action_map, &root_paths);
+    assets.male.horse_middle = process_pair(base_path, "男主角马中", &action_map, &root_paths);
+    assets.male.horse_back = process_pair(base_path, "男主角马后", &action_map, &root_paths);
+
+    // ---------------------------------------------------------
+    // 3. Xử lý Nhân vật NỮ (Female) - Load đủ 11 bộ phận
+    // ---------------------------------------------------------
     println!("⚙️ Processing Female Assets...");
+    // Cơ thể & Đầu tóc
     assets.female.body = process_pair(base_path, "女主角躯体", &action_map, &root_paths);
-    // ...
+    assets.female.head = process_pair(base_path, "女主角头部", &action_map, &root_paths);
+    assets.female.hair = process_pair(base_path, "女主角发型", &action_map, &root_paths);
+    assets.female.shoulder = process_pair(base_path, "女主角肩膀", &action_map, &root_paths);
 
-    // 4. Xử lý NPC & Quái vật (NEW)
-    // File: 普通npc资源.txt (NormalNpcRes.txt)
+    // Tay chân
+    assets.female.hand_left = process_pair(base_path, "女主角左手", &action_map, &root_paths);
+    assets.female.hand_right = process_pair(base_path, "女主角右手", &action_map, &root_paths);
+
+    // Vũ khí
+    assets.female.weapon_left = process_pair(base_path, "女主角左手武器", &action_map, &root_paths);
+    assets.female.weapon_right =
+        process_pair(base_path, "女主角右手武器", &action_map, &root_paths);
+
+    // Ngựa (3 phần)
+    assets.female.horse_front = process_pair(base_path, "女主角马前", &action_map, &root_paths);
+    assets.female.horse_middle = process_pair(base_path, "女主角马中", &action_map, &root_paths);
+    assets.female.horse_back = process_pair(base_path, "女主角马后", &action_map, &root_paths);
+
+    // ---------------------------------------------------------
+    // 4. Xử lý NPC & Quái vật
+    // ---------------------------------------------------------
     println!("⚙️ Processing NPC Assets...");
     assets.npcs = process_pair(base_path, "普通npc资源", &action_map, &root_paths);
 
     // 5. Save
+    let output_path = "data/newdata/assets_full.json";
+
+    // Tạo thư mục nếu chưa có
+    if let Some(parent) = Path::new(output_path).parent() {
+        fs::create_dir_all(parent).unwrap_or_default();
+    }
+
     let json_str = serde_json::to_string_pretty(&assets).unwrap();
-    fs::write("assets_full.json", json_str).expect("Unable to write file");
-    println!("✅ Done! Check assets_full.json");
+    fs::write(output_path, json_str).expect("Unable to write file");
+
+    println!(
+        "✅ Hoàn tất! File data siêu to khổng lồ đã sẵn sàng tại: {}",
+        output_path
+    );
 }
 
 // --- Hàm đọc file GBK ---
-fn read_gbk_file<P: AsRef<Path>>(path: P) -> String {
-    let mut file = File::open(path).expect("File not found");
-    let mut buffer = Vec::new();
-    file.read_to_end(&mut buffer).expect("Read error");
-    let (cow, _encoding_used, _had_errors) = GBK.decode(&buffer);
-    cow.into_owned()
+fn read_utf8_file<P: AsRef<Path>>(path: P) -> String {
+    // Đọc toàn bộ nội dung file thành String (mặc định Rust coi là UTF-8)
+    fs::read_to_string(path).expect("Không thể đọc file hoặc file không phải chuẩn UTF-8")
 }
 
 // Load CharacterType.txt -> HashMap<String, String>
 // Key: "男主角头部" -> Value: "spr/npcres/man"
 fn load_root_paths<P: AsRef<Path>>(path: P) -> HashMap<String, String> {
-    let content = read_gbk_file(path);
+    let content = read_utf8_file(path);
     let mut rdr = csv::ReaderBuilder::new()
         .delimiter(b'\t')
         .has_headers(false) // File này header tiếng Trung thường ở dòng 1 nhưng csv reader skip lỗi
@@ -161,8 +216,8 @@ fn process_pair(
         return HashMap::new();
     }
 
-    let res_content = read_gbk_file(&res_path);
-    let info_content = read_gbk_file(&info_path);
+    let res_content = read_utf8_file(&res_path);
+    let info_content = read_utf8_file(&info_path);
 
     let mut res_rdr = csv::ReaderBuilder::new()
         .delimiter(b'\t')
@@ -176,49 +231,67 @@ fn process_pair(
 
     let mut result = HashMap::new();
 
+    // SỬA TẠI ĐÂY: Xác định Key tổng quát để tra cứu root path
+    // Nếu prefix chứa "男主角" -> dùng key "男主角"
+    // Nếu prefix chứa "女主角" -> dùng key "女主角"
+    // Nếu là "普通npc资源" -> mỗi dòng sẽ có root riêng (xử lý trong vòng lặp)
+    let lookup_key = if file_prefix.contains("男主角") {
+        "男主角"
+    } else if file_prefix.contains("女主角") {
+        "女主角"
+    } else {
+        file_prefix // Trường hợp khác giữ nguyên
+    };
+
     // Xác định Root Path mặc định cho file này (nếu có)
     // Ví dụ file "男主角躯体" -> Root là "\spr\npcres\man"
-    let default_root = root_map.get(file_prefix).cloned().unwrap_or_default();
+    let default_root = root_map.get(lookup_key).cloned().unwrap_or_default();
 
     loop {
         match (res_iter.next(), info_iter.next()) {
             (Some(Ok(res_rec)), Some(Ok(info_rec))) => {
-                // Cột 0 là tên định danh (ví dụ: "enemy003" hoặc "躯体01")
                 let code_name = res_rec.get(0).unwrap_or("Unknown").trim().to_string();
 
-                // QUAN TRỌNG: Tìm root path cho dòng này.
-                // - Với Player: Root nằm ở default_root ("\spr\npcres\man")
-                // - Với NPC: Root path phụ thuộc vào từng con NPC (enemy003 có path riêng, enemy004 path riêng)
-                // => Logic: Thử tra code_name trong root_map trước (cho NPC), nếu ko có thì dùng default_root (cho Player)
-                let current_root = root_map
-                    .get(&code_name)
-                    .cloned()
-                    .unwrap_or_else(|| default_root.clone());
+                // Logic cho NPC: Nếu là file "普通npc资源", root path nằm ở CharacterType theo từng NPC ID
+                let current_root = if file_prefix == "普通npc资源" {
+                    root_map.get(&code_name).cloned().unwrap_or_default()
+                } else {
+                    default_root.clone()
+                };
 
                 let mut actions = HashMap::new();
 
                 for (col_idx, action_name) in action_map {
-                    // +1 vì cột 0 là Name
                     let data_idx = col_idx + 1;
-
                     if data_idx < res_rec.len() && data_idx < info_rec.len() {
                         let spr_name = res_rec[data_idx].trim().to_string();
                         let info_data = info_rec[data_idx].trim().to_string();
 
                         if !spr_name.is_empty() && spr_name != "-" {
-                            let clean_spr = spr_name.replace("\\", "/");
+                            // Chuẩn hóa đường dẫn
+                            let clean_spr = spr_name.replace("/", "\\");
+                            let mut clean_root = current_root.replace("/", "\\");
 
-                            // GHÉP ĐƯỜNG DẪN: root + / + filename
-                            let full_path = if current_root.is_empty() {
-                                clean_spr.clone()
+                            if !clean_root.starts_with('\\') && !clean_root.is_empty() {
+                                clean_root = format!("\\{}", clean_root);
+                            }
+                            let clean_root = clean_root.trim_end_matches('\\');
+
+                            // Ghép full path
+                            let full_path = if clean_root.is_empty() {
+                                if clean_spr.starts_with('\\') {
+                                    clean_spr.clone()
+                                } else {
+                                    format!("\\{}", clean_spr)
+                                }
                             } else {
-                                format!("{}/{}", current_root, clean_spr)
+                                format!("{}\\{}", clean_root, clean_spr)
                             };
 
                             actions.insert(
                                 action_name.clone(),
                                 ActionData {
-                                    full_path, // Đây là cái bạn cần!
+                                    full_path,
                                     spr: clean_spr,
                                     info: info_data,
                                 },
@@ -227,15 +300,13 @@ fn process_pair(
                     }
                 }
 
-                // Nếu có data hành động thì mới add vào list
                 if !actions.is_empty() {
-                    // Dùng code_name làm KEY của HashMap
                     result.insert(
                         code_name.clone(),
                         PartData {
                             id: code_name,
                             original_name: String::new(),
-                            root_path: current_root,
+                            root_path: current_root, // Bây giờ sẽ có giá trị: \spr\npcres\man
                             actions,
                         },
                     );
