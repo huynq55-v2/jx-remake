@@ -123,7 +123,7 @@ fn main() {
     assets.npcs = process_pair(base_path, "普通npc资源", &action_map, &root_paths);
 
     // 5. Save
-    let output_path = "data/newdata/assets_full.json";
+    let output_path = "data/newdata/npcres.json";
 
     // Tạo thư mục nếu chưa có
     if let Some(parent) = Path::new(output_path).parent() {
