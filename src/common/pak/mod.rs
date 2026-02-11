@@ -3,6 +3,8 @@ use std::fs::File;
 use std::io::{self, Read, Seek, SeekFrom};
 use std::path::Path;
 
+use encoding_rs::GBK;
+
 // --- CONSTANTS ---
 pub const PACK_SIGNATURE: u32 = 0x4b434150; // 'PACK'
 
@@ -44,27 +46,46 @@ pub fn read_u32_le(buf: &[u8]) -> u32 {
 
 /// Thuật toán Hash tên file của Kingsoft (Phiên bản Fix chuẩn 32-bit)
 pub fn jx_file_name_hash(path: &str) -> u32 {
+    // 1. Chuẩn hóa đường dẫn giống Engine: Chuyển hết thành chữ thường (với ký tự ASCII)
+    // Lưu ý: Engine C++ thực ra vừa hash vừa lower, nhưng để an toàn ta lower ASCII trước.
+    // Với tiếng Trung, .to_lowercase() trong Rust vẫn giữ nguyên ngữ nghĩa UTF-8,
+    // nhưng ta cần encode sang GBK sau đó.
+
+    // Engine VLTK thường chuẩn hóa đường dẫn nội bộ dùng dấu '\'
     let normalized_path = path.replace('/', "\\");
 
-    // Đảm bảo path bắt đầu bằng '\\'
-    let final_path = if !normalized_path.starts_with('\\') {
-        format!("\\{}", normalized_path)
-    } else {
-        normalized_path
-    };
+    // 2. Chuyển đổi từ UTF-8 (Rust) sang GBK (JX Engine)
+    // Nếu chuỗi không phải tiếng Trung hợp lệ, nó sẽ thay bằng ký tự thay thế,
+    // nhưng game file thường chuẩn nên dùng cơ chế mặc định là ổn.
+    let (cow, _encoding_used, _had_errors) = GBK.encode(&normalized_path);
+    let gbk_bytes: &[u8] = &cow;
 
     let mut id: u32 = 0;
-    let mut index: i32 = 0;
+    let mut index: i32 = 0; // Giữ nguyên kiểu i32 như C++
 
-    for byte in final_path.bytes() {
+    for &byte in gbk_bytes {
         index += 1;
-        let char_code = if byte >= b'A' && byte <= b'Z' {
-            byte + (b'a' - b'A')
-        } else {
-            byte
-        } as i32;
 
-        let term1 = (index.wrapping_mul(char_code)) as u32;
+        // Mô phỏng logic C++:
+        // C++: const char *ptr; -> *ptr là signed 8-bit integer (-128 đến 127)
+        // Rust: byte là u8 (0 đến 255)
+        // Cần ép kiểu u8 -> i8 -> i32 để có giá trị âm đúng như C++
+        let mut char_code = byte as i8 as i32;
+
+        // Xử lý chữ hoa -> chữ thường (Chỉ áp dụng cho ASCII 'A'-'Z')
+        // Ký tự tiếng Trung (GBK) luôn có byte > 127 (hoặc < 0 khi là signed),
+        // nên sẽ tự động bỏ qua check này (vì byte 'A' là 65).
+        if byte >= b'A' && byte <= b'Z' {
+            char_code = (byte + (b'a' - b'A')) as i8 as i32;
+        }
+
+        // 3. Tính toán thuật toán Hash
+        // C++: id = (id + (++index) * (*ptr)) ...
+        // Lưu ý: char_code có thể là số âm, nhân với index sẽ ra số âm.
+        // Khi cộng số âm vào u32 (id), C++ sẽ wrap around (tràn số).
+        // Rust cần dùng wrapping_mul và ép kiểu cẩn thận.
+
+        let term1 = index.wrapping_mul(char_code) as u32; // Ép sang u32 để cộng bit-wise
         let sum = id.wrapping_add(term1);
         let modded = sum % 0x8000000b;
         id = modded.wrapping_mul(0xffffffef);

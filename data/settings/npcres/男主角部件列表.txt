@@ -1,5 +1,5 @@
-åºå·	éƒ¨ä»¶ç»„æˆ	éƒ¨ä»¶1	éƒ¨ä»¶2	éƒ¨ä»¶3	éƒ¨ä»¶4
-0	å¤´ç›”	å¤´éƒ¨	å‘å‹		
-1	è£…å¤‡	è‚©è†€	èº¯ä½“	å·¦æ‰‹	å³æ‰‹
-2	æ­¦å™¨	å·¦æ‰‹æ­¦å™¨	å³æ‰‹æ­¦å™¨		
-3	é©¬	é©¬å‰	é©¬ä¸­	é©¬å	
+ĞòºÅ	²¿¼ş×é³É	²¿¼ş1	²¿¼ş2	²¿¼ş3	²¿¼ş4
+0	§Çu kh«i	Head	Hair		
+1	Trang bŞ 	Shoulder	Body	LeftHand	RightHead
+2	Vò khİ 	LeftWeapon	RightWeapon		
+3	Ngùa	HorseFront	HorseMiddle	HorseBack	

@@ -1,34 +1,34 @@
-武器类别	战斗站立	普通站立1	普通站立2	战斗行走	普通行走	战斗跑步	普通跑步	受伤	死亡	攻击1	攻击2	魔法	打坐	跳跃
-空手	空手站立3	空手站立2	空手站立1	空手走路	普通走路	空手跑步	普通跑步	空手受伤	空手死亡	空手攻击	空手攻击	空手魔法	打坐	跳跃
-单手剑1	短武器站立	空手站立2	空手站立1	短武器走路	短武器走路	短武器跑步	短武器跑步	短武器受伤	短武器死亡	短武器刺	短武器砍	短武器魔法	打坐	跳跃
-单手剑2	短武器站立	空手站立2	空手站立1	短武器走路	短武器走路	短武器跑步	短武器跑步	短武器受伤	短武器死亡	短武器刺	短武器砍	短武器魔法	打坐	跳跃
-单手剑3	短武器站立	空手站立2	空手站立1	短武器走路	短武器走路	短武器跑步	短武器跑步	短武器受伤	短武器死亡	短武器刺	短武器砍	短武器魔法	打坐	跳跃
-单手刀1	短武器站立	空手站立2	空手站立1	短武器走路	短武器走路	短武器跑步	短武器跑步	短武器受伤	短武器死亡	短武器砍	短武器刺	短武器魔法	打坐	跳跃
-单手刀2	短武器站立	空手站立2	空手站立1	短武器走路	短武器走路	短武器跑步	短武器跑步	短武器受伤	短武器死亡	短武器砍	短武器刺	短武器魔法	打坐	跳跃
-单手刀3	短武器站立	空手站立2	空手站立1	短武器走路	短武器走路	短武器跑步	短武器跑步	短武器受伤	短武器死亡	短武器砍	短武器刺	短武器魔法	打坐	跳跃
-长枪类1	长武器站立	空手站立2	空手站立1	长武器走路	长武器走路	长武器跑步	长武器跑步	长武器受伤	长武器死亡	长武器戳	长武器劈	长武器魔法	打坐	跳跃
-长枪类2	长武器站立	空手站立2	空手站立1	长武器走路	长武器走路	长武器跑步	长武器跑步	长武器受伤	长武器死亡	长武器戳	长武器劈	长武器魔法	打坐	跳跃
-长枪类3	长武器站立	空手站立2	空手站立1	长武器走路	长武器走路	长武器跑步	长武器跑步	长武器受伤	长武器死亡	长武器戳	长武器劈	长武器魔法	打坐	跳跃
-长棍类1	长武器站立	空手站立2	空手站立1	长武器走路	长武器走路	长武器跑步	长武器跑步	长武器受伤	长武器死亡	长武器劈	长武器戳	长武器魔法	打坐	跳跃
-长棍类2	长武器站立	空手站立2	空手站立1	长武器走路	长武器走路	长武器跑步	长武器跑步	长武器受伤	长武器死亡	长武器劈	长武器戳	长武器魔法	打坐	跳跃
-长棍类3	长武器站立	空手站立2	空手站立1	长武器走路	长武器走路	长武器跑步	长武器跑步	长武器受伤	长武器死亡	长武器劈	长武器戳	长武器魔法	打坐	跳跃
-双剑类1	双武器站立	空手站立2	空手站立1	双武器走路	双武器走路	双武器跑步	双武器跑步	双武器受伤	双武器死亡	双武器划	双武器砸	双武器魔法	打坐	跳跃
-双剑类2	双武器站立	空手站立2	空手站立1	双武器走路	双武器走路	双武器跑步	双武器跑步	双武器受伤	双武器死亡	双武器划	双武器砸	双武器魔法	打坐	跳跃
-双剑类3	双武器站立	空手站立2	空手站立1	双武器走路	双武器走路	双武器跑步	双武器跑步	双武器受伤	双武器死亡	双武器划	双武器砸	双武器魔法	打坐	跳跃
-双锤类1	双武器站立	空手站立2	空手站立1	双武器走路	双武器走路	双武器跑步	双武器跑步	双武器受伤	双武器死亡	双武器砸	双武器划	双武器魔法	打坐	跳跃
-双锤类2	双武器站立	空手站立2	空手站立1	双武器走路	双武器走路	双武器跑步	双武器跑步	双武器受伤	双武器死亡	双武器砸	双武器划	双武器魔法	打坐	跳跃
-双锤类3	双武器站立	空手站立2	空手站立1	双武器走路	双武器走路	双武器跑步	双武器跑步	双武器受伤	双武器死亡	双武器砸	双武器划	双武器魔法	打坐	跳跃
-暗器	空手站立3	空手站立2	空手站立1	空手走路	普通走路	空手跑步	普通跑步	空手受伤	空手死亡	暗器投掷	暗器投掷	空手魔法	打坐	跳跃
-单手剑4	短武器站立	空手站立2	空手站立1	短武器走路	短武器走路	短武器跑步	短武器跑步	短武器受伤	短武器死亡	短武器刺	短武器砍	短武器魔法	打坐	跳跃
-单手剑5	短武器站立	空手站立2	空手站立1	短武器走路	短武器走路	短武器跑步	短武器跑步	短武器受伤	短武器死亡	短武器砍	短武器刺	短武器魔法	打坐	跳跃
-单手刀4	短武器站立	空手站立2	空手站立1	短武器走路	短武器走路	短武器跑步	短武器跑步	短武器受伤	短武器死亡	短武器砍	短武器刺	短武器魔法	打坐	跳跃
-单手刀5	短武器站立	空手站立2	空手站立1	短武器走路	短武器走路	短武器跑步	短武器跑步	短武器受伤	短武器死亡	短武器砍	短武器刺	短武器魔法	打坐	跳跃
-长枪类4	长武器站立	空手站立2	空手站立1	长武器走路	长武器走路	长武器跑步	长武器跑步	长武器受伤	长武器死亡	长武器戳	长武器劈	长武器魔法	打坐	跳跃
-长枪类5	长武器站立	空手站立2	空手站立1	长武器走路	长武器走路	长武器跑步	长武器跑步	长武器受伤	长武器死亡	长武器戳	长武器劈	长武器魔法	打坐	跳跃
-长棍类4	长武器站立	空手站立2	空手站立1	长武器走路	长武器走路	长武器跑步	长武器跑步	长武器受伤	长武器死亡	长武器劈	长武器戳	长武器魔法	打坐	跳跃
-长棍类5	长武器站立	空手站立2	空手站立1	长武器走路	长武器走路	长武器跑步	长武器跑步	长武器受伤	长武器死亡	长武器劈	长武器戳	长武器魔法	打坐	跳跃
-双剑类4	双武器站立	空手站立2	空手站立1	双武器走路	双武器走路	双武器跑步	双武器跑步	双武器受伤	双武器死亡	双武器划	双武器砸	双武器魔法	打坐	跳跃
-双剑类5	双武器站立	空手站立2	空手站立1	双武器走路	双武器走路	双武器跑步	双武器跑步	双武器受伤	双武器死亡	双武器划	双武器砸	双武器魔法	打坐	跳跃
-双锤类4	双武器站立	空手站立2	空手站立1	双武器走路	双武器走路	双武器跑步	双武器跑步	双武器受伤	双武器死亡	双武器砸	双武器划	双武器魔法	打坐	跳跃
-双锤类5	双武器站立	空手站立2	空手站立1	双武器走路	双武器走路	双武器跑步	双武器跑步	双武器受伤	双武器死亡	双武器砸	双武器划	双武器魔法	打坐	跳跃
-Null	空手站立3	空手站立2	空手站立1	空手走路	普通走路	空手跑步	普通跑步	空手受伤	空手死亡	空手攻击	空手攻击	空手魔法	打坐	跳跃
+EqType	FightStand	NormalStand1	NormalStand2	FightWalk	NormalWalk	FightRun	NormalRun	Wound	Die	Attack1	Attack2	Magic	SitDown	JunpFly
+Tay kh�ng	FreeStand3	FreeStand2	FreeStand1	FreeWalk	NormalWalk	FreeRun	NormalRun	FreeWound	FreeDie	FreeAttack	FreeAttack	FreeMagic	SitDown	JumpFly
+��n th� ki�m 1	MeleeWStand	FreeStand2	FreeStand1	MeleeWWalk	MeleeWWalk	MeleeWRun	MeleeWRun	MeleeWWound	MeleeWDie	MeleeWPuncture	MeleeWCut	MeleeWMagic	SitDown	JumpFly
+��n th� ki�m 2	MeleeWStand	FreeStand2	FreeStand1	MeleeWWalk	MeleeWWalk	MeleeWRun	MeleeWRun	MeleeWWound	MeleeWDie	MeleeWPuncture	MeleeWCut	MeleeWMagic	SitDown	JumpFly
+��n th� ki�m 3	MeleeWStand	FreeStand2	FreeStand1	MeleeWWalk	MeleeWWalk	MeleeWRun	MeleeWRun	MeleeWWound	MeleeWDie	MeleeWPuncture	MeleeWCut	MeleeWMagic	SitDown	JumpFly
+��n th� �ao 1	MeleeWStand	FreeStand2	FreeStand1	MeleeWWalk	MeleeWWalk	MeleeWRun	MeleeWRun	MeleeWWound	MeleeWDie	MeleeWCut	MeleeWPuncture	MeleeWMagic	SitDown	JumpFly
+��n th� �ao 2	MeleeWStand	FreeStand2	FreeStand1	MeleeWWalk	MeleeWWalk	MeleeWRun	MeleeWRun	MeleeWWound	MeleeWDie	MeleeWCut	MeleeWPuncture	MeleeWMagic	SitDown	JumpFly
+��n th� �ao 3	MeleeWStand	FreeStand2	FreeStand1	MeleeWWalk	MeleeWWalk	MeleeWRun	MeleeWRun	MeleeWWound	MeleeWDie	MeleeWCut	MeleeWPuncture	MeleeWMagic	SitDown	JumpFly
+Lo�i tr��ng th��ng 1	RangeWStand	FreeStand2	FreeStand1	RangeWWalk	RangeWWalk	RangeWRun	RangeWRun	RangeWWound	MeleeWDie	RangeWPuncture	RangeWCut	RangeWMagic	SitDown	JumpFly
+Lo�i tr��ng th��ng 2	RangeWStand	FreeStand2	FreeStand1	RangeWWalk	RangeWWalk	RangeWRun	RangeWRun	RangeWWound	MeleeWDie	RangeWPuncture	RangeWCut	RangeWMagic	SitDown	JumpFly
+Lo�i tr��ng th��ng 3	RangeWStand	FreeStand2	FreeStand1	RangeWWalk	RangeWWalk	RangeWRun	RangeWRun	RangeWWound	MeleeWDie	RangeWPuncture	RangeWCut	RangeWMagic	SitDown	JumpFly
+Lo�i tr��ng c�n 1	RangeWStand	FreeStand2	FreeStand1	RangeWWalk	RangeWWalk	RangeWRun	RangeWRun	RangeWWound	MeleeWDie	RangeWCut	RangeWPuncture	RangeWMagic	SitDown	JumpFly
+Lo�i tr��ng c�n 2	RangeWStand	FreeStand2	FreeStand1	RangeWWalk	RangeWWalk	RangeWRun	RangeWRun	RangeWWound	MeleeWDie	RangeWCut	RangeWPuncture	RangeWMagic	SitDown	JumpFly
+Lo�i tr��ng c�n 3	RangeWStand	FreeStand2	FreeStand1	RangeWWalk	RangeWWalk	RangeWRun	RangeWRun	RangeWWound	MeleeWDie	RangeWCut	RangeWPuncture	RangeWMagic	SitDown	JumpFly
+Lo�i Song ki�m 1	DoubleWStand	FreeStand2	FreeStand1	DoubleWWalk	DoubleWWalk	DoubleWRun	DoubleWRun	DoubleWWound	DoubleWDie	DoubleWPull	DoubleWPound	DoubleWMagic	SitDown	JumpFly
+Lo�i Song ki�m 2	DoubleWStand	FreeStand2	FreeStand1	DoubleWWalk	DoubleWWalk	DoubleWRun	DoubleWRun	DoubleWWound	DoubleWDie	DoubleWPull	DoubleWPound	DoubleWMagic	SitDown	JumpFly
+Lo�i Song ki�m 3	DoubleWStand	FreeStand2	FreeStand1	DoubleWWalk	DoubleWWalk	DoubleWRun	DoubleWRun	DoubleWWound	DoubleWDie	DoubleWPull	DoubleWPound	DoubleWMagic	SitDown	JumpFly
+Lo�i Song ch�y 1	DoubleWStand	FreeStand2	FreeStand1	DoubleWWalk	DoubleWWalk	DoubleWRun	DoubleWRun	DoubleWWound	DoubleWDie	DoubleWPound	DoubleWPull	DoubleWMagic	SitDown	JumpFly
+Lo�i Song ch�y 2	DoubleWStand	FreeStand2	FreeStand1	DoubleWWalk	DoubleWWalk	DoubleWRun	DoubleWRun	DoubleWWound	DoubleWDie	DoubleWPound	DoubleWPull	DoubleWMagic	SitDown	JumpFly
+Lo�i Song ch�y 3	DoubleWStand	FreeStand2	FreeStand1	DoubleWWalk	DoubleWWalk	DoubleWRun	DoubleWRun	DoubleWWound	DoubleWDie	DoubleWPound	DoubleWPull	DoubleWMagic	SitDown	JumpFly
+�m kh� 	FreeStand3	FreeStand2	FreeStand1	FreeWalk	NormalWalk	FreeRun	NormalRun	FreeWound	FreeDie	DartThrow	DartThrow	FreeMagic	SitDown	JumpFly
+��n th� ki�m 4	MeleeWStand	FreeStand2	FreeStand1	MeleeWWalk	MeleeWWalk	MeleeWRun	MeleeWRun	MeleeWWound	MeleeWDie	MeleeWPuncture	MeleeWCut	MeleeWMagic	SitDown	JumpFly
+��n th� ki�m 5	MeleeWStand	FreeStand2	FreeStand1	MeleeWWalk	MeleeWWalk	MeleeWRun	MeleeWRun	MeleeWWound	MeleeWDie	MeleeWCut	MeleeWPuncture	MeleeWMagic	SitDown	JumpFly
+��n th� �ao 4	MeleeWStand	FreeStand2	FreeStand1	MeleeWWalk	MeleeWWalk	MeleeWRun	MeleeWRun	MeleeWWound	MeleeWDie	MeleeWCut	MeleeWPuncture	MeleeWMagic	SitDown	JumpFly
+��n th� �ao 5	MeleeWStand	FreeStand2	FreeStand1	MeleeWWalk	MeleeWWalk	MeleeWRun	MeleeWRun	MeleeWWound	MeleeWDie	MeleeWCut	MeleeWPuncture	MeleeWMagic	SitDown	JumpFly
+Lo�i tr��ng th��ng 4	RangeWStand	FreeStand2	FreeStand1	RangeWWalk	RangeWWalk	RangeWRun	RangeWRun	RangeWWound	MeleeWDie	RangeWPuncture	RangeWCut	RangeWMagic	SitDown	JumpFly
+Lo�i tr��ng th��ng 5	RangeWStand	FreeStand2	FreeStand1	RangeWWalk	RangeWWalk	RangeWRun	RangeWRun	RangeWWound	MeleeWDie	RangeWPuncture	RangeWCut	RangeWMagic	SitDown	JumpFly
+Lo�i tr��ng c�n 4	RangeWStand	FreeStand2	FreeStand1	RangeWWalk	RangeWWalk	RangeWRun	RangeWRun	RangeWWound	MeleeWDie	RangeWCut	RangeWPuncture	RangeWMagic	SitDown	JumpFly
+Lo�i tr��ng c�n 5	RangeWStand	FreeStand2	FreeStand1	RangeWWalk	RangeWWalk	RangeWRun	RangeWRun	RangeWWound	MeleeWDie	RangeWCut	RangeWPuncture	RangeWMagic	SitDown	JumpFly
+Lo�i Song ki�m 4	DoubleWStand	FreeStand2	FreeStand1	DoubleWWalk	DoubleWWalk	DoubleWRun	DoubleWRun	DoubleWWound	DoubleWDie	DoubleWPull	DoubleWPound	DoubleWMagic	SitDown	JumpFly
+Lo�i Song ki�m 5	DoubleWStand	FreeStand2	FreeStand1	DoubleWWalk	DoubleWWalk	DoubleWRun	DoubleWRun	DoubleWWound	DoubleWDie	DoubleWPull	DoubleWPound	DoubleWMagic	SitDown	JumpFly
+Lo�i Song ch�y 4	DoubleWStand	FreeStand2	FreeStand1	DoubleWWalk	DoubleWWalk	DoubleWRun	DoubleWRun	DoubleWWound	DoubleWDie	DoubleWPound	DoubleWPull	DoubleWMagic	SitDown	JumpFly
+Lo�i Song ch�y 5	DoubleWStand	FreeStand2	FreeStand1	DoubleWWalk	DoubleWWalk	DoubleWRun	DoubleWRun	DoubleWWound	DoubleWDie	DoubleWPound	DoubleWPull	DoubleWMagic	SitDown	JumpFly
+Null	FreeStand3	FreeStand2	FreeStand1	FreeWalk	NormalWalk	FreeRun	NormalRun	FreeWound	FreeDie	FreeAttack	FreeAttack	FreeMagic	SitDown	JumpFly

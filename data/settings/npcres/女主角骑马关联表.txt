@@ -1,34 +1,34 @@
-武器类别	战斗站立	普通站立1	普通站立2	战斗行走	普通行走	战斗跑步	普通跑步	受伤	死亡	攻击1	攻击2	魔法	打坐	跳跃
-空手	骑马站立	骑马站立	骑马站立1	骑马走路	骑马走路	骑马跑步	骑马跑步	骑马受伤	骑马死亡	骑马攻击劈	骑马攻击刺	骑马魔法		
-单手剑1	骑马站立	骑马站立	骑马站立1	骑马走路	骑马走路	骑马跑步	骑马跑步	骑马受伤	骑马死亡	骑马攻击劈	骑马攻击刺	骑马魔法		
-单手剑2	骑马站立	骑马站立	骑马站立1	骑马走路	骑马走路	骑马跑步	骑马跑步	骑马受伤	骑马死亡	骑马攻击劈	骑马攻击刺	骑马魔法		
-单手剑3	骑马站立	骑马站立	骑马站立1	骑马走路	骑马走路	骑马跑步	骑马跑步	骑马受伤	骑马死亡	骑马攻击劈	骑马攻击刺	骑马魔法		
-单手刀1	骑马站立	骑马站立	骑马站立1	骑马走路	骑马走路	骑马跑步	骑马跑步	骑马受伤	骑马死亡	骑马攻击劈	骑马攻击刺	骑马魔法		
-单手刀2	骑马站立	骑马站立	骑马站立1	骑马走路	骑马走路	骑马跑步	骑马跑步	骑马受伤	骑马死亡	骑马攻击劈	骑马攻击刺	骑马魔法		
-单手刀3	骑马站立	骑马站立	骑马站立1	骑马走路	骑马走路	骑马跑步	骑马跑步	骑马受伤	骑马死亡	骑马攻击劈	骑马攻击刺	骑马魔法		
-长枪类1	骑马站立	骑马站立	骑马站立1	骑马走路	骑马走路	骑马跑步	骑马跑步	骑马受伤	骑马死亡	骑马攻击劈	骑马攻击刺	骑马魔法		
-长枪类2	骑马站立	骑马站立	骑马站立1	骑马走路	骑马走路	骑马跑步	骑马跑步	骑马受伤	骑马死亡	骑马攻击劈	骑马攻击刺	骑马魔法		
-长枪类3	骑马站立	骑马站立	骑马站立1	骑马走路	骑马走路	骑马跑步	骑马跑步	骑马受伤	骑马死亡	骑马攻击劈	骑马攻击刺	骑马魔法		
-长棍类1	骑马站立	骑马站立	骑马站立1	骑马走路	骑马走路	骑马跑步	骑马跑步	骑马受伤	骑马死亡	骑马攻击劈	骑马攻击刺	骑马魔法		
-长棍类2	骑马站立	骑马站立	骑马站立1	骑马走路	骑马走路	骑马跑步	骑马跑步	骑马受伤	骑马死亡	骑马攻击劈	骑马攻击刺	骑马魔法		
-长棍类3	骑马站立	骑马站立	骑马站立1	骑马走路	骑马走路	骑马跑步	骑马跑步	骑马受伤	骑马死亡	骑马攻击劈	骑马攻击刺	骑马魔法		
-双剑类1	骑马站立	骑马站立	骑马站立1	骑马走路	骑马走路	骑马跑步	骑马跑步	骑马受伤	骑马死亡	骑马攻击劈	骑马攻击刺	骑马魔法		
-双剑类2	骑马站立	骑马站立	骑马站立1	骑马走路	骑马走路	骑马跑步	骑马跑步	骑马受伤	骑马死亡	骑马攻击劈	骑马攻击刺	骑马魔法		
-双剑类3	骑马站立	骑马站立	骑马站立1	骑马走路	骑马走路	骑马跑步	骑马跑步	骑马受伤	骑马死亡	骑马攻击劈	骑马攻击刺	骑马魔法
-双锤类1	骑马站立	骑马站立	骑马站立1	骑马走路	骑马走路	骑马跑步	骑马跑步	骑马受伤	骑马死亡	骑马攻击劈	骑马攻击刺	骑马魔法
-双锤类2	骑马站立	骑马站立	骑马站立1	骑马走路	骑马走路	骑马跑步	骑马跑步	骑马受伤	骑马死亡	骑马攻击劈	骑马攻击刺	骑马魔法
-双锤类3	骑马站立	骑马站立	骑马站立1	骑马走路	骑马走路	骑马跑步	骑马跑步	骑马受伤	骑马死亡	骑马攻击劈	骑马攻击刺	骑马魔法
-暗器	骑马站立	骑马站立	骑马站立1	骑马走路	骑马走路	骑马跑步	骑马跑步	骑马受伤	骑马死亡	骑马魔法	骑马魔法	骑马魔法
-单手剑4	骑马站立	骑马站立	骑马站立1	骑马走路	骑马走路	骑马跑步	骑马跑步	骑马受伤	骑马死亡	骑马攻击劈	骑马攻击刺	骑马魔法
-单手剑5	骑马站立	骑马站立	骑马站立1	骑马走路	骑马走路	骑马跑步	骑马跑步	骑马受伤	骑马死亡	骑马攻击劈	骑马攻击刺	骑马魔法
-单手刀4	骑马站立	骑马站立	骑马站立1	骑马走路	骑马走路	骑马跑步	骑马跑步	骑马受伤	骑马死亡	骑马攻击劈	骑马攻击刺	骑马魔法
-单手刀5	骑马站立	骑马站立	骑马站立1	骑马走路	骑马走路	骑马跑步	骑马跑步	骑马受伤	骑马死亡	骑马攻击劈	骑马攻击刺	骑马魔法
-长枪类4	骑马站立	骑马站立	骑马站立1	骑马走路	骑马走路	骑马跑步	骑马跑步	骑马受伤	骑马死亡	骑马攻击劈	骑马攻击刺	骑马魔法
-长枪类5	骑马站立	骑马站立	骑马站立1	骑马走路	骑马走路	骑马跑步	骑马跑步	骑马受伤	骑马死亡	骑马攻击劈	骑马攻击刺	骑马魔法
-长棍类4	骑马站立	骑马站立	骑马站立1	骑马走路	骑马走路	骑马跑步	骑马跑步	骑马受伤	骑马死亡	骑马攻击劈	骑马攻击刺	骑马魔法
-长棍类5	骑马站立	骑马站立	骑马站立1	骑马走路	骑马走路	骑马跑步	骑马跑步	骑马受伤	骑马死亡	骑马攻击劈	骑马攻击刺	骑马魔法
-双剑类4	骑马站立	骑马站立	骑马站立1	骑马走路	骑马走路	骑马跑步	骑马跑步	骑马受伤	骑马死亡	骑马攻击劈	骑马攻击刺	骑马魔法
-双剑类5	骑马站立	骑马站立	骑马站立1	骑马走路	骑马走路	骑马跑步	骑马跑步	骑马受伤	骑马死亡	骑马攻击劈	骑马攻击刺	骑马魔法
-双锤类4	骑马站立	骑马站立	骑马站立1	骑马走路	骑马走路	骑马跑步	骑马跑步	骑马受伤	骑马死亡	骑马攻击劈	骑马攻击刺	骑马魔法
-双锤类5	骑马站立	骑马站立	骑马站立1	骑马走路	骑马走路	骑马跑步	骑马跑步	骑马受伤	骑马死亡	骑马攻击劈	骑马攻击刺	骑马魔法
-Null	骑马站立	骑马站立	骑马站立2	骑马走路	骑马走路	骑马跑步	骑马跑步	骑马受伤	骑马死亡	骑马攻击劈	骑马攻击刺	骑马魔法
+EqType	FightStand	NormalStand1	NormalStand2	FightWalk	NormalWalk	FightRun	NormalRun	Wound	Die	Attack1	Attack2	Magic	SitDown	JunpFly
+Tay kh�ng	RideStand	RideStand	RideStand1	RideWalk	RideWalk	RideRun	RideRun	RideWound	RideDie	RideCut	RidePuncture	RideMagic		
+��n th� ki�m 1	RideStand	RideStand	RideStand1	RideWalk	RideWalk	RideRun	RideRun	RideWound	RideDie	RideCut	RidePuncture	RideMagic		
+��n th� ki�m 2	RideStand	RideStand	RideStand1	RideWalk	RideWalk	RideRun	RideRun	RideWound	RideDie	RideCut	RidePuncture	RideMagic		
+��n th� ki�m 3	RideStand	RideStand	RideStand1	RideWalk	RideWalk	RideRun	RideRun	RideWound	RideDie	RideCut	RidePuncture	RideMagic		
+��n th� �ao 1	RideStand	RideStand	RideStand1	RideWalk	RideWalk	RideRun	RideRun	RideWound	RideDie	RideCut	RidePuncture	RideMagic		
+��n th� �ao 2	RideStand	RideStand	RideStand1	RideWalk	RideWalk	RideRun	RideRun	RideWound	RideDie	RideCut	RidePuncture	RideMagic		
+��n th� �ao 3	RideStand	RideStand	RideStand1	RideWalk	RideWalk	RideRun	RideRun	RideWound	RideDie	RideCut	RidePuncture	RideMagic		
+Lo�i tr��ng th��ng 1	RideStand	RideStand	RideStand1	RideWalk	RideWalk	RideRun	RideRun	RideWound	RideDie	RideCut	RidePuncture	RideMagic		
+Lo�i tr��ng th��ng 2	RideStand	RideStand	RideStand1	RideWalk	RideWalk	RideRun	RideRun	RideWound	RideDie	RideCut	RidePuncture	RideMagic		
+Lo�i tr��ng th��ng 3	RideStand	RideStand	RideStand1	RideWalk	RideWalk	RideRun	RideRun	RideWound	RideDie	RideCut	RidePuncture	RideMagic		
+Lo�i tr��ng c�n 1	RideStand	RideStand	RideStand1	RideWalk	RideWalk	RideRun	RideRun	RideWound	RideDie	RideCut	RidePuncture	RideMagic		
+Lo�i tr��ng c�n 2	RideStand	RideStand	RideStand1	RideWalk	RideWalk	RideRun	RideRun	RideWound	RideDie	RideCut	RidePuncture	RideMagic		
+Lo�i tr��ng c�n 3	RideStand	RideStand	RideStand1	RideWalk	RideWalk	RideRun	RideRun	RideWound	RideDie	RideCut	RidePuncture	RideMagic		
+Lo�i Song ki�m 1	RideStand	RideStand	RideStand1	RideWalk	RideWalk	RideRun	RideRun	RideWound	RideDie	RideCut	RidePuncture	RideMagic		
+Lo�i Song ki�m 2	RideStand	RideStand	RideStand1	RideWalk	RideWalk	RideRun	RideRun	RideWound	RideDie	RideCut	RidePuncture	RideMagic		
+Lo�i Song ki�m 3	RideStand	RideStand	RideStand1	RideWalk	RideWalk	RideRun	RideRun	RideWound	RideDie	RideCut	RidePuncture	RideMagic
+Lo�i Song ch�y 1	RideStand	RideStand	RideStand1	RideWalk	RideWalk	RideRun	RideRun	RideWound	RideDie	RideCut	RidePuncture	RideMagic
+Lo�i Song ch�y 2	RideStand	RideStand	RideStand1	RideWalk	RideWalk	RideRun	RideRun	RideWound	RideDie	RideCut	RidePuncture	RideMagic
+Lo�i Song ch�y 3	RideStand	RideStand	RideStand1	RideWalk	RideWalk	RideRun	RideRun	RideWound	RideDie	RideCut	RidePuncture	RideMagic
+�m kh� 	RideStand	RideStand	RideStand1	RideWalk	RideWalk	RideRun	RideRun	RideWound	RideDie	RideMagic	RideMagic	RideMagic
+��n th� ki�m 4	RideStand	RideStand	RideStand1	RideWalk	RideWalk	RideRun	RideRun	RideWound	RideDie	RideCut	RidePuncture	RideMagic
+��n th� ki�m 5	RideStand	RideStand	RideStand1	RideWalk	RideWalk	RideRun	RideRun	RideWound	RideDie	RideCut	RidePuncture	RideMagic
+��n th� �ao 4	RideStand	RideStand	RideStand1	RideWalk	RideWalk	RideRun	RideRun	RideWound	RideDie	RideCut	RidePuncture	RideMagic
+��n th� �ao 5	RideStand	RideStand	RideStand1	RideWalk	RideWalk	RideRun	RideRun	RideWound	RideDie	RideCut	RidePuncture	RideMagic
+Lo�i tr��ng th��ng 4	RideStand	RideStand	RideStand1	RideWalk	RideWalk	RideRun	RideRun	RideWound	RideDie	RideCut	RidePuncture	RideMagic
+Lo�i tr��ng th��ng 5	RideStand	RideStand	RideStand1	RideWalk	RideWalk	RideRun	RideRun	RideWound	RideDie	RideCut	RidePuncture	RideMagic
+Lo�i tr��ng c�n 4	RideStand	RideStand	RideStand1	RideWalk	RideWalk	RideRun	RideRun	RideWound	RideDie	RideCut	RidePuncture	RideMagic
+Lo�i tr��ng c�n 5	RideStand	RideStand	RideStand1	RideWalk	RideWalk	RideRun	RideRun	RideWound	RideDie	RideCut	RidePuncture	RideMagic
+Lo�i Song ki�m 4	RideStand	RideStand	RideStand1	RideWalk	RideWalk	RideRun	RideRun	RideWound	RideDie	RideCut	RidePuncture	RideMagic
+Lo�i Song ki�m 5	RideStand	RideStand	RideStand1	RideWalk	RideWalk	RideRun	RideRun	RideWound	RideDie	RideCut	RidePuncture	RideMagic
+Lo�i Song ch�y 4	RideStand	RideStand	RideStand1	RideWalk	RideWalk	RideRun	RideRun	RideWound	RideDie	RideCut	RidePuncture	RideMagic
+Lo�i Song ch�y 5	RideStand	RideStand	RideStand1	RideWalk	RideWalk	RideRun	RideRun	RideWound	RideDie	RideCut	RidePuncture	RideMagic
+Null	RideStand	RideStand	RideStand2	RideWalk	RideWalk	RideRun	RideRun	RideWound	RideDie	RideCut	RidePuncture	RideMagic

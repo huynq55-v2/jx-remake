@@ -1,7 +1,7 @@
-çŠ¶æ€	å›¾å½¢æ–‡ä»¶å
-é˜Ÿä¼å¼€æ”¾çŠ¶æ€	\spr\npcres\style\menustate01.spr
-äº¤æ˜“å¼€æ”¾çŠ¶æ€	\spr\npcres\style\menustate02.spr
-äº¤æ˜“è¿›è¡ŒçŠ¶æ€	\spr\npcres\style\menustate03.spr
-ç¡çœ çŠ¶æ€	\spr\npcres\style\menustate04.spr
-æ‘†æ‘ŠçŠ¶æ€	\spr\npcres\style\menustate02.spr
-æ‘†æ‘Šäº¤æ˜“çŠ¶æ€	\spr\npcres\style\menustate03.spr
+×´Ì¬	Í¼ĞÎÎÄ¼şÃû
+më tr¹ng th¸i Tæ ®éi	\spr\npcres\style\menustate01.spr
+më tr¹ng th¸i giao dŞch	\spr\npcres\style\menustate02.spr
+tiÕn hµnh tr¹ng th¸i giao dŞch	\spr\npcres\style\menustate03.spr
+tr¹ng th¸i nghØ ng¬i	\spr\npcres\style\menustate04.spr
+tr¹ng th¸i rao b¸n	\spr\npcres\style\menustate02.spr
+tr¹ng th¸i rao b¸n_giao dŞch	\spr\npcres\style\menustate03.spr
