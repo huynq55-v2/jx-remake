@@ -1,4 +1,4 @@
-æ­¦å™¨ç±»åˆ«	æˆ˜æ–—ç«™ç«‹	æ™®é€šç«™ç«‹1	æ™®é€šç«™ç«‹2	æˆ˜æ–—è¡Œèµ°	æ™®é€šè¡Œèµ°	æˆ˜æ–—è·‘æ­¥	æ™®é€šè·‘æ­¥	å—ä¼¤	æ­»äº¡	æ”»å‡»1	æ”»å‡»2	é­”æ³•	æ‰“å	è·³è·ƒ
+ÎäÆ÷Àà±ğ	Õ½¶·Õ¾Á¢	ÆÕÍ¨Õ¾Á¢1	ÆÕÍ¨Õ¾Á¢2	Õ½¶·ĞĞ×ß	ÆÕÍ¨ĞĞ×ß	Õ½¶·ÅÜ²½	ÆÕÍ¨ÅÜ²½	ÊÜÉË	ËÀÍö	¹¥»÷1	¹¥»÷2	Ä§·¨	´ò×ø	ÌøÔ¾
 enemy003	enemy003_st.spr	enemy003_st.spr	enemy003_pst.spr	enemy003_wlk.spr	enemy003_wlk.spr	enemy003_wlk.spr	enemy003_wlk.spr	enemy003_bat.spr	enemy003_die.spr	enemy003_at.spr	enemy003_at.spr	enemy003_at.spr		
 enemy004	enemy004_st.spr	enemy004_st.spr	enemy004_pst.spr	enemy004_wlk.spr	enemy004_wlk.spr	enemy004_wlk.spr	enemy004_wlk.spr	enemy004_bat.spr	enemy004_die.spr	enemy004_at.spr	enemy004_at.spr	enemy004_at.spr		
 enemy005	enemy005_st.spr	enemy005_st.spr	enemy005_pst.spr	enemy005_wlk.spr	enemy005_wlk.spr	enemy005_wlk.spr	enemy005_wlk.spr	enemy005_bat.spr	enemy005_die.spr	enemy005_at.spr	enemy005_at.spr	enemy005_at.spr		

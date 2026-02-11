@@ -1,7 +1,7 @@
-çŠ¶æ€	å›¾å½¢æ–‡ä»¶å
-é˜Ÿä¼å¼€æ”¾çŠ¶æ€	\spr\npcres\style\menustate01.spr
-äº¤æ˜“å¼€æ”¾çŠ¶æ€	\spr\npcres\style\menustate02.spr
-äº¤æ˜“è¿›è¡ŒçŠ¶æ€	\spr\npcres\style\menustate03.spr
-ç¡çœ çŠ¶æ€	\spr\npcres\style\menustate04.spr
-æ‘†æ‘ŠçŠ¶æ€	\spr\npcres\style\menustate02.spr
-æ‘†æ‘Šäº¤æ˜“çŠ¶æ€	\spr\npcres\style\menustate03.spr
+×´Ì¬	Í¼ĞÎÎÄ¼şÃû
+¶ÓÎé¿ª·Å×´Ì¬	\spr\npcres\style\menustate01.spr
+½»Ò×¿ª·Å×´Ì¬	\spr\npcres\style\menustate02.spr
+½»Ò×½øĞĞ×´Ì¬	\spr\npcres\style\menustate03.spr
+Ë¯Ãß×´Ì¬	\spr\npcres\style\menustate04.spr
+°ÚÌ¯×´Ì¬	\spr\npcres\style\menustate02.spr
+°ÚÌ¯½»Ò××´Ì¬	\spr\npcres\style\menustate03.spr
