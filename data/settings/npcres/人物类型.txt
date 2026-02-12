@@ -1,6 +1,6 @@
 CharacterName	CharacterType	ResFilePath	PartFileName	WeaponActionTab1	WeaponActionTab2	ActionRenderOrderTab	Head	Hair	Shoulder	Body	LeftHand	RightHead	LeftWeapon	RightWeapon	HorseFront	HorseMiddle	HorseBack
-MainMan	SpecialNpc	spr\npcres\man	Äéệữẵầ²¿ẳỵÁé±ớ.txt	Äéệữẵầẻ´ặùÂớạỉÁê±ớ.txt	ÄéệữẵầặùÂớạỉÁê±ớ.txt	ÄéệữẵầèựÍẳậ³éũ±ớ.txt	ÄéệữẵầÍã²¿.txt	ÄéệữẵầãÂéÍ.txt	Äéệữẵầẳỗ°ũ.txt	Äéệữẵầầỷèồ.txt	Äéệữẵầìúấệ.txt	Äéệữẵầểềấệ.txt	Äéệữẵầìúấệẻọặữ.txt	Äéệữẵầểềấệẻọặữ.txt	ÄéệữẵầÂớầ°.txt	ÄéệữẵầÂớệé.txt	ÄéệữẵầÂớºú.txt
-MainLady	SpecialNpc	spr\npcres\woman	Åđệữẵầ²¿ẳỵÁé±ớ.txt	Åđệữẵầẻ´ặùÂớạỉÁê±ớ.txt	ÅđệữẵầặùÂớạỉÁê±ớ.txt	ÅđệữẵầèựÍẳậ³éũ±ớ.txt	ÅđệữẵầÍã²¿.txt	ÅđệữẵầãÂéÍ.txt	Åđệữẵầẳỗ°ũ.txt	Åđệữẵầầỷèồ.txt	Åđệữẵầìúấệ.txt	Åđệữẵầểềấệ.txt	Åđệữẵầìúấệẻọặữ.txt	Åđệữẵầểềấệẻọặữ.txt	ÅđệữẵầÂớầ°.txt	ÅđệữẵầÂớệé.txt	ÅđệữẵầÂớºú.txt
+MainMan	SpecialNpc	spr\npcres\man	男主角部件列表.txt	男主角未骑马关联表.txt	男主角骑马关联表.txt	男主角贴图顺序表.txt	男主角头部.txt	男主角发型.txt	男主角肩膀.txt	男主角躯体.txt	男主角左手.txt	男主角右手.txt	男主角左手武器.txt	男主角右手武器.txt	男主角马前.txt	男主角马中.txt	男主角马后.txt
+MainLady	SpecialNpc	spr\npcres\woman	女主角部件列表.txt	女主角未骑马关联表.txt	女主角骑马关联表.txt	女主角贴图顺序表.txt	女主角头部.txt	女主角发型.txt	女主角肩膀.txt	女主角躯体.txt	女主角左手.txt	女主角右手.txt	女主角左手武器.txt	女主角右手武器.txt	女主角马前.txt	女主角马中.txt	女主角马后.txt
 enemy003	NormalNpc	spr\npcres\enemy\enemy003															
 enemy004	NormalNpc	spr\npcres\enemy\enemy004															
 enemy005	NormalNpc	spr\npcres\enemy\enemy005															
@@ -569,4 +569,3 @@ enemy222	NormalNpc	spr\npcres\enemy\enemy222
 enemy223	NormalNpc	spr\npcres\enemy\enemy223
 enemy224	NormalNpc	spr\npcres\enemy\enemy224
 passerby208	NormalNpc	spr\npcres\passerby\passerby208
-
