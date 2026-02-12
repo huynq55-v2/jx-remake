@@ -1,815 +1,660 @@
-use std::collections::HashMap;
-use std::fs::{self, File};
-use std::io::BufReader;
-use std::time::Instant;
+// --- 1. IMPORT & FIX LỖI XUNG ĐỘT ---
+use ::rand as rand_crate;
+use rand_crate::seq::SliceRandom;
 
+use byteorder::{LittleEndian, ReadBytesExt};
+use encoding_rs::GBK;
 use macroquad::prelude::*;
 use serde::Deserialize;
+use std::collections::HashMap;
+use std::fs::{self, File};
+use std::io::{self, BufReader, Cursor, Read, Seek, SeekFrom};
+use std::path::Path;
 
-use jx_remake::client::spr::{SprColor, SprFile, SprFrameInfo};
-use jx_remake::common::pak::PakReader;
+// --- MODULE PAK READER ---
+pub const PACK_SIGNATURE: u32 = 0x4b434150;
 
-// --- CẤU HÌNH MÀN HÌNH ---
-const WIN_WIDTH: f32 = 1024.0;
-const WIN_HEIGHT: f32 = 768.0;
-const CENTER_X: f32 = WIN_WIDTH / 2.0 + 100.0;
-const CENTER_Y: f32 = WIN_HEIGHT / 2.0;
-const FONT_SIZE: u16 = 20;
-const LINE_HEIGHT: f32 = 28.0;
-
-// --- DATA STRUCTURES (JSON) ---
-#[derive(Deserialize, Debug)]
-struct GameAssets {
-    meta: MetaData,
-    male: PlayerParts,
-    female: PlayerParts,
-    npcs: HashMap<String, PartData>,
+#[derive(Debug, Clone, Copy)]
+pub struct PakHeader {
+    pub signature: u32,
+    pub count: u32,
+    pub index_offset: u32,
+    pub data_offset: u32,
+    pub _crc32: u32,
+    pub _reserved: [u8; 12],
 }
 
-#[derive(Deserialize, Debug)]
-struct MetaData {
-    action_map_debug: HashMap<String, usize>,
+#[derive(Debug, Clone, Copy)]
+pub struct PakEntry {
+    pub id: u32,
+    pub offset: u32,
+    pub original_size: u32,
+    pub compress_flag: u32,
 }
 
-#[derive(Deserialize, Debug, Default)]
-struct PlayerParts {
-    head: HashMap<String, PartData>,
-    body: HashMap<String, PartData>,
-    #[allow(dead_code)]
-    hair: HashMap<String, PartData>,
-    #[allow(dead_code)]
-    shoulder: HashMap<String, PartData>,
-    #[allow(dead_code)]
-    hand_left: HashMap<String, PartData>,
-    #[allow(dead_code)]
-    hand_right: HashMap<String, PartData>,
-    #[allow(dead_code)]
-    weapon_left: HashMap<String, PartData>,
-    weapon_right: HashMap<String, PartData>,
-    #[allow(dead_code)]
-    horse_front: HashMap<String, PartData>,
-    horse_middle: HashMap<String, PartData>,
-    #[allow(dead_code)]
-    horse_back: HashMap<String, PartData>,
+impl PakEntry {
+    pub fn get_stored_size(&self) -> u32 {
+        self.compress_flag & 0x00FFFFFF
+    }
+    pub fn get_compression_type(&self) -> u8 {
+        ((self.compress_flag >> 24) & 0xFF) as u8
+    }
 }
 
-#[derive(Deserialize, Debug, Clone)]
-struct PartData {
-    #[allow(dead_code)]
-    id: String,
-    actions: HashMap<String, ActionData>,
+pub fn read_u32_le(buf: &[u8]) -> u32 {
+    u32::from_le_bytes(buf.try_into().unwrap())
 }
 
-#[derive(Deserialize, Debug, Clone)]
-struct ActionData {
-    full_path: String,
-    info: String,
+// --- SỬA LỖI 1: Hàm Hash không tự ý cắt bỏ ký tự đầu nữa ---
+pub fn jx_file_name_hash(path: &str) -> u32 {
+    // Chỉ chuẩn hóa: Chuyển hết / thành \ (Backslash)
+    let normalized_path = path.replace('/', "\\");
+
+    // Encode GBK (Cho hỗ trợ tiếng Trung/Việt nếu có)
+    let (cow, _, _) = GBK.encode(&normalized_path);
+    let gbk_bytes: &[u8] = &cow;
+
+    let mut id: u32 = 0;
+    let mut index: i32 = 0;
+    for &byte in gbk_bytes {
+        index += 1;
+        let mut char_code = byte as i8 as i32;
+        if byte >= b'A' && byte <= b'Z' {
+            char_code = (byte + (b'a' - b'A')) as i8 as i32;
+        }
+        let term1 = index.wrapping_mul(char_code) as u32;
+        let sum = id.wrapping_add(term1);
+        let modded = sum % 0x8000000b;
+        id = modded.wrapping_mul(0xffffffef);
+    }
+    id ^ 0x12345678
 }
 
-// --- APP STATE ---
-
-struct AppState {
-    // Selection Indices
-    char_type_idx: usize, // 0: Male, 1: Female, 2: NPC
-    action_idx: usize,
-
-    // Player Parts Indices
-    body_idx: usize,
-    head_idx: usize,
-    weapon_idx: usize,
-    horse_idx: usize,
-
-    // NPC Index
-    npc_idx: usize,
-
-    // UI State
-    selected_row: usize,
-
-    // Cache Lists (Sorted IDs)
-    lists: AssetLists,
-
-    // Render Data - Textures thay vì raw SprFile
-    loaded_parts: Vec<LoadedPart>,
+pub struct PakReader {
+    pub file_path: String,
+    file: File,
+    pub header: PakHeader,
+    index_map: HashMap<u32, PakEntry>,
 }
 
-struct AssetLists {
-    actions: Vec<String>,
-    male_bodies: Vec<String>,
-    male_heads: Vec<String>,
-    male_weapons: Vec<String>,
-    male_horses: Vec<String>,
+impl PakReader {
+    pub fn new<P: AsRef<Path>>(path: P) -> io::Result<Self> {
+        let path_str = path.as_ref().to_string_lossy().to_string();
+        let mut f = File::open(path)?;
+        let mut header_buf = [0u8; 24];
+        f.read_exact(&mut header_buf)?;
+        let header = PakHeader {
+            signature: read_u32_le(&header_buf[0..4]),
+            count: read_u32_le(&header_buf[4..8]),
+            index_offset: read_u32_le(&header_buf[8..12]),
+            data_offset: read_u32_le(&header_buf[12..16]),
+            _crc32: read_u32_le(&header_buf[16..20]),
+            _reserved: [0; 12],
+        };
+        if header.signature != PACK_SIGNATURE {
+            return Err(io::Error::new(
+                io::ErrorKind::InvalidData,
+                format!("Invalid PAK: {}", path_str),
+            ));
+        }
+        let mut index_map = HashMap::new();
+        f.seek(SeekFrom::Start(header.index_offset as u64))?;
+        let mut entry_buf = [0u8; 16];
+        for _ in 0..header.count {
+            f.read_exact(&mut entry_buf)?;
+            let id = read_u32_le(&entry_buf[0..4]);
+            index_map.insert(
+                id,
+                PakEntry {
+                    id,
+                    offset: read_u32_le(&entry_buf[4..8]),
+                    original_size: read_u32_le(&entry_buf[8..12]),
+                    compress_flag: read_u32_le(&entry_buf[12..16]),
+                },
+            );
+        }
+        Ok(PakReader {
+            file_path: path_str,
+            file: f,
+            header,
+            index_map,
+        })
+    }
 
-    female_bodies: Vec<String>,
-    female_heads: Vec<String>,
-    female_weapons: Vec<String>,
-    female_horses: Vec<String>,
+    pub fn find_file(&self, path: &str) -> Option<&PakEntry> {
+        let target_hash = jx_file_name_hash(path);
+        self.index_map.get(&target_hash)
+    }
 
-    npcs: Vec<String>,
-}
-
-struct LoadedFrame {
-    texture: Texture2D,
-    offset_x: f32,
-    offset_y: f32,
-}
-
-struct LoadedPart {
-    name: String,
-    frames: Vec<LoadedFrame>,
-    info: (usize, usize, usize), // TotalFrames, Dirs, Interval
-}
-
-// --- Chuyển SPR frame thành Texture2D ---
-fn spr_frame_to_texture(frame: &SprFrameInfo, palette: &[SprColor]) -> Texture2D {
-    let w = frame.width as u32;
-    let h = frame.height as u32;
-    let mut rgba = vec![0u8; (w * h * 4) as usize];
-
-    for y in 0..h {
-        for x in 0..w {
-            let pi = (y * w + x) as usize;
-            if pi < frame.decoded_indices.len() {
-                let alpha = frame.alpha_map[pi];
-                if alpha > 0 {
-                    let c = &palette[frame.decoded_indices[pi] as usize];
-                    let offset = pi * 4;
-                    rgba[offset] = c.r;
-                    rgba[offset + 1] = c.g;
-                    rgba[offset + 2] = c.b;
-                    rgba[offset + 3] = alpha;
-                }
-            }
+    pub fn read_entry_data(&mut self, entry: &PakEntry) -> io::Result<Vec<u8>> {
+        let stored_size = entry.get_stored_size();
+        self.file.seek(SeekFrom::Start(entry.offset as u64))?;
+        let mut buffer = vec![0u8; stored_size as usize];
+        self.file.read_exact(&mut buffer)?;
+        match entry.get_compression_type() {
+            0 => Ok(buffer),
+            1 => nrv2b_decompress_8(&buffer, entry.original_size as usize)
+                .map_err(|e| io::Error::new(io::ErrorKind::InvalidData, e)),
+            _ => Ok(buffer),
         }
     }
-
-    let img = Image {
-        bytes: rgba,
-        width: w as u16,
-        height: h as u16,
-    };
-    let tex = Texture2D::from_image(&img);
-    tex.set_filter(FilterMode::Nearest); // Pixel art style
-    tex
 }
 
-// --- MAIN ---
-fn window_conf() -> Conf {
-    Conf {
-        window_title: "JX Viewer - Arrows to Control - ESC to Exit".to_string(),
-        window_width: WIN_WIDTH as i32,
-        window_height: WIN_HEIGHT as i32,
-        window_resizable: false,
-        ..Default::default()
-    }
-}
+pub fn nrv2b_decompress_8(src: &[u8], dst_len: usize) -> Result<Vec<u8>, String> {
+    let mut dst = Vec::with_capacity(dst_len);
+    let mut bb: u32 = 0;
+    let mut ilen: usize = 0;
+    let mut olen: usize = 0;
+    let mut last_m_off: u32 = 1;
+    let src_len = src.len();
 
-#[macroquad::main(window_conf)]
-async fn main() {
-    // 1. Init Data
-    println!("⏳ Loading Assets...");
-    let assets = load_assets();
-    let mut pak_readers = load_paks();
-    let lists = build_asset_lists(&assets);
-
-    // Init State mặc định
-    let mut state = AppState {
-        char_type_idx: 0, // Male
-        action_idx: lists.actions.iter().position(|r| r == "run").unwrap_or(0),
-        body_idx: 0,
-        head_idx: 0,
-        weapon_idx: 0,
-        horse_idx: 0,
-        npc_idx: 0,
-        selected_row: 0,
-        lists,
-        loaded_parts: Vec::new(),
+    let mut getbit = |bb: &mut u32, src: &[u8], ilen: &mut usize| -> Result<u32, String> {
+        if (*bb & 0x7f) != 0 {
+            *bb = bb.wrapping_mul(2);
+        } else {
+            if *ilen >= src.len() {
+                return Err("INPUT_OVERRUN".into());
+            }
+            *bb = (src[*ilen] as u32).wrapping_mul(2).wrapping_add(1);
+            *ilen += 1;
+        }
+        Ok((*bb >> 8) & 1)
     };
-
-    // Load nhân vật lần đầu
-    reload_character(&mut state, &assets, &mut pak_readers);
-
-    let mut current_frame: usize = 0;
-    let mut last_tick = Instant::now();
-    let mut accum_time: u64 = 0;
-    let dir: usize = 0; // Hướng nhìn (0-7)
-
-    // Key repeat timer
-    let mut key_repeat_timer: f64 = 0.0;
-    let key_repeat_delay = 0.25; // Delay đầu tiên
-    let key_repeat_rate = 0.08; // Tốc độ lặp
-    let mut key_held_time: f64 = 0.0;
 
     loop {
-        // --- EXIT ---
-        if is_key_pressed(KeyCode::Escape) {
-            break;
+        while getbit(&mut bb, src, &mut ilen)? != 0 {
+            if ilen >= src_len || olen >= dst_len {
+                return Err("OVERRUN".into());
+            }
+            dst.push(src[ilen]);
+            ilen += 1;
+            olen += 1;
         }
-
-        let dt = get_frame_time() as f64;
-
-        // --- INPUT ---
-        let mut changed = false;
-
-        // Navigation Up/Down
-        if is_key_pressed(KeyCode::Up) {
-            if state.selected_row > 0 {
-                state.selected_row -= 1;
+        let mut m_off: u32 = 1;
+        loop {
+            m_off = m_off
+                .wrapping_mul(2)
+                .wrapping_add(getbit(&mut bb, src, &mut ilen)?);
+            if getbit(&mut bb, src, &mut ilen)? != 0 {
+                break;
             }
         }
-        if is_key_pressed(KeyCode::Down) {
-            let max_row = if state.char_type_idx == 2 { 2 } else { 5 };
-            if state.selected_row < max_row {
-                state.selected_row += 1;
-            }
-        }
-
-        // Left/Right with key repeat
-        let left_pressed = is_key_pressed(KeyCode::Left);
-        let right_pressed = is_key_pressed(KeyCode::Right);
-        let left_held = is_key_down(KeyCode::Left);
-        let right_held = is_key_down(KeyCode::Right);
-
-        let mut delta: i32 = 0;
-
-        if left_pressed {
-            delta = -1;
-            key_held_time = 0.0;
-            key_repeat_timer = 0.0;
-        } else if right_pressed {
-            delta = 1;
-            key_held_time = 0.0;
-            key_repeat_timer = 0.0;
-        } else if left_held || right_held {
-            key_held_time += dt;
-            if key_held_time > key_repeat_delay {
-                key_repeat_timer += dt;
-                if key_repeat_timer >= key_repeat_rate {
-                    key_repeat_timer -= key_repeat_rate;
-                    delta = if left_held { -1 } else { 1 };
-                }
-            }
+        if m_off == 2 {
+            m_off = last_m_off;
         } else {
-            key_held_time = 0.0;
-            key_repeat_timer = 0.0;
+            if ilen >= src_len {
+                return Err("INPUT_OVERRUN".into());
+            }
+            m_off = m_off
+                .wrapping_sub(3)
+                .wrapping_mul(256)
+                .wrapping_add(src[ilen] as u32);
+            ilen += 1;
+            if m_off == u32::MAX {
+                break;
+            }
+            m_off = m_off.wrapping_add(1);
+            last_m_off = m_off;
         }
-
-        if delta != 0 {
-            changed = true;
-            match state.selected_row {
-                0 => {
-                    state.char_type_idx = wrap_idx(state.char_type_idx, delta, 3);
-                    // Reset sub-indices khi đổi type
-                    state.body_idx = 0;
-                    state.head_idx = 0;
-                    state.weapon_idx = 0;
-                    state.horse_idx = 0;
-                    state.npc_idx = 0;
-                    state.selected_row = 0;
-                }
-                1 => {
-                    state.action_idx = wrap_idx(state.action_idx, delta, state.lists.actions.len());
-                }
-                _ => {
-                    if state.char_type_idx == 2 {
-                        // NPC MODE
-                        if state.selected_row == 2 {
-                            state.npc_idx = wrap_idx(state.npc_idx, delta, state.lists.npcs.len());
-                        }
-                    } else {
-                        // PLAYER MODE
-                        match state.selected_row {
-                            2 => {
-                                state.head_idx =
-                                    wrap_idx(state.head_idx, delta, get_head_list(&state).len())
-                            }
-                            3 => {
-                                state.body_idx =
-                                    wrap_idx(state.body_idx, delta, get_body_list(&state).len())
-                            }
-                            4 => {
-                                state.weapon_idx =
-                                    wrap_idx(state.weapon_idx, delta, get_weapon_list(&state).len())
-                            }
-                            5 => {
-                                state.horse_idx =
-                                    wrap_idx(state.horse_idx, delta, get_horse_list(&state).len())
-                            }
-                            _ => {}
-                        }
-                    }
+        let mut m_len = getbit(&mut bb, src, &mut ilen)?;
+        m_len = m_len
+            .wrapping_mul(2)
+            .wrapping_add(getbit(&mut bb, src, &mut ilen)?);
+        if m_len == 0 {
+            m_len = 1;
+            loop {
+                m_len = m_len
+                    .wrapping_mul(2)
+                    .wrapping_add(getbit(&mut bb, src, &mut ilen)?);
+                if getbit(&mut bb, src, &mut ilen)? != 0 {
+                    break;
                 }
             }
+            m_len += 2;
+        }
+        if m_off > 0x0d00 {
+            m_len += 1;
+        }
+        if olen + (m_len as usize) + 1 > dst_len {
+            return Err("OUTPUT_OVERRUN".into());
+        }
+        let start = olen - m_off as usize;
+        for i in 0..=m_len as usize {
+            dst.push(dst[start + i]);
+            olen += 1;
+        }
+    }
+    Ok(dst)
+}
+
+// --- MODULE SPR PARSER ---
+#[derive(Debug, Clone)]
+pub struct SprHeader {
+    pub signature: [u8; 4], // Đã thêm trường signature
+    pub width: u16,
+    pub height: u16,
+    pub center_x: u16,
+    pub center_y: u16,
+    pub frames: u16,
+    pub colors: u16,
+    pub directions: u16,
+    pub interval: u16,
+    pub reserved: [u16; 6],
+}
+
+#[derive(Debug, Clone, Copy)]
+pub struct SprColor {
+    pub r: u8,
+    pub g: u8,
+    pub b: u8,
+}
+
+#[derive(Debug, Clone)]
+pub struct SprFrameInfo {
+    pub width: u16,
+    pub height: u16,
+    pub offset_x: i16,
+    pub offset_y: i16,
+    pub decoded_indices: Vec<u8>,
+    pub alpha_map: Vec<u8>,
+}
+
+pub struct SprFile {
+    pub header: SprHeader,
+    pub palette: Vec<SprColor>,
+    pub frames: Vec<SprFrameInfo>,
+}
+
+impl SprFile {
+    pub fn from_reader<R: Read + Seek>(mut f: R) -> io::Result<Self> {
+        let mut sig = [0u8; 4];
+        f.read_exact(&mut sig)?;
+        if &sig[0..3] != b"SPR" {
+            return Err(io::Error::new(
+                io::ErrorKind::InvalidData,
+                "Invalid SPR signature",
+            ));
         }
 
-        if changed {
-            reload_character(&mut state, &assets, &mut pak_readers);
-            current_frame = 0;
-        }
-
-        // --- ANIMATION TIMER ---
-        let interval = if !state.loaded_parts.is_empty() {
-            let (_, _, iv) = state.loaded_parts[0].info;
-            if iv > 0 { iv as u64 } else { 4 }
-        } else {
-            4
+        let header = SprHeader {
+            signature: sig,
+            width: f.read_u16::<LittleEndian>()?,
+            height: f.read_u16::<LittleEndian>()?,
+            center_x: f.read_u16::<LittleEndian>()?,
+            center_y: f.read_u16::<LittleEndian>()?,
+            frames: f.read_u16::<LittleEndian>()?,
+            colors: f.read_u16::<LittleEndian>()?,
+            directions: f.read_u16::<LittleEndian>()?,
+            interval: f.read_u16::<LittleEndian>()?,
+            reserved: [
+                f.read_u16::<LittleEndian>()?,
+                f.read_u16::<LittleEndian>()?,
+                f.read_u16::<LittleEndian>()?,
+                f.read_u16::<LittleEndian>()?,
+                f.read_u16::<LittleEndian>()?,
+                f.read_u16::<LittleEndian>()?,
+            ],
         };
 
-        accum_time += last_tick.elapsed().as_millis() as u64;
-        last_tick = Instant::now();
-
-        if accum_time >= interval * 55 {
-            current_frame += 1;
-            accum_time = 0;
+        let mut palette = Vec::with_capacity(header.colors as usize);
+        for _ in 0..header.colors {
+            let r = f.read_u8()?;
+            let g = f.read_u8()?;
+            let b = f.read_u8()?;
+            palette.push(SprColor { r, g, b });
         }
 
-        // --- RENDER ---
-        clear_background(Color::from_rgba(32, 32, 32, 255));
+        let mut offsets = Vec::with_capacity(header.frames as usize);
+        for _ in 0..header.frames {
+            let offset = f.read_u32::<LittleEndian>()?;
+            let length = f.read_u32::<LittleEndian>()?;
+            offsets.push((offset, length));
+        }
 
-        // 1. Draw Character (Textures)
-        draw_character(&state, dir, current_frame);
+        let mut frames = Vec::with_capacity(header.frames as usize);
+        let data_start_pos = f.stream_position()?;
 
-        // 2. Draw UI
-        draw_ui(&state);
+        for (offset, _) in offsets {
+            f.seek(SeekFrom::Start(data_start_pos + offset as u64))?;
+            let f_width = f.read_u16::<LittleEndian>()?;
+            let f_height = f.read_u16::<LittleEndian>()?;
+            let f_off_x = f.read_i16::<LittleEndian>()?;
+            let f_off_y = f.read_i16::<LittleEndian>()?;
 
-        next_frame().await;
+            let total_pixels = (f_width as usize) * (f_height as usize);
+            let mut indices = vec![0u8; total_pixels];
+            let mut alphas = vec![0u8; total_pixels];
+            let mut pixel_idx = 0;
+
+            while pixel_idx < total_pixels {
+                let count = f.read_u8()?;
+                let alpha = f.read_u8()?;
+                let count_usize = count as usize;
+
+                if alpha > 0 {
+                    for _ in 0..count_usize {
+                        if pixel_idx >= total_pixels {
+                            break;
+                        }
+                        let color_index = f.read_u8()?;
+                        indices[pixel_idx] = color_index;
+                        alphas[pixel_idx] = alpha;
+                        pixel_idx += 1;
+                    }
+                } else {
+                    pixel_idx += count_usize;
+                }
+            }
+
+            frames.push(SprFrameInfo {
+                width: f_width,
+                height: f_height,
+                offset_x: f_off_x,
+                offset_y: f_off_y,
+                decoded_indices: indices,
+                alpha_map: alphas,
+            });
+        }
+
+        Ok(SprFile {
+            header,
+            palette,
+            frames,
+        })
     }
 }
 
-// --- HELPER FUNCTIONS ---
-
-fn wrap_idx(current: usize, delta: i32, max: usize) -> usize {
-    if max == 0 {
-        return 0;
-    }
-    let res = (current as i32) + delta;
-    if res < 0 {
-        max - 1
-    } else if res >= max as i32 {
-        0
-    } else {
-        res as usize
-    }
+// --- HELPER MACROQUAD ---
+struct SprTexture {
+    textures: Vec<Texture2D>,
+    offsets: Vec<(f32, f32)>,
+    interval: f32,
+    total_frames: usize,
 }
 
-fn get_body_list(state: &AppState) -> &Vec<String> {
-    if state.char_type_idx == 0 {
-        &state.lists.male_bodies
-    } else {
-        &state.lists.female_bodies
-    }
-}
-fn get_head_list(state: &AppState) -> &Vec<String> {
-    if state.char_type_idx == 0 {
-        &state.lists.male_heads
-    } else {
-        &state.lists.female_heads
-    }
-}
-fn get_weapon_list(state: &AppState) -> &Vec<String> {
-    if state.char_type_idx == 0 {
-        &state.lists.male_weapons
-    } else {
-        &state.lists.female_weapons
-    }
-}
-fn get_horse_list(state: &AppState) -> &Vec<String> {
-    if state.char_type_idx == 0 {
-        &state.lists.male_horses
-    } else {
-        &state.lists.female_horses
+impl SprTexture {
+    fn from_spr_file(spr: &SprFile) -> Self {
+        let mut textures = Vec::new();
+        let mut offsets = Vec::new();
+
+        for frame in &spr.frames {
+            let mut image_data = vec![0u8; frame.width as usize * frame.height as usize * 4];
+            for (i, &color_idx) in frame.decoded_indices.iter().enumerate() {
+                let r_idx = i * 4;
+                if frame.alpha_map[i] > 0 {
+                    let color = spr.palette[color_idx as usize];
+                    image_data[r_idx] = color.r;
+                    image_data[r_idx + 1] = color.g;
+                    image_data[r_idx + 2] = color.b;
+                    image_data[r_idx + 3] = 255;
+                } else {
+                    image_data[r_idx + 3] = 0;
+                }
+            }
+            let image = Image {
+                bytes: image_data,
+                width: frame.width,
+                height: frame.height,
+            };
+            let texture = Texture2D::from_image(&image);
+            texture.set_filter(FilterMode::Nearest);
+            textures.push(texture);
+            offsets.push((frame.offset_x as f32, frame.offset_y as f32));
+        }
+
+        let interval_sec = if spr.header.interval > 0 {
+            spr.header.interval as f32 / 18.0
+        } else {
+            0.05
+        };
+
+        SprTexture {
+            textures,
+            offsets,
+            interval: interval_sec,
+            total_frames: spr.header.frames as usize,
+        }
     }
 }
 
-fn load_assets() -> GameAssets {
-    let file = File::open("data/newdata/npcres.json").expect("Missing JSON");
-    serde_json::from_reader(BufReader::new(file)).expect("Bad JSON")
+// --- MAIN SIMULATION ---
+
+#[derive(Deserialize, Debug)]
+struct NpcResJson {
+    #[serde(rename = "MainMan")]
+    main_man: SpecialNpcData,
+    #[serde(rename = "MainLady")]
+    main_lady: SpecialNpcData,
 }
 
-fn load_paks() -> Vec<PakReader> {
-    let mut readers = Vec::new();
+#[derive(Deserialize, Debug)]
+struct SpecialNpcData {
+    #[serde(default)]
+    weapon_logic: HashMap<String, HashMap<String, HashMap<String, String>>>,
+    #[serde(default)]
+    components: HashMap<String, HashMap<String, HashMap<String, String>>>,
+    #[serde(default)]
+    render_order: HashMap<String, HashMap<String, String>>,
+}
+
+struct RenderLayer {
+    #[allow(dead_code)]
+    z_index: i32,
+    #[allow(dead_code)]
+    slot_name: String,
+    spr_data: Option<SprTexture>,
+}
+
+#[macroquad::main("JX1 Character Viewer")]
+async fn main() {
+    println!("🚀 Đang khởi động Engine...");
+
+    // A. Load PAKs
+    let mut pak_readers = Vec::new();
     if let Ok(entries) = fs::read_dir("data/pak") {
         for entry in entries.flatten() {
-            let path = entry.path();
-            if path
-                .extension()
-                .map_or(false, |e| e.eq_ignore_ascii_case("pak"))
-            {
-                if let Ok(r) = PakReader::new(&path) {
-                    println!("📦 Loaded PAK: {}", path.display());
-                    readers.push(r);
+            if entry.path().extension().map_or(false, |e| e == "pak") {
+                if let Ok(reader) = PakReader::new(&entry.path()) {
+                    println!("   Loaded PAK: {}", entry.path().display());
+                    pak_readers.push(reader);
                 }
             }
         }
     }
-    if readers.is_empty() {
-        println!("⚠️ WARNING: No .pak files found in 'data/pak/' directory!");
+
+    // B. Load Config & Random
+    let file = File::open("data/newdata/npcres.json").expect("Thiếu npcres.json");
+    let db: NpcResJson = serde_json::from_reader(BufReader::new(file)).unwrap();
+
+    let mut rng = rand_crate::thread_rng();
+    let is_male = rand_crate::random::<bool>();
+
+    let (char_id, char_data) = if is_male {
+        ("MainMan", &db.main_man)
     } else {
-        println!("✅ Loaded {} PAK files.", readers.len());
-    }
-    readers
-}
-
-fn build_asset_lists(assets: &GameAssets) -> AssetLists {
-    let mut actions: Vec<String> = assets.meta.action_map_debug.keys().cloned().collect();
-    actions.sort();
-
-    let sort_keys = |map: &HashMap<String, PartData>| -> Vec<String> {
-        let mut v: Vec<String> = map.keys().cloned().collect();
-        v.sort();
-        v
+        ("MainLady", &db.main_lady)
     };
 
-    AssetLists {
-        actions,
-        male_bodies: sort_keys(&assets.male.body),
-        male_heads: sort_keys(&assets.male.head),
-        male_weapons: sort_keys(&assets.male.weapon_right),
-        male_horses: sort_keys(&assets.male.horse_middle),
-
-        female_bodies: sort_keys(&assets.female.body),
-        female_heads: sort_keys(&assets.female.head),
-        female_weapons: sort_keys(&assets.female.weapon_right),
-        female_horses: sort_keys(&assets.female.horse_middle),
-
-        npcs: sort_keys(&assets.npcs),
-    }
-}
-
-// --- RELOAD LOGIC ---
-
-fn reload_character(state: &mut AppState, assets: &GameAssets, readers: &mut [PakReader]) {
-    state.loaded_parts.clear();
-
-    let action = &state.lists.actions[state.action_idx];
-    let mut parts_to_load: Vec<(&str, &PartData, &str)> = Vec::new();
-
-    if state.char_type_idx == 2 {
-        // NPC
-        if let Some(id) = state.lists.npcs.get(state.npc_idx) {
-            if let Some(data) = assets.npcs.get(id) {
-                let act = if data.actions.contains_key(action) {
-                    action.as_str()
-                } else {
-                    "stand"
-                };
-                parts_to_load.push(("npc_body", data, act));
-            }
-        }
-    } else {
-        // Player
-        let is_male = state.char_type_idx == 0;
-        let (p_body, p_head, p_wep, _p_horse) = if is_male {
-            (
-                &assets.male.body,
-                &assets.male.head,
-                &assets.male.weapon_right,
-                &assets.male.horse_middle,
-            )
-        } else {
-            (
-                &assets.female.body,
-                &assets.female.head,
-                &assets.female.weapon_right,
-                &assets.female.horse_middle,
-            )
-        };
-
-        // Body
-        let body_list = get_body_list(state);
-        if let Some(id) = body_list.get(state.body_idx) {
-            if let Some(data) = p_body.get(id) {
-                if data.actions.contains_key(action) {
-                    parts_to_load.push(("body", data, action.as_str()));
-                }
-            }
-        }
-
-        // Head
-        let head_list = get_head_list(state);
-        if let Some(id) = head_list.get(state.head_idx) {
-            if let Some(data) = p_head.get(id) {
-                if data.actions.contains_key(action) {
-                    parts_to_load.push(("head", data, action.as_str()));
-                }
-            }
-        }
-
-        // Weapon
-        let weapon_list = get_weapon_list(state);
-        if let Some(id) = weapon_list.get(state.weapon_idx) {
-            if let Some(data) = p_wep.get(id) {
-                if data.actions.contains_key(action) {
-                    parts_to_load.push(("weapon_right", data, action.as_str()));
-                }
-            }
-        }
-    }
-
-    // LOAD FILES
-    let mut counter: u32 = 0;
-    for (p_name, data, act) in parts_to_load {
-        if let Some(act_data) = data.actions.get(act) {
-            let mut found = false;
-            for reader in readers.iter_mut() {
-                if let Some(entry) = reader.find_file(&act_data.full_path) {
-                    found = true;
-                    let entry_copy = *entry;
-                    if let Ok(bytes) = reader.read_entry_data(&entry_copy) {
-                        // Temp file workaround (SprFile::load cần file path)
-                        counter += 1;
-                        let tmp = format!("tmp_{}_{}.spr", p_name, counter);
-                        fs::write(&tmp, &bytes).unwrap();
-                        if let Ok(spr) = SprFile::load(&tmp) {
-                            // Parse Info
-                            let info_parts: Vec<&str> = act_data.info.split(',').collect();
-                            let frames: usize =
-                                info_parts.first().unwrap_or(&"0").parse().unwrap_or(0);
-                            let dirs: usize =
-                                info_parts.get(1).unwrap_or(&"0").parse().unwrap_or(0);
-                            let interval: usize =
-                                info_parts.get(2).unwrap_or(&"0").parse().unwrap_or(0);
-
-                            // Chuyển tất cả frames thành Texture2D
-                            let loaded_frames: Vec<LoadedFrame> = spr
-                                .frames
-                                .iter()
-                                .map(|f| LoadedFrame {
-                                    texture: spr_frame_to_texture(f, &spr.palette),
-                                    offset_x: f.offset_x as f32,
-                                    offset_y: f.offset_y as f32,
-                                })
-                                .collect();
-
-                            state.loaded_parts.push(LoadedPart {
-                                name: p_name.to_string(),
-                                frames: loaded_frames,
-                                info: (frames, dirs, interval),
-                            });
-                        }
-                        let _ = fs::remove_file(tmp);
-                        break;
-                    }
-                }
-            }
-            if !found {
-                println!("❌ Missing file in PAKs: {}", act_data.full_path);
-            }
-        }
-    }
-}
-
-// --- DRAWING ---
-
-fn draw_character(state: &AppState, dir: usize, frame_tick: usize) {
-    if state.loaded_parts.is_empty() {
-        // Hiển thị thông báo khi chưa có gì
-        draw_text(
-            "No character loaded",
-            CENTER_X - 100.0,
-            CENTER_Y,
-            24.0,
-            Color::from_rgba(150, 150, 150, 255),
-        );
+    let states: Vec<&String> = char_data.weapon_logic.keys().collect();
+    if states.is_empty() {
         return;
     }
+    let state = *states.choose(&mut rng).unwrap();
+    let valid_weapons = char_data.weapon_logic.get(state).unwrap();
+    let weapon_name = *valid_weapons
+        .keys()
+        .collect::<Vec<_>>()
+        .choose(&mut rng)
+        .unwrap();
+    let command = *valid_weapons
+        .get(weapon_name)
+        .unwrap()
+        .keys()
+        .collect::<Vec<_>>()
+        .choose(&mut rng)
+        .unwrap();
+    let action_id = valid_weapons
+        .get(weapon_name)
+        .unwrap()
+        .get(command)
+        .unwrap();
 
-    // Z-Order
-    let z_order = ["body", "npc_body", "head", "weapon_right"];
+    println!(
+        "🎭 KỊCH BẢN: {} | {} | {} | Hành động: {}",
+        char_id, state, weapon_name, action_id
+    );
 
-    let mut map: HashMap<&str, &LoadedPart> = HashMap::new();
-    for p in &state.loaded_parts {
-        map.insert(&p.name, p);
-    }
-
-    for name in z_order {
-        if let Some(part) = map.get(name) {
-            let (total_frames, dirs, _) = part.info;
-            if total_frames == 0 || dirs == 0 {
-                continue;
+    // C. Prepare Layers
+    let mut render_layers: Vec<RenderLayer> = Vec::new();
+    let mut equipment = HashMap::new();
+    for (slot, item_list) in &char_data.components {
+        if slot == "rightweapon" {
+            if item_list.contains_key(weapon_name) {
+                equipment.insert(slot, weapon_name);
             }
-            let fpd = total_frames / dirs;
-            if fpd == 0 {
-                continue;
-            }
-            let idx = (dir * fpd) + (frame_tick % fpd);
-
-            if let Some(frame) = part.frames.get(idx) {
-                let x = CENTER_X + frame.offset_x;
-                let y = CENTER_Y + frame.offset_y;
-                draw_texture(&frame.texture, x, y, WHITE);
+        } else {
+            if let Some(item) = item_list.keys().collect::<Vec<_>>().choose(&mut rng) {
+                equipment.insert(slot, *item);
             }
         }
     }
-}
 
-// --- UI DRAWING ---
-fn draw_ui(state: &AppState) {
-    let yellow = Color::from_rgba(255, 220, 50, 255);
-    let white = Color::from_rgba(240, 240, 240, 255);
-    let gray = Color::from_rgba(160, 160, 160, 255);
-    let bg_color = Color::from_rgba(0, 0, 0, 180);
-    let highlight_bg = Color::from_rgba(255, 200, 0, 40);
+    let default_order = HashMap::new();
+    let order_config = char_data
+        .render_order
+        .get(action_id)
+        .unwrap_or(&default_order);
+    let z_order_str = order_config
+        .get("Dir1")
+        .map(|s: &String| s.as_str())
+        .unwrap_or("-1,14,13,1,4,9,7,6,5,12,8,0");
 
-    let types = ["Male", "Female", "NPC"];
-    let font_size = FONT_SIZE as f32;
+    let layer_ids: Vec<i32> = z_order_str
+        .split(',')
+        .filter_map(|s: &str| s.trim().parse::<i32>().ok())
+        .filter(|&id| id >= 0)
+        .collect();
 
-    // Panel background
-    let panel_x = 10.0;
-    let panel_y = 10.0;
-    let panel_w = 340.0;
-    let panel_h = if state.char_type_idx == 2 {
-        210.0
-    } else {
-        300.0
-    };
-    draw_rectangle(panel_x, panel_y, panel_w, panel_h, bg_color);
-    draw_rectangle_lines(
-        panel_x,
-        panel_y,
-        panel_w,
-        panel_h,
-        1.0,
-        Color::from_rgba(80, 80, 80, 255),
-    );
+    // --- SỬA LỖI 2: LOGIC DÒ TÌM ĐƯỜNG DẪN THÔNG MINH ---
+    for (idx, layer_id) in layer_ids.iter().enumerate() {
+        let slot_name = get_slot_name(*layer_id);
+        let mut spr_texture = None;
+        let mut debug_msg = "No Item".to_string();
 
-    let mut y = 35.0;
-    let x = 25.0;
+        if let Some(item_name) = equipment.get(&slot_name) {
+            if let Some(spr_path_raw) = char_data
+                .components
+                .get(&slot_name)
+                .and_then(|i: &HashMap<String, HashMap<String, String>>| i.get(*item_name))
+                .and_then(|a: &HashMap<String, String>| a.get(action_id))
+            {
+                // Chuẩn hóa input ban đầu
+                let raw = spr_path_raw.replace('/', "\\"); // Đổi / -> \
 
-    // Title
-    draw_text("JX VIEWER", x, y, font_size + 4.0, yellow);
-    y += LINE_HEIGHT;
-    draw_text("Up/Down: Select  |  Left/Right: Change", x, y, 14.0, gray);
-    y += LINE_HEIGHT + 4.0;
+                // Tạo 3 ứng viên đường dẫn để thử
+                let candidates = vec![
+                    format!("\\{}", raw.trim_start_matches('\\')), // 1. Có \ ở đầu: \spr\npcres...
+                    raw.trim_start_matches('\\').to_string(), // 2. Không \ ở đầu: spr\npcres...
+                    raw.replace("\\spr\\", "\\")
+                        .trim_start_matches('\\')
+                        .to_string(), // 3. Bỏ spr: npcres...
+                ];
 
-    // --- Separator ---
-    draw_line(
-        panel_x + 5.0,
-        y - 10.0,
-        panel_x + panel_w - 5.0,
-        y - 10.0,
-        1.0,
-        Color::from_rgba(80, 80, 80, 255),
-    );
+                let mut found = false;
+                'pak_loop: for pak in &mut pak_readers {
+                    for try_path in &candidates {
+                        if let Some(entry) = pak.find_file(try_path) {
+                            if let Ok(data) = pak.read_entry_data(&entry.clone()) {
+                                let cursor = Cursor::new(data);
+                                if let Ok(spr_file) = SprFile::from_reader(cursor) {
+                                    spr_texture = Some(SprTexture::from_spr_file(&spr_file));
+                                    debug_msg = format!("✅ OK ({})", try_path);
+                                    found = true;
+                                    break 'pak_loop;
+                                }
+                            }
+                        }
+                    }
+                }
 
-    // Menu Items
-    let mut row: usize = 0;
-
-    // Row 0: Type
-    let label = format!("  << {} >>", types[state.char_type_idx]);
-    draw_menu_row(
-        x,
-        y,
-        panel_x,
-        panel_w,
-        &label,
-        "Type:",
-        row == state.selected_row,
-        yellow,
-        white,
-        highlight_bg,
-        font_size,
-    );
-    y += LINE_HEIGHT;
-    row += 1;
-
-    // Row 1: Action
-    let action_name = state
-        .lists
-        .actions
-        .get(state.action_idx)
-        .map(|s| s.as_str())
-        .unwrap_or("???");
-    let label = format!("  << {} >>", action_name);
-    draw_menu_row(
-        x,
-        y,
-        panel_x,
-        panel_w,
-        &label,
-        "Action:",
-        row == state.selected_row,
-        yellow,
-        white,
-        highlight_bg,
-        font_size,
-    );
-    y += LINE_HEIGHT;
-    row += 1;
-
-    if state.char_type_idx == 2 {
-        // NPC Menu
-        let npc_id = state
-            .lists
-            .npcs
-            .get(state.npc_idx)
-            .map(|s| s.as_str())
-            .unwrap_or("None");
-        let label = format!("  << {} >>", npc_id);
-        draw_menu_row(
-            x,
-            y,
-            panel_x,
-            panel_w,
-            &label,
-            "NPC:",
-            row == state.selected_row,
-            yellow,
-            white,
-            highlight_bg,
-            font_size,
-        );
-    } else {
-        // Player Menu
-        let h_list = get_head_list(state);
-        let b_list = get_body_list(state);
-        let w_list = get_weapon_list(state);
-        let horse_list = get_horse_list(state);
-
-        let parts = [
-            (
-                "Head:",
-                h_list
-                    .get(state.head_idx)
-                    .map(|s| s.as_str())
-                    .unwrap_or("-"),
-            ),
-            (
-                "Body:",
-                b_list
-                    .get(state.body_idx)
-                    .map(|s| s.as_str())
-                    .unwrap_or("-"),
-            ),
-            (
-                "Weapon:",
-                w_list
-                    .get(state.weapon_idx)
-                    .map(|s| s.as_str())
-                    .unwrap_or("-"),
-            ),
-            (
-                "Horse:",
-                horse_list
-                    .get(state.horse_idx)
-                    .map(|s| s.as_str())
-                    .unwrap_or("-"),
-            ),
-        ];
-
-        for (i, (name, value)) in parts.iter().enumerate() {
-            let label = format!("  << {} >>", value);
-            draw_menu_row(
-                x,
-                y,
-                panel_x,
-                panel_w,
-                &label,
-                name,
-                (row + i) == state.selected_row,
-                yellow,
-                white,
-                highlight_bg,
-                font_size,
-            );
-            y += LINE_HEIGHT;
+                if !found {
+                    debug_msg = format!("❌ Failed (Input: {})", spr_path_raw);
+                }
+            } else {
+                debug_msg = "No Action Logic".to_string();
+            }
         }
+
+        render_layers.push(RenderLayer {
+            z_index: *layer_id,
+            slot_name: slot_name.clone(),
+            spr_data: spr_texture,
+        });
+
+        println!(
+            "   Layer {:02} | Slot: {:<12} | {}",
+            idx, slot_name, debug_msg
+        );
     }
 
-    // Footer info
-    let fps = get_fps();
-    let info = format!("FPS: {} | Parts: {}", fps, state.loaded_parts.len());
-    draw_text(&info, 10.0, WIN_HEIGHT - 10.0, 16.0, gray);
+    // D. Game Loop
+    let mut global_timer = 0.0f32;
+    let center_x = screen_width() / 2.0;
+    let center_y = screen_height() / 2.0;
+
+    loop {
+        clear_background(DARKGRAY); // Đổi màu nền tối để dễ nhìn
+        global_timer += get_frame_time();
+
+        for layer in &render_layers {
+            if let Some(anim) = &layer.spr_data {
+                if anim.total_frames == 0 {
+                    continue;
+                }
+                let frame_idx = (global_timer / anim.interval) as usize % anim.total_frames;
+                let texture = &anim.textures[frame_idx];
+                let (off_x, off_y) = anim.offsets[frame_idx];
+
+                // Công thức vẽ: Center - Offset
+                let draw_x = center_x - off_x;
+                let draw_y = center_y - off_y;
+
+                draw_texture(texture, draw_x, draw_y, WHITE);
+            }
+        }
+
+        draw_text(
+            format!("Action: {}", action_id).as_str(),
+            20.0,
+            20.0,
+            30.0,
+            WHITE,
+        );
+        draw_text(
+            format!("State: {}", state).as_str(),
+            20.0,
+            50.0,
+            30.0,
+            WHITE,
+        );
+        next_frame().await
+    }
 }
 
-fn draw_menu_row(
-    x: f32,
-    y: f32,
-    panel_x: f32,
-    panel_w: f32,
-    value: &str,
-    label: &str,
-    selected: bool,
-    sel_color: Color,
-    normal_color: Color,
-    highlight_bg: Color,
-    font_size: f32,
-) {
-    if selected {
-        // Highlight background
-        draw_rectangle(
-            panel_x + 2.0,
-            y - font_size + 4.0,
-            panel_w - 4.0,
-            LINE_HEIGHT,
-            highlight_bg,
-        );
-        // Arrow indicator
-        draw_text(">", x - 12.0, y, font_size, sel_color);
+fn get_slot_name(id: i32) -> String {
+    match id {
+        0 => "head",
+        1 => "body",
+        2 => "lefthand",
+        4 => "leftweapon",
+        5 => "shoulder",
+        6 => "horsemiddle",
+        7 => "horsefront",
+        8 => "horseback",
+        12 => "hair",
+        13 => "lefthand",
+        14 => "rightweapon",
+        _ => "unknown",
     }
-
-    let color = if selected { sel_color } else { normal_color };
-    draw_text(label, x, y, font_size, color);
-
-    // Value (right-aligned)
-    draw_text(value, x + 80.0, y, font_size, color);
+    .to_string()
 }

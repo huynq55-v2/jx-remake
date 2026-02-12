@@ -21,25 +21,31 @@ fn main() -> io::Result<()> {
             _ => continue,
         };
 
-        // Lấy root_path và chuẩn hóa
+        // [SỬA ĐỔI 1]: Chuẩn hóa root path thành Slash (/)
         let raw_root = row
             .get("ResFilePath")
             .unwrap_or(&String::new())
             .replace("\\", "/");
+
         let char_type = row.get("CharacterType").map(|s| s.as_str()).unwrap_or("");
 
         let mut char_data = Map::new();
         char_data.insert("type".to_string(), json!(char_type));
-        char_data.insert("root_path".to_string(), json!(&raw_root));
+
+        // Đảm bảo root path bắt đầu bằng / nếu chưa có
+        let clean_root = if raw_root.starts_with('/') {
+            raw_root
+        } else {
+            format!("/{}", raw_root)
+        };
+        char_data.insert("root_path".to_string(), json!(&clean_root));
 
         if char_type == "SpecialNpc" {
             // --- XỬ LÝ SPECIAL NPC ---
 
-            // A. Weapon Logic (Deep Parse Mount & Unmount Matrix)
-            // Thay vì chỉ lưu tên file, ta đọc luôn nội dung bảng mapping vào JSON
+            // A. Weapon Logic
             let mut weapon_logic = Map::new();
 
-            // 1. Unmounted (Đi bộ)
             if let Some(filename) = row.get("WeaponActionTab1") {
                 if !filename.trim().is_empty() {
                     match parse_weapon_matrix(filename) {
@@ -51,7 +57,6 @@ fn main() -> io::Result<()> {
                 }
             }
 
-            // 2. Mounted (Cưỡi ngựa)
             if let Some(filename) = row.get("WeaponActionTab2") {
                 if !filename.trim().is_empty() {
                     match parse_weapon_matrix(filename) {
@@ -67,7 +72,7 @@ fn main() -> io::Result<()> {
                 char_data.insert("weapon_logic".to_string(), Value::Object(weapon_logic));
             }
 
-            // B. Render Order (Deep Parse)
+            // B. Render Order
             if let Some(filename) = row.get("ActionRenderOrderTab") {
                 if !filename.trim().is_empty() {
                     match parse_render_order(filename) {
@@ -79,7 +84,7 @@ fn main() -> io::Result<()> {
                 }
             }
 
-            // C. Components (Deep Parse & Full Path Generation)
+            // C. Components
             let component_cols = vec![
                 "Head",
                 "Hair",
@@ -99,7 +104,8 @@ fn main() -> io::Result<()> {
             for col in component_cols {
                 if let Some(filename) = row.get(col) {
                     if !filename.trim().is_empty() {
-                        match parse_component_config(filename, &raw_root) {
+                        // Truyền clean_root vào hàm parse
+                        match parse_component_config(filename, &clean_root) {
                             Ok(data) => {
                                 components_data.insert(col.to_lowercase(), Value::Object(data));
                             }
@@ -112,8 +118,6 @@ fn main() -> io::Result<()> {
             if !components_data.is_empty() {
                 char_data.insert("components".to_string(), Value::Object(components_data));
             }
-        } else if char_type == "NormalNpc" {
-            // Logic NormalNPC (Giữ nguyên hoặc mở rộng)
         }
 
         json_root.insert(char_name, Value::Object(char_data));
@@ -128,7 +132,7 @@ fn main() -> io::Result<()> {
     fs::write(path, final_json)?;
 
     println!(
-        "Success: Toàn bộ dữ liệu (bao gồm Logic Ngựa) đã lưu tại '{}'",
+        "Success: Toàn bộ dữ liệu (đã fix đường dẫn '/') lưu tại '{}'",
         OUTPUT_FILE
     );
     Ok(())
@@ -136,22 +140,42 @@ fn main() -> io::Result<()> {
 
 // --- CÁC HÀM HELPER ---
 
-// 1. Đọc file Weapon Matrix (Bảng liên kết hành động)
-// Input: Tên file (ví dụ: 男主角骑马关联表.txt)
-// Output: Map<WeaponName, Map<GeneralAction, ActionID>>
+// [SỬA ĐỔI QUAN TRỌNG]: Hàm xử lý đường dẫn với dấu / và logic ..
+fn resolve_game_path(root: &str, file: &str) -> String {
+    // 1. Ghép chuỗi thô: root + / + file
+    // 2. Đổi tất cả \ (Backslash) thành / (Forward Slash)
+    let raw_combined = format!("{}/{}", root, file).replace("\\", "/");
+
+    // 3. Tách chuỗi bằng dấu /
+    let parts: Vec<&str> = raw_combined.split('/').collect();
+    let mut stack: Vec<&str> = Vec::new();
+
+    // 4. Dùng Stack để xử lý ".."
+    for part in parts {
+        if part == "." || part.is_empty() {
+            continue; // Bỏ qua phần tử rỗng hoặc dấu chấm
+        } else if part == ".." {
+            stack.pop(); // Gặp ".." thì xóa thư mục cha gần nhất trong stack
+        } else {
+            stack.push(part); // Thêm thư mục vào stack
+        }
+    }
+
+    // 5. Ghép lại thành chuỗi, bắt đầu bằng /
+    format!("/{}", stack.join("/"))
+}
+
 fn parse_weapon_matrix(filename: &str) -> io::Result<Map<String, Value>> {
     let full_path = format!("{}/{}", INPUT_BASE_DIR, filename);
     let file = File::open(&full_path)?;
     let reader = BufReader::new(file);
     let mut lines = reader.lines();
 
-    // Dòng 1: Header (EqName, FightStand, Attack1...)
     let header_line = match lines.next() {
         Some(Ok(s)) => s,
         _ => return Ok(Map::new()),
     };
 
-    // Tách header, bỏ cột đầu tiên (EqName)
     let headers: Vec<String> = header_line
         .split('\t')
         .skip(1)
@@ -171,11 +195,10 @@ fn parse_weapon_matrix(filename: &str) -> io::Result<Map<String, Value>> {
             continue;
         }
 
-        let weapon_name = parts[0].trim().to_string(); // "Tay không", "Kiếm 1"...
+        let weapon_name = parts[0].trim().to_string();
         let mut action_map = Map::new();
 
         for (i, col_name) in headers.iter().enumerate() {
-            // Giá trị bắt đầu từ index 1
             if i + 1 < parts.len() {
                 let action_id = parts[i + 1].trim();
                 if !action_id.is_empty() {
@@ -188,7 +211,6 @@ fn parse_weapon_matrix(filename: &str) -> io::Result<Map<String, Value>> {
     Ok(matrix)
 }
 
-// 2. Đọc file Component và ghép Full Path
 fn parse_component_config(filename: &str, root_path: &str) -> io::Result<Map<String, Value>> {
     let full_path = format!("{}/{}", INPUT_BASE_DIR, filename);
     let file = File::open(&full_path)?;
@@ -224,7 +246,8 @@ fn parse_component_config(filename: &str, root_path: &str) -> io::Result<Map<Str
             if i + 1 < parts.len() {
                 let spr_name = parts[i + 1].trim();
                 if !spr_name.is_empty() {
-                    let full_spr_path = format!("/{}/{}", root_path, spr_name);
+                    // [SỬA ĐỔI]: Dùng hàm resolve mới
+                    let full_spr_path = resolve_game_path(root_path, spr_name);
                     actions.insert(header.clone(), json!(full_spr_path));
                 }
             }
@@ -234,7 +257,6 @@ fn parse_component_config(filename: &str, root_path: &str) -> io::Result<Map<Str
     Ok(items_map)
 }
 
-// 3. Đọc file Render Order (INI style)
 fn parse_render_order(filename: &str) -> io::Result<Map<String, Value>> {
     let full_path = format!("{}/{}", INPUT_BASE_DIR, filename);
     let file = File::open(&full_path)?;
@@ -272,7 +294,6 @@ fn parse_render_order(filename: &str) -> io::Result<Map<String, Value>> {
     Ok(sections)
 }
 
-// 4. Đọc file Tab cơ bản
 fn parse_tab_file_dynamic(filename: &str) -> io::Result<Vec<HashMap<String, String>>> {
     let full_path = format!("{}/{}", INPUT_BASE_DIR, filename);
     let file = File::open(&full_path)?;

@@ -1,7 +1,0 @@
-ì´èơ	ÍẳéẻẻÄẳỵÃỷ
-mở trạng thái Tổ đội	\spr\npcres\style\menustate01.spr
-mở trạng thái giao dịch	\spr\npcres\style\menustate02.spr
-tiến hành trạng thái giao dịch	\spr\npcres\style\menustate03.spr
-trạng thái nghỉ ngơi	\spr\npcres\style\menustate04.spr
-trạng thái rao bán	\spr\npcres\style\menustate02.spr
-trạng thái rao bán_giao dịch	\spr\npcres\style\menustate03.spr

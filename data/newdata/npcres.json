@@ -4411,440 +4411,440 @@
       },
       "horseback": {
         "Ngựa 1": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HT_001_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HT_001_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HT_001_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HT_001_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HT_001_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HT_001_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HT_001_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HT_001_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HT_001_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HT_001_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HT_001_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HT_001_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HT_001_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HT_001_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HT_001_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HT_001_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HT_001_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HT_001_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HT_001_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HT_001_HI01.spr"
         },
         "Ngựa 10": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HT_010_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HT_010_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HT_010_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HT_010_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HT_010_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HT_010_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HT_010_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HT_010_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HT_010_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HT_010_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HT_010_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HT_010_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HT_010_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HT_010_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HT_010_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HT_010_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HT_010_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HT_010_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HT_010_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HT_010_HI01.spr"
         },
         "Ngựa 11": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HT_011_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HT_011_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HT_011_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HT_011_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HT_011_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HT_011_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HT_011_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HT_011_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HT_011_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HT_011_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HT_011_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HT_011_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HT_011_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HT_011_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HT_011_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HT_011_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HT_011_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HT_011_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HT_011_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HT_011_HI01.spr"
         },
         "Ngựa 12": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HT_012_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HT_012_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HT_012_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HT_012_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HT_012_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HT_012_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HT_012_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HT_012_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HT_012_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HT_012_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HT_012_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HT_012_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HT_012_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HT_012_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HT_012_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HT_012_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HT_012_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HT_012_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HT_012_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HT_012_HI01.spr"
         },
         "Ngựa 2": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HT_002_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HT_002_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HT_002_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HT_002_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HT_002_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HT_002_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HT_002_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HT_002_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HT_002_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HT_002_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HT_002_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HT_002_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HT_002_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HT_002_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HT_002_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HT_002_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HT_002_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HT_002_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HT_002_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HT_002_HI01.spr"
         },
         "Ngựa 3": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HT_003_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HT_003_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HT_003_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HT_003_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HT_003_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HT_003_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HT_003_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HT_003_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HT_003_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HT_003_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HT_003_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HT_003_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HT_003_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HT_003_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HT_003_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HT_003_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HT_003_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HT_003_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HT_003_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HT_003_HI01.spr"
         },
         "Ngựa 4": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HT_004_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HT_004_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HT_004_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HT_004_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HT_004_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HT_004_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HT_004_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HT_004_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HT_004_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HT_004_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HT_004_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HT_004_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HT_004_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HT_004_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HT_004_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HT_004_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HT_004_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HT_004_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HT_004_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HT_004_HI01.spr"
         },
         "Ngựa 5": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HT_005_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HT_005_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HT_005_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HT_005_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HT_005_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HT_005_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HT_005_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HT_005_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HT_005_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HT_005_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HT_005_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HT_005_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HT_005_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HT_005_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HT_005_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HT_005_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HT_005_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HT_005_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HT_005_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HT_005_HI01.spr"
         },
         "Ngựa 6": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HT_006_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HT_006_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HT_006_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HT_006_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HT_006_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HT_006_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HT_006_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HT_006_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HT_006_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HT_006_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HT_006_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HT_006_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HT_006_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HT_006_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HT_006_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HT_006_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HT_006_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HT_006_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HT_006_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HT_006_HI01.spr"
         },
         "Ngựa 7": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HT_007_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HT_007_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HT_007_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HT_007_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HT_007_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HT_007_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HT_007_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HT_007_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HT_007_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HT_007_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HT_007_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HT_007_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HT_007_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HT_007_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HT_007_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HT_007_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HT_007_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HT_007_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HT_007_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HT_007_HI01.spr"
         },
         "Ngựa 8": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HT_008_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HT_008_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HT_008_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HT_008_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HT_008_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HT_008_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HT_008_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HT_008_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HT_008_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HT_008_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HT_008_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HT_008_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HT_008_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HT_008_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HT_008_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HT_008_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HT_008_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HT_008_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HT_008_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HT_008_HI01.spr"
         },
         "Ngựa 9": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HT_009_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HT_009_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HT_009_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HT_009_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HT_009_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HT_009_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HT_009_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HT_009_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HT_009_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HT_009_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HT_009_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HT_009_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HT_009_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HT_009_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HT_009_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HT_009_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HT_009_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HT_009_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HT_009_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HT_009_HI01.spr"
         }
       },
       "horsefront": {
         "Ngựa 1": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HH_001_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HH_001_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HH_001_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HH_001_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HH_001_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HH_001_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HH_001_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HH_001_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HH_001_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HH_001_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HH_001_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HH_001_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HH_001_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HH_001_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HH_001_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HH_001_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HH_001_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HH_001_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HH_001_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HH_001_HI01.spr"
         },
         "Ngựa 10": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HH_010_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HH_010_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HH_010_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HH_010_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HH_010_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HH_010_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HH_010_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HH_010_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HH_010_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HH_010_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HH_010_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HH_010_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HH_010_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HH_010_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HH_010_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HH_010_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HH_010_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HH_010_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HH_010_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HH_010_HI01.spr"
         },
         "Ngựa 11": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HH_011_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HH_011_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HH_011_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HH_011_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HH_011_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HH_011_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HH_011_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HH_011_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HH_011_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HH_011_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HH_011_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HH_011_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HH_011_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HH_011_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HH_011_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HH_011_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HH_011_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HH_011_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HH_011_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HH_011_HI01.spr"
         },
         "Ngựa 12": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HH_012_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HH_012_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HH_012_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HH_012_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HH_012_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HH_012_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HH_012_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HH_012_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HH_012_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HH_012_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HH_012_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HH_012_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HH_012_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HH_012_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HH_012_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HH_012_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HH_012_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HH_012_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HH_012_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HH_012_HI01.spr"
         },
         "Ngựa 2": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HH_002_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HH_002_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HH_002_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HH_002_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HH_002_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HH_002_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HH_002_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HH_002_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HH_002_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HH_002_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HH_002_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HH_002_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HH_002_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HH_002_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HH_002_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HH_002_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HH_002_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HH_002_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HH_002_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HH_002_HI01.spr"
         },
         "Ngựa 3": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HH_003_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HH_003_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HH_003_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HH_003_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HH_003_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HH_003_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HH_003_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HH_003_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HH_003_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HH_003_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HH_003_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HH_003_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HH_003_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HH_003_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HH_003_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HH_003_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HH_003_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HH_003_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HH_003_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HH_003_HI01.spr"
         },
         "Ngựa 4": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HH_004_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HH_004_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HH_004_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HH_004_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HH_004_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HH_004_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HH_004_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HH_004_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HH_004_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HH_004_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HH_004_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HH_004_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HH_004_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HH_004_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HH_004_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HH_004_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HH_004_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HH_004_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HH_004_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HH_004_HI01.spr"
         },
         "Ngựa 5": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HH_005_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HH_005_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HH_005_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HH_005_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HH_005_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HH_005_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HH_005_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HH_005_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HH_005_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HH_005_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HH_005_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HH_005_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HH_005_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HH_005_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HH_005_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HH_005_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HH_005_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HH_005_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HH_005_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HH_005_HI01.spr"
         },
         "Ngựa 6": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HH_006_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HH_006_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HH_006_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HH_006_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HH_006_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HH_006_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HH_006_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HH_006_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HH_006_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HH_006_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HH_006_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HH_006_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HH_006_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HH_006_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HH_006_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HH_006_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HH_006_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HH_006_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HH_006_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HH_006_HI01.spr"
         },
         "Ngựa 7": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HH_007_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HH_007_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HH_007_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HH_007_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HH_007_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HH_007_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HH_007_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HH_007_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HH_007_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HH_007_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HH_007_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HH_007_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HH_007_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HH_007_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HH_007_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HH_007_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HH_007_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HH_007_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HH_007_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HH_007_HI01.spr"
         },
         "Ngựa 8": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HH_008_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HH_008_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HH_008_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HH_008_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HH_008_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HH_008_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HH_008_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HH_008_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HH_008_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HH_008_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HH_008_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HH_008_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HH_008_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HH_008_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HH_008_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HH_008_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HH_008_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HH_008_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HH_008_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HH_008_HI01.spr"
         },
         "Ngựa 9": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HH_009_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HH_009_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HH_009_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HH_009_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HH_009_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HH_009_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HH_009_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HH_009_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HH_009_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HH_009_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HH_009_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HH_009_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HH_009_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HH_009_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HH_009_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HH_009_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HH_009_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HH_009_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HH_009_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HH_009_HI01.spr"
         }
       },
       "horsemiddle": {
         "Ngựa 1": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HB_001_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HB_001_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HB_001_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HB_001_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HB_001_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HB_001_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HB_001_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HB_001_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HB_001_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HB_001_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HB_001_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HB_001_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HB_001_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HB_001_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HB_001_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HB_001_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HB_001_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HB_001_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HB_001_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HB_001_HI01.spr"
         },
         "Ngựa 10": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HB_010_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HB_010_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HB_010_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HB_010_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HB_010_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HB_010_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HB_010_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HB_010_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HB_010_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HB_010_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HB_010_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HB_010_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HB_010_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HB_010_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HB_010_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HB_010_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HB_010_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HB_010_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HB_010_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HB_010_HI01.spr"
         },
         "Ngựa 11": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HB_011_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HB_011_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HB_011_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HB_011_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HB_011_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HB_011_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HB_011_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HB_011_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HB_011_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HB_011_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HB_011_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HB_011_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HB_011_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HB_011_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HB_011_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HB_011_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HB_011_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HB_011_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HB_011_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HB_011_HI01.spr"
         },
         "Ngựa 12": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HB_012_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HB_012_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HB_012_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HB_012_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HB_012_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HB_012_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HB_012_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HB_012_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HB_012_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HB_012_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HB_012_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HB_012_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HB_012_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HB_012_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HB_012_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HB_012_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HB_012_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HB_012_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HB_012_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HB_012_HI01.spr"
         },
         "Ngựa 2": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HB_002_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HB_002_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HB_002_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HB_002_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HB_002_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HB_002_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HB_002_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HB_002_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HB_002_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HB_002_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HB_002_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HB_002_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HB_002_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HB_002_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HB_002_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HB_002_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HB_002_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HB_002_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HB_002_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HB_002_HI01.spr"
         },
         "Ngựa 3": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HB_003_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HB_003_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HB_003_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HB_003_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HB_003_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HB_003_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HB_003_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HB_003_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HB_003_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HB_003_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HB_003_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HB_003_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HB_003_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HB_003_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HB_003_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HB_003_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HB_003_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HB_003_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HB_003_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HB_003_HI01.spr"
         },
         "Ngựa 4": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HB_004_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HB_004_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HB_004_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HB_004_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HB_004_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HB_004_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HB_004_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HB_004_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HB_004_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HB_004_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HB_004_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HB_004_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HB_004_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HB_004_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HB_004_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HB_004_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HB_004_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HB_004_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HB_004_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HB_004_HI01.spr"
         },
         "Ngựa 5": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HB_005_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HB_005_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HB_005_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HB_005_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HB_005_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HB_005_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HB_005_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HB_005_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HB_005_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HB_005_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HB_005_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HB_005_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HB_005_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HB_005_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HB_005_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HB_005_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HB_005_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HB_005_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HB_005_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HB_005_HI01.spr"
         },
         "Ngựa 6": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HB_006_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HB_006_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HB_006_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HB_006_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HB_006_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HB_006_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HB_006_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HB_006_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HB_006_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HB_006_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HB_006_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HB_006_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HB_006_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HB_006_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HB_006_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HB_006_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HB_006_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HB_006_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HB_006_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HB_006_HI01.spr"
         },
         "Ngựa 7": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HB_007_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HB_007_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HB_007_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HB_007_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HB_007_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HB_007_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HB_007_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HB_007_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HB_007_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HB_007_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HB_007_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HB_007_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HB_007_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HB_007_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HB_007_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HB_007_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HB_007_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HB_007_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HB_007_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HB_007_HI01.spr"
         },
         "Ngựa 8": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HB_008_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HB_008_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HB_008_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HB_008_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HB_008_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HB_008_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HB_008_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HB_008_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HB_008_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HB_008_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HB_008_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HB_008_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HB_008_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HB_008_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HB_008_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HB_008_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HB_008_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HB_008_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HB_008_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HB_008_HI01.spr"
         },
         "Ngựa 9": {
-          "RideCut": "/spr/npcres/woman/..\\man\\MA_HB_009_HA01.spr",
-          "RideDie": "/spr/npcres/woman/..\\man\\MA_HB_009_HD01.spr",
-          "RideMagic": "/spr/npcres/woman/..\\man\\MA_HB_009_HM01.spr",
-          "RidePuncture": "/spr/npcres/woman/..\\man\\MA_HB_009_HA02.spr",
-          "RideRun": "/spr/npcres/woman/..\\man\\MA_HB_009_HR01.spr",
-          "RideStand": "/spr/npcres/woman/..\\man\\MA_HB_009_RD01.spr",
-          "RideStand1": "/spr/npcres/woman/..\\man\\MA_HB_009_RD02.spr",
-          "RideStand2": "/spr/npcres/woman/..\\man\\MA_HB_009_RD03.spr",
-          "RideWalk": "/spr/npcres/woman/..\\man\\MA_HB_009_HW01.spr",
-          "RideWound": "/spr/npcres/woman/..\\man\\MA_HB_009_HI01.spr"
+          "RideCut": "/spr/npcres/man/MA_HB_009_HA01.spr",
+          "RideDie": "/spr/npcres/man/MA_HB_009_HD01.spr",
+          "RideMagic": "/spr/npcres/man/MA_HB_009_HM01.spr",
+          "RidePuncture": "/spr/npcres/man/MA_HB_009_HA02.spr",
+          "RideRun": "/spr/npcres/man/MA_HB_009_HR01.spr",
+          "RideStand": "/spr/npcres/man/MA_HB_009_RD01.spr",
+          "RideStand1": "/spr/npcres/man/MA_HB_009_RD02.spr",
+          "RideStand2": "/spr/npcres/man/MA_HB_009_RD03.spr",
+          "RideWalk": "/spr/npcres/man/MA_HB_009_HW01.spr",
+          "RideWound": "/spr/npcres/man/MA_HB_009_HI01.spr"
         }
       },
       "lefthand": {
@@ -15213,7 +15213,7 @@
         "Dir8": "-1,14,13,4,1,8,6,5,12,0,7,9,"
       }
     },
-    "root_path": "spr/npcres/woman",
+    "root_path": "/spr/npcres/woman",
     "type": "SpecialNpc",
     "weapon_logic": {
       "mounted": {
@@ -31388,7 +31388,7 @@
         "Line2": "17,14,13,7,4,1,5,12,6,0,9,8"
       }
     },
-    "root_path": "spr/npcres/man",
+    "root_path": "/spr/npcres/man",
     "type": "SpecialNpc",
     "weapon_logic": {
       "mounted": {
@@ -32388,2275 +32388,2275 @@
     }
   },
   "ani001": {
-    "root_path": "spr/npcres/animal/ani001",
+    "root_path": "/spr/npcres/animal/ani001",
     "type": "NormalNpc"
   },
   "ani002": {
-    "root_path": "spr/npcres/animal/ani002",
+    "root_path": "/spr/npcres/animal/ani002",
     "type": "NormalNpc"
   },
   "ani003": {
-    "root_path": "spr/npcres/animal/ani003",
+    "root_path": "/spr/npcres/animal/ani003",
     "type": "NormalNpc"
   },
   "ani005": {
-    "root_path": "spr/npcres/animal/ani005",
+    "root_path": "/spr/npcres/animal/ani005",
     "type": "NormalNpc"
   },
   "ani006": {
-    "root_path": "spr/npcres/animal/ani006",
+    "root_path": "/spr/npcres/animal/ani006",
     "type": "NormalNpc"
   },
   "ani009": {
-    "root_path": "spr/npcres/animal/ani009",
+    "root_path": "/spr/npcres/animal/ani009",
     "type": "NormalNpc"
   },
   "ani010": {
-    "root_path": "spr/npcres/animal/ani010",
+    "root_path": "/spr/npcres/animal/ani010",
     "type": "NormalNpc"
   },
   "ani011": {
-    "root_path": "spr/npcres/animal/ani011",
+    "root_path": "/spr/npcres/animal/ani011",
     "type": "NormalNpc"
   },
   "ani012": {
-    "root_path": "spr/npcres/animal/ani012",
+    "root_path": "/spr/npcres/animal/ani012",
     "type": "NormalNpc"
   },
   "ani013": {
-    "root_path": "spr/npcres/animal/ani013",
+    "root_path": "/spr/npcres/animal/ani013",
     "type": "NormalNpc"
   },
   "ani015": {
-    "root_path": "spr/npcres/animal/ani015",
+    "root_path": "/spr/npcres/animal/ani015",
     "type": "NormalNpc"
   },
   "ani018": {
-    "root_path": "spr/npcres/animal/ani018",
+    "root_path": "/spr/npcres/animal/ani018",
     "type": "NormalNpc"
   },
   "ani019": {
-    "root_path": "spr/npcres/animal/ani019",
+    "root_path": "/spr/npcres/animal/ani019",
     "type": "NormalNpc"
   },
   "ani021": {
-    "root_path": "spr/npcres/animal/ani021",
+    "root_path": "/spr/npcres/animal/ani021",
     "type": "NormalNpc"
   },
   "ani024": {
-    "root_path": "spr/npcres/animal/ani024",
+    "root_path": "/spr/npcres/animal/ani024",
     "type": "NormalNpc"
   },
   "ani025": {
-    "root_path": "spr/npcres/animal/ani025",
+    "root_path": "/spr/npcres/animal/ani025",
     "type": "NormalNpc"
   },
   "ani026": {
-    "root_path": "spr/npcres/animal/ani026",
+    "root_path": "/spr/npcres/animal/ani026",
     "type": "NormalNpc"
   },
   "ani029": {
-    "root_path": "spr/npcres/animal/ani029",
+    "root_path": "/spr/npcres/animal/ani029",
     "type": "NormalNpc"
   },
   "ani033": {
-    "root_path": "spr/npcres/animal/ani033",
+    "root_path": "/spr/npcres/animal/ani033",
     "type": "NormalNpc"
   },
   "ani036": {
-    "root_path": "spr/npcres/animal/ani036",
+    "root_path": "/spr/npcres/animal/ani036",
     "type": "NormalNpc"
   },
   "ani037": {
-    "root_path": "spr/npcres/animal/ani037",
+    "root_path": "/spr/npcres/animal/ani037",
     "type": "NormalNpc"
   },
   "ani038": {
-    "root_path": "spr/npcres/animal/ani038",
+    "root_path": "/spr/npcres/animal/ani038",
     "type": "NormalNpc"
   },
   "ani039": {
-    "root_path": "spr/npcres/animal/ani039",
+    "root_path": "/spr/npcres/animal/ani039",
     "type": "NormalNpc"
   },
   "ani040": {
-    "root_path": "spr/npcres/animal/ani040",
+    "root_path": "/spr/npcres/animal/ani040",
     "type": "NormalNpc"
   },
   "ani041": {
-    "root_path": "spr/npcres/animal/ani041",
+    "root_path": "/spr/npcres/animal/ani041",
     "type": "NormalNpc"
   },
   "ani042": {
-    "root_path": "spr/npcres/animal/ani042",
+    "root_path": "/spr/npcres/animal/ani042",
     "type": "NormalNpc"
   },
   "ani043": {
-    "root_path": "spr/npcres/animal/ani043",
+    "root_path": "/spr/npcres/animal/ani043",
     "type": "NormalNpc"
   },
   "ani045": {
-    "root_path": "spr/npcres/animal/ani045",
+    "root_path": "/spr/npcres/animal/ani045",
     "type": "NormalNpc"
   },
   "ani046": {
-    "root_path": "spr/npcres/animal/ani046",
+    "root_path": "/spr/npcres/animal/ani046",
     "type": "NormalNpc"
   },
   "ani047": {
-    "root_path": "spr/npcres/animal/ani047",
+    "root_path": "/spr/npcres/animal/ani047",
     "type": "NormalNpc"
   },
   "ani048": {
-    "root_path": "spr/npcres/animal/ani048",
+    "root_path": "/spr/npcres/animal/ani048",
     "type": "NormalNpc"
   },
   "ani049": {
-    "root_path": "spr/npcres/animal/ani049",
+    "root_path": "/spr/npcres/animal/ani049",
     "type": "NormalNpc"
   },
   "ani050": {
-    "root_path": "spr/npcres/animal/ani050",
+    "root_path": "/spr/npcres/animal/ani050",
     "type": "NormalNpc"
   },
   "ani051": {
-    "root_path": "spr/npcres/animal/ani051",
+    "root_path": "/spr/npcres/animal/ani051",
     "type": "NormalNpc"
   },
   "ani052": {
-    "root_path": "spr/npcres/animal/ani052",
+    "root_path": "/spr/npcres/animal/ani052",
     "type": "NormalNpc"
   },
   "ani053": {
-    "root_path": "spr/npcres/animal/ani053",
+    "root_path": "/spr/npcres/animal/ani053",
     "type": "NormalNpc"
   },
   "ani054": {
-    "root_path": "spr/npcres/animal/ani054",
+    "root_path": "/spr/npcres/animal/ani054",
     "type": "NormalNpc"
   },
   "ani055": {
-    "root_path": "spr/npcres/animal/ani055",
+    "root_path": "/spr/npcres/animal/ani055",
     "type": "NormalNpc"
   },
   "ani056": {
-    "root_path": "spr/npcres/animal/ani056",
+    "root_path": "/spr/npcres/animal/ani056",
     "type": "NormalNpc"
   },
   "ani058": {
-    "root_path": "spr/npcres/animal/ani058",
+    "root_path": "/spr/npcres/animal/ani058",
     "type": "NormalNpc"
   },
   "ani059": {
-    "root_path": "spr/npcres/animal/ani059",
+    "root_path": "/spr/npcres/animal/ani059",
     "type": "NormalNpc"
   },
   "ani060": {
-    "root_path": "spr/npcres/animal/ani060",
+    "root_path": "/spr/npcres/animal/ani060",
     "type": "NormalNpc"
   },
   "ani061": {
-    "root_path": "spr/npcres/animal/ani061",
+    "root_path": "/spr/npcres/animal/ani061",
     "type": "NormalNpc"
   },
   "ani063": {
-    "root_path": "spr/npcres/animal/ani063",
+    "root_path": "/spr/npcres/animal/ani063",
     "type": "NormalNpc"
   },
   "ani065": {
-    "root_path": "spr/npcres/animal/ani065",
+    "root_path": "/spr/npcres/animal/ani065",
     "type": "NormalNpc"
   },
   "ani066": {
-    "root_path": "spr/npcres/animal/ani066",
+    "root_path": "/spr/npcres/animal/ani066",
     "type": "NormalNpc"
   },
   "ani067": {
-    "root_path": "spr/npcres/animal/ani067",
+    "root_path": "/spr/npcres/animal/ani067",
     "type": "NormalNpc"
   },
   "ani068": {
-    "root_path": "spr/npcres/animal/ani068",
+    "root_path": "/spr/npcres/animal/ani068",
     "type": "NormalNpc"
   },
   "ani069": {
-    "root_path": "spr/npcres/animal/ani069",
+    "root_path": "/spr/npcres/animal/ani069",
     "type": "NormalNpc"
   },
   "boss001": {
-    "root_path": "spr/npcres/boss/boss001",
+    "root_path": "/spr/npcres/boss/boss001",
     "type": "NormalNpc"
   },
   "boss002": {
-    "root_path": "spr/npcres/boss/boss002",
+    "root_path": "/spr/npcres/boss/boss002",
     "type": "NormalNpc"
   },
   "boss003": {
-    "root_path": "spr/npcres/boss/boss003",
+    "root_path": "/spr/npcres/boss/boss003",
     "type": "NormalNpc"
   },
   "boss004": {
-    "root_path": "spr/npcres/boss/boss004",
+    "root_path": "/spr/npcres/boss/boss004",
     "type": "NormalNpc"
   },
   "boss005": {
-    "root_path": "spr/npcres/boss/boss005",
+    "root_path": "/spr/npcres/boss/boss005",
     "type": "NormalNpc"
   },
   "boss006": {
-    "root_path": "spr/npcres/boss/boss006",
+    "root_path": "/spr/npcres/boss/boss006",
     "type": "NormalNpc"
   },
   "boss007": {
-    "root_path": "spr/npcres/boss/boss007",
+    "root_path": "/spr/npcres/boss/boss007",
     "type": "NormalNpc"
   },
   "boss008": {
-    "root_path": "spr/npcres/boss/boss008",
+    "root_path": "/spr/npcres/boss/boss008",
     "type": "NormalNpc"
   },
   "boss009": {
-    "root_path": "spr/npcres/boss/boss009",
+    "root_path": "/spr/npcres/boss/boss009",
     "type": "NormalNpc"
   },
   "boss010": {
-    "root_path": "spr/npcres/boss/boss010",
+    "root_path": "/spr/npcres/boss/boss010",
     "type": "NormalNpc"
   },
   "boss011": {
-    "root_path": "spr/npcres/boss/boss011",
+    "root_path": "/spr/npcres/boss/boss011",
     "type": "NormalNpc"
   },
   "boss012": {
-    "root_path": "spr/npcres/boss/boss012",
+    "root_path": "/spr/npcres/boss/boss012",
     "type": "NormalNpc"
   },
   "boss013": {
-    "root_path": "spr/npcres/boss/boss013",
+    "root_path": "/spr/npcres/boss/boss013",
     "type": "NormalNpc"
   },
   "boss014": {
-    "root_path": "spr/npcres/boss/boss014",
+    "root_path": "/spr/npcres/boss/boss014",
     "type": "NormalNpc"
   },
   "boss015": {
-    "root_path": "spr/npcres/boss/boss015",
+    "root_path": "/spr/npcres/boss/boss015",
     "type": "NormalNpc"
   },
   "boss016": {
-    "root_path": "spr/npcres/boss/boss016",
+    "root_path": "/spr/npcres/boss/boss016",
     "type": "NormalNpc"
   },
   "boss017": {
-    "root_path": "spr/npcres/boss/boss017",
+    "root_path": "/spr/npcres/boss/boss017",
     "type": "NormalNpc"
   },
   "boss018": {
-    "root_path": "spr/npcres/boss/boss018",
+    "root_path": "/spr/npcres/boss/boss018",
     "type": "NormalNpc"
   },
   "boss019": {
-    "root_path": "spr/npcres/boss/boss019",
+    "root_path": "/spr/npcres/boss/boss019",
     "type": "NormalNpc"
   },
   "boss020": {
-    "root_path": "spr/npcres/boss/boss020",
+    "root_path": "/spr/npcres/boss/boss020",
     "type": "NormalNpc"
   },
   "boss022": {
-    "root_path": "spr/npcres/boss/boss022",
+    "root_path": "/spr/npcres/boss/boss022",
     "type": "NormalNpc"
   },
   "boss023": {
-    "root_path": "spr/npcres/boss/boss023",
+    "root_path": "/spr/npcres/boss/boss023",
     "type": "NormalNpc"
   },
   "boss024": {
-    "root_path": "spr/npcres/boss/boss024",
+    "root_path": "/spr/npcres/boss/boss024",
     "type": "NormalNpc"
   },
   "boss025": {
-    "root_path": "spr/npcres/boss/boss025",
+    "root_path": "/spr/npcres/boss/boss025",
     "type": "NormalNpc"
   },
   "boss026": {
-    "root_path": "spr/npcres/boss/boss026",
+    "root_path": "/spr/npcres/boss/boss026",
     "type": "NormalNpc"
   },
   "boss027": {
-    "root_path": "spr/npcres/boss/boss027",
+    "root_path": "/spr/npcres/boss/boss027",
     "type": "NormalNpc"
   },
   "boss028": {
-    "root_path": "spr/npcres/boss/boss028",
+    "root_path": "/spr/npcres/boss/boss028",
     "type": "NormalNpc"
   },
   "boss029": {
-    "root_path": "spr/npcres/boss/boss029",
+    "root_path": "/spr/npcres/boss/boss029",
     "type": "NormalNpc"
   },
   "boss030": {
-    "root_path": "spr/npcres/boss/boss030",
+    "root_path": "/spr/npcres/boss/boss030",
     "type": "NormalNpc"
   },
   "boss031": {
-    "root_path": "spr/npcres/boss/boss031",
+    "root_path": "/spr/npcres/boss/boss031",
     "type": "NormalNpc"
   },
   "boss032": {
-    "root_path": "spr/npcres/boss/boss032",
+    "root_path": "/spr/npcres/boss/boss032",
     "type": "NormalNpc"
   },
   "boss033": {
-    "root_path": "spr/npcres/boss/boss033",
+    "root_path": "/spr/npcres/boss/boss033",
     "type": "NormalNpc"
   },
   "boss034": {
-    "root_path": "spr/npcres/boss/boss034",
+    "root_path": "/spr/npcres/boss/boss034",
     "type": "NormalNpc"
   },
   "boss035": {
-    "root_path": "spr/npcres/boss/boss035",
+    "root_path": "/spr/npcres/boss/boss035",
     "type": "NormalNpc"
   },
   "boss036": {
-    "root_path": "spr/npcres/boss/boss036",
+    "root_path": "/spr/npcres/boss/boss036",
     "type": "NormalNpc"
   },
   "boss037": {
-    "root_path": "spr/npcres/boss/boss037",
+    "root_path": "/spr/npcres/boss/boss037",
     "type": "NormalNpc"
   },
   "boss038": {
-    "root_path": "spr/npcres/boss/boss038",
+    "root_path": "/spr/npcres/boss/boss038",
     "type": "NormalNpc"
   },
   "boss039": {
-    "root_path": "spr/npcres/boss/boss039",
+    "root_path": "/spr/npcres/boss/boss039",
     "type": "NormalNpc"
   },
   "boss040": {
-    "root_path": "spr/npcres/boss/boss040",
+    "root_path": "/spr/npcres/boss/boss040",
     "type": "NormalNpc"
   },
   "boss041": {
-    "root_path": "spr/npcres/boss/boss041",
+    "root_path": "/spr/npcres/boss/boss041",
     "type": "NormalNpc"
   },
   "boss042": {
-    "root_path": "spr/npcres/boss/boss042",
+    "root_path": "/spr/npcres/boss/boss042",
     "type": "NormalNpc"
   },
   "boss043": {
-    "root_path": "spr/npcres/boss/boss043",
+    "root_path": "/spr/npcres/boss/boss043",
     "type": "NormalNpc"
   },
   "boss044": {
-    "root_path": "spr/npcres/boss/boss044",
+    "root_path": "/spr/npcres/boss/boss044",
     "type": "NormalNpc"
   },
   "boss045": {
-    "root_path": "spr/npcres/boss/boss045",
+    "root_path": "/spr/npcres/boss/boss045",
     "type": "NormalNpc"
   },
   "critter008": {
-    "root_path": "spr/npcres/critter/critter008",
+    "root_path": "/spr/npcres/critter/critter008",
     "type": "NormalNpc"
   },
   "critter016": {
-    "root_path": "spr/npcres/critter/critter016",
+    "root_path": "/spr/npcres/critter/critter016",
     "type": "NormalNpc"
   },
   "critter017": {
-    "root_path": "spr/npcres/critter/critter017",
+    "root_path": "/spr/npcres/critter/critter017",
     "type": "NormalNpc"
   },
   "critter018": {
-    "root_path": "spr/npcres/critter/critter018",
+    "root_path": "/spr/npcres/critter/critter018",
     "type": "NormalNpc"
   },
   "critter019": {
-    "root_path": "spr/npcres/critter/critter019",
+    "root_path": "/spr/npcres/critter/critter019",
     "type": "NormalNpc"
   },
   "critter020": {
-    "root_path": "spr/npcres/critter/critter020",
+    "root_path": "/spr/npcres/critter/critter020",
     "type": "NormalNpc"
   },
   "critter021": {
-    "root_path": "spr/npcres/critter/critter021",
+    "root_path": "/spr/npcres/critter/critter021",
     "type": "NormalNpc"
   },
   "critter022": {
-    "root_path": "spr/npcres/critter/critter022",
+    "root_path": "/spr/npcres/critter/critter022",
     "type": "NormalNpc"
   },
   "critter023": {
-    "root_path": "spr/npcres/critter/critter023",
+    "root_path": "/spr/npcres/critter/critter023",
     "type": "NormalNpc"
   },
   "critter024": {
-    "root_path": "spr/npcres/critter/critter024",
+    "root_path": "/spr/npcres/critter/critter024",
     "type": "NormalNpc"
   },
   "critter025": {
-    "root_path": "spr/npcres/critter/critter025",
+    "root_path": "/spr/npcres/critter/critter025",
     "type": "NormalNpc"
   },
   "critter026": {
-    "root_path": "spr/npcres/critter/critter026",
+    "root_path": "/spr/npcres/critter/critter026",
     "type": "NormalNpc"
   },
   "critter027": {
-    "root_path": "spr/npcres/critter/critter027",
+    "root_path": "/spr/npcres/critter/critter027",
     "type": "NormalNpc"
   },
   "critter028": {
-    "root_path": "spr/npcres/critter/critter028",
+    "root_path": "/spr/npcres/critter/critter028",
     "type": "NormalNpc"
   },
   "critter029": {
-    "root_path": "spr/npcres/critter/critter029",
+    "root_path": "/spr/npcres/critter/critter029",
     "type": "NormalNpc"
   },
   "critter030": {
-    "root_path": "spr/npcres/critter/critter030",
+    "root_path": "/spr/npcres/critter/critter030",
     "type": "NormalNpc"
   },
   "critter031": {
-    "root_path": "spr/npcres/critter/critter031",
+    "root_path": "/spr/npcres/critter/critter031",
     "type": "NormalNpc"
   },
   "critter032": {
-    "root_path": "spr/npcres/critter/critter032",
+    "root_path": "/spr/npcres/critter/critter032",
     "type": "NormalNpc"
   },
   "critter033": {
-    "root_path": "spr/npcres/critter/critter033",
+    "root_path": "/spr/npcres/critter/critter033",
     "type": "NormalNpc"
   },
   "critter034": {
-    "root_path": "spr/npcres/critter/critter034",
+    "root_path": "/spr/npcres/critter/critter034",
     "type": "NormalNpc"
   },
   "critter035": {
-    "root_path": "spr/npcres/critter/critter035",
+    "root_path": "/spr/npcres/critter/critter035",
     "type": "NormalNpc"
   },
   "critter036": {
-    "root_path": "spr/npcres/critter/critter036",
+    "root_path": "/spr/npcres/critter/critter036",
     "type": "NormalNpc"
   },
   "critter037": {
-    "root_path": "spr/npcres/critter/critter037",
+    "root_path": "/spr/npcres/critter/critter037",
     "type": "NormalNpc"
   },
   "critter038": {
-    "root_path": "spr/npcres/critter/critter038",
+    "root_path": "/spr/npcres/critter/critter038",
     "type": "NormalNpc"
   },
   "critter039": {
-    "root_path": "spr/npcres/critter/critter039",
+    "root_path": "/spr/npcres/critter/critter039",
     "type": "NormalNpc"
   },
   "critter040": {
-    "root_path": "spr/npcres/critter/critter040",
+    "root_path": "/spr/npcres/critter/critter040",
     "type": "NormalNpc"
   },
   "critter041": {
-    "root_path": "spr/npcres/critter/critter041",
+    "root_path": "/spr/npcres/critter/critter041",
     "type": "NormalNpc"
   },
   "critter042": {
-    "root_path": "spr/npcres/critter/critter042",
+    "root_path": "/spr/npcres/critter/critter042",
     "type": "NormalNpc"
   },
   "critter043": {
-    "root_path": "spr/npcres/critter/critter043",
+    "root_path": "/spr/npcres/critter/critter043",
     "type": "NormalNpc"
   },
   "critter044": {
-    "root_path": "spr/npcres/critter/critter044",
+    "root_path": "/spr/npcres/critter/critter044",
     "type": "NormalNpc"
   },
   "critter045": {
-    "root_path": "spr/npcres/critter/critter045",
+    "root_path": "/spr/npcres/critter/critter045",
     "type": "NormalNpc"
   },
   "enemy003": {
-    "root_path": "spr/npcres/enemy/enemy003",
+    "root_path": "/spr/npcres/enemy/enemy003",
     "type": "NormalNpc"
   },
   "enemy004": {
-    "root_path": "spr/npcres/enemy/enemy004",
+    "root_path": "/spr/npcres/enemy/enemy004",
     "type": "NormalNpc"
   },
   "enemy005": {
-    "root_path": "spr/npcres/enemy/enemy005",
+    "root_path": "/spr/npcres/enemy/enemy005",
     "type": "NormalNpc"
   },
   "enemy006": {
-    "root_path": "spr/npcres/enemy/enemy006",
+    "root_path": "/spr/npcres/enemy/enemy006",
     "type": "NormalNpc"
   },
   "enemy007": {
-    "root_path": "spr/npcres/enemy/enemy007",
+    "root_path": "/spr/npcres/enemy/enemy007",
     "type": "NormalNpc"
   },
   "enemy015": {
-    "root_path": "spr/npcres/enemy/enemy015",
+    "root_path": "/spr/npcres/enemy/enemy015",
     "type": "NormalNpc"
   },
   "enemy016": {
-    "root_path": "spr/npcres/enemy/enemy016",
+    "root_path": "/spr/npcres/enemy/enemy016",
     "type": "NormalNpc"
   },
   "enemy017": {
-    "root_path": "spr/npcres/enemy/enemy017",
+    "root_path": "/spr/npcres/enemy/enemy017",
     "type": "NormalNpc"
   },
   "enemy021": {
-    "root_path": "spr/npcres/enemy/enemy021",
+    "root_path": "/spr/npcres/enemy/enemy021",
     "type": "NormalNpc"
   },
   "enemy022": {
-    "root_path": "spr/npcres/enemy/enemy022",
+    "root_path": "/spr/npcres/enemy/enemy022",
     "type": "NormalNpc"
   },
   "enemy023": {
-    "root_path": "spr/npcres/enemy/enemy023",
+    "root_path": "/spr/npcres/enemy/enemy023",
     "type": "NormalNpc"
   },
   "enemy024": {
-    "root_path": "spr/npcres/enemy/enemy024",
+    "root_path": "/spr/npcres/enemy/enemy024",
     "type": "NormalNpc"
   },
   "enemy026": {
-    "root_path": "spr/npcres/enemy/enemy026",
+    "root_path": "/spr/npcres/enemy/enemy026",
     "type": "NormalNpc"
   },
   "enemy028": {
-    "root_path": "spr/npcres/enemy/enemy028",
+    "root_path": "/spr/npcres/enemy/enemy028",
     "type": "NormalNpc"
   },
   "enemy029": {
-    "root_path": "spr/npcres/enemy/enemy029",
+    "root_path": "/spr/npcres/enemy/enemy029",
     "type": "NormalNpc"
   },
   "enemy031": {
-    "root_path": "spr/npcres/enemy/enemy031",
+    "root_path": "/spr/npcres/enemy/enemy031",
     "type": "NormalNpc"
   },
   "enemy034": {
-    "root_path": "spr/npcres/enemy/enemy034",
+    "root_path": "/spr/npcres/enemy/enemy034",
     "type": "NormalNpc"
   },
   "enemy036": {
-    "root_path": "spr/npcres/enemy/enemy036",
+    "root_path": "/spr/npcres/enemy/enemy036",
     "type": "NormalNpc"
   },
   "enemy037": {
-    "root_path": "spr/npcres/enemy/enemy037",
+    "root_path": "/spr/npcres/enemy/enemy037",
     "type": "NormalNpc"
   },
   "enemy038": {
-    "root_path": "spr/npcres/enemy/enemy038",
+    "root_path": "/spr/npcres/enemy/enemy038",
     "type": "NormalNpc"
   },
   "enemy039": {
-    "root_path": "spr/npcres/enemy/enemy039",
+    "root_path": "/spr/npcres/enemy/enemy039",
     "type": "NormalNpc"
   },
   "enemy040": {
-    "root_path": "spr/npcres/enemy/enemy040",
+    "root_path": "/spr/npcres/enemy/enemy040",
     "type": "NormalNpc"
   },
   "enemy041": {
-    "root_path": "spr/npcres/enemy/enemy041",
+    "root_path": "/spr/npcres/enemy/enemy041",
     "type": "NormalNpc"
   },
   "enemy042": {
-    "root_path": "spr/npcres/enemy/enemy042",
+    "root_path": "/spr/npcres/enemy/enemy042",
     "type": "NormalNpc"
   },
   "enemy043": {
-    "root_path": "spr/npcres/enemy/enemy043",
+    "root_path": "/spr/npcres/enemy/enemy043",
     "type": "NormalNpc"
   },
   "enemy044": {
-    "root_path": "spr/npcres/enemy/enemy044",
+    "root_path": "/spr/npcres/enemy/enemy044",
     "type": "NormalNpc"
   },
   "enemy045": {
-    "root_path": "spr/npcres/enemy/enemy045",
+    "root_path": "/spr/npcres/enemy/enemy045",
     "type": "NormalNpc"
   },
   "enemy046": {
-    "root_path": "spr/npcres/enemy/enemy046",
+    "root_path": "/spr/npcres/enemy/enemy046",
     "type": "NormalNpc"
   },
   "enemy047": {
-    "root_path": "spr/npcres/enemy/enemy047",
+    "root_path": "/spr/npcres/enemy/enemy047",
     "type": "NormalNpc"
   },
   "enemy048": {
-    "root_path": "spr/npcres/enemy/enemy048",
+    "root_path": "/spr/npcres/enemy/enemy048",
     "type": "NormalNpc"
   },
   "enemy049": {
-    "root_path": "spr/npcres/enemy/enemy049",
+    "root_path": "/spr/npcres/enemy/enemy049",
     "type": "NormalNpc"
   },
   "enemy050": {
-    "root_path": "spr/npcres/enemy/enemy050",
+    "root_path": "/spr/npcres/enemy/enemy050",
     "type": "NormalNpc"
   },
   "enemy051": {
-    "root_path": "spr/npcres/enemy/enemy051",
+    "root_path": "/spr/npcres/enemy/enemy051",
     "type": "NormalNpc"
   },
   "enemy052": {
-    "root_path": "spr/npcres/enemy/enemy052",
+    "root_path": "/spr/npcres/enemy/enemy052",
     "type": "NormalNpc"
   },
   "enemy053": {
-    "root_path": "spr/npcres/enemy/enemy053",
+    "root_path": "/spr/npcres/enemy/enemy053",
     "type": "NormalNpc"
   },
   "enemy054": {
-    "root_path": "spr/npcres/enemy/enemy054",
+    "root_path": "/spr/npcres/enemy/enemy054",
     "type": "NormalNpc"
   },
   "enemy055": {
-    "root_path": "spr/npcres/enemy/enemy055",
+    "root_path": "/spr/npcres/enemy/enemy055",
     "type": "NormalNpc"
   },
   "enemy056": {
-    "root_path": "spr/npcres/enemy/enemy056",
+    "root_path": "/spr/npcres/enemy/enemy056",
     "type": "NormalNpc"
   },
   "enemy057": {
-    "root_path": "spr/npcres/enemy/enemy057",
+    "root_path": "/spr/npcres/enemy/enemy057",
     "type": "NormalNpc"
   },
   "enemy058": {
-    "root_path": "spr/npcres/enemy/enemy058",
+    "root_path": "/spr/npcres/enemy/enemy058",
     "type": "NormalNpc"
   },
   "enemy059": {
-    "root_path": "spr/npcres/enemy/enemy059",
+    "root_path": "/spr/npcres/enemy/enemy059",
     "type": "NormalNpc"
   },
   "enemy060": {
-    "root_path": "spr/npcres/enemy/enemy060",
+    "root_path": "/spr/npcres/enemy/enemy060",
     "type": "NormalNpc"
   },
   "enemy061": {
-    "root_path": "spr/npcres/enemy/enemy061",
+    "root_path": "/spr/npcres/enemy/enemy061",
     "type": "NormalNpc"
   },
   "enemy062": {
-    "root_path": "spr/npcres/enemy/enemy062",
+    "root_path": "/spr/npcres/enemy/enemy062",
     "type": "NormalNpc"
   },
   "enemy063": {
-    "root_path": "spr/npcres/enemy/enemy063",
+    "root_path": "/spr/npcres/enemy/enemy063",
     "type": "NormalNpc"
   },
   "enemy064": {
-    "root_path": "spr/npcres/enemy/enemy064",
+    "root_path": "/spr/npcres/enemy/enemy064",
     "type": "NormalNpc"
   },
   "enemy065": {
-    "root_path": "spr/npcres/enemy/enemy065",
+    "root_path": "/spr/npcres/enemy/enemy065",
     "type": "NormalNpc"
   },
   "enemy066": {
-    "root_path": "spr/npcres/enemy/enemy066",
+    "root_path": "/spr/npcres/enemy/enemy066",
     "type": "NormalNpc"
   },
   "enemy067": {
-    "root_path": "spr/npcres/enemy/enemy067",
+    "root_path": "/spr/npcres/enemy/enemy067",
     "type": "NormalNpc"
   },
   "enemy068": {
-    "root_path": "spr/npcres/enemy/enemy068",
+    "root_path": "/spr/npcres/enemy/enemy068",
     "type": "NormalNpc"
   },
   "enemy069": {
-    "root_path": "spr/npcres/enemy/enemy069",
+    "root_path": "/spr/npcres/enemy/enemy069",
     "type": "NormalNpc"
   },
   "enemy070": {
-    "root_path": "spr/npcres/enemy/enemy070",
+    "root_path": "/spr/npcres/enemy/enemy070",
     "type": "NormalNpc"
   },
   "enemy071": {
-    "root_path": "spr/npcres/enemy/enemy071",
+    "root_path": "/spr/npcres/enemy/enemy071",
     "type": "NormalNpc"
   },
   "enemy072": {
-    "root_path": "spr/npcres/enemy/enemy072",
+    "root_path": "/spr/npcres/enemy/enemy072",
     "type": "NormalNpc"
   },
   "enemy073": {
-    "root_path": "spr/npcres/enemy/enemy073",
+    "root_path": "/spr/npcres/enemy/enemy073",
     "type": "NormalNpc"
   },
   "enemy074": {
-    "root_path": "spr/npcres/enemy/enemy074",
+    "root_path": "/spr/npcres/enemy/enemy074",
     "type": "NormalNpc"
   },
   "enemy075": {
-    "root_path": "spr/npcres/enemy/enemy075",
+    "root_path": "/spr/npcres/enemy/enemy075",
     "type": "NormalNpc"
   },
   "enemy076": {
-    "root_path": "spr/npcres/enemy/enemy076",
+    "root_path": "/spr/npcres/enemy/enemy076",
     "type": "NormalNpc"
   },
   "enemy077": {
-    "root_path": "spr/npcres/enemy/enemy077",
+    "root_path": "/spr/npcres/enemy/enemy077",
     "type": "NormalNpc"
   },
   "enemy078": {
-    "root_path": "spr/npcres/enemy/enemy078",
+    "root_path": "/spr/npcres/enemy/enemy078",
     "type": "NormalNpc"
   },
   "enemy079": {
-    "root_path": "spr/npcres/enemy/enemy079",
+    "root_path": "/spr/npcres/enemy/enemy079",
     "type": "NormalNpc"
   },
   "enemy080": {
-    "root_path": "spr/npcres/enemy/enemy080",
+    "root_path": "/spr/npcres/enemy/enemy080",
     "type": "NormalNpc"
   },
   "enemy081": {
-    "root_path": "spr/npcres/enemy/enemy081",
+    "root_path": "/spr/npcres/enemy/enemy081",
     "type": "NormalNpc"
   },
   "enemy082": {
-    "root_path": "spr/npcres/enemy/enemy082",
+    "root_path": "/spr/npcres/enemy/enemy082",
     "type": "NormalNpc"
   },
   "enemy083": {
-    "root_path": "spr/npcres/enemy/enemy083",
+    "root_path": "/spr/npcres/enemy/enemy083",
     "type": "NormalNpc"
   },
   "enemy084": {
-    "root_path": "spr/npcres/enemy/enemy084",
+    "root_path": "/spr/npcres/enemy/enemy084",
     "type": "NormalNpc"
   },
   "enemy085": {
-    "root_path": "spr/npcres/enemy/enemy085",
+    "root_path": "/spr/npcres/enemy/enemy085",
     "type": "NormalNpc"
   },
   "enemy086": {
-    "root_path": "spr/npcres/enemy/enemy086",
+    "root_path": "/spr/npcres/enemy/enemy086",
     "type": "NormalNpc"
   },
   "enemy087": {
-    "root_path": "spr/npcres/enemy/enemy087",
+    "root_path": "/spr/npcres/enemy/enemy087",
     "type": "NormalNpc"
   },
   "enemy088": {
-    "root_path": "spr/npcres/enemy/enemy088",
+    "root_path": "/spr/npcres/enemy/enemy088",
     "type": "NormalNpc"
   },
   "enemy089": {
-    "root_path": "spr/npcres/enemy/enemy089",
+    "root_path": "/spr/npcres/enemy/enemy089",
     "type": "NormalNpc"
   },
   "enemy090": {
-    "root_path": "spr/npcres/enemy/enemy090",
+    "root_path": "/spr/npcres/enemy/enemy090",
     "type": "NormalNpc"
   },
   "enemy091": {
-    "root_path": "spr/npcres/enemy/enemy091",
+    "root_path": "/spr/npcres/enemy/enemy091",
     "type": "NormalNpc"
   },
   "enemy092": {
-    "root_path": "spr/npcres/enemy/enemy092",
+    "root_path": "/spr/npcres/enemy/enemy092",
     "type": "NormalNpc"
   },
   "enemy093": {
-    "root_path": "spr/npcres/enemy/enemy093",
+    "root_path": "/spr/npcres/enemy/enemy093",
     "type": "NormalNpc"
   },
   "enemy094": {
-    "root_path": "spr/npcres/enemy/enemy094",
+    "root_path": "/spr/npcres/enemy/enemy094",
     "type": "NormalNpc"
   },
   "enemy095": {
-    "root_path": "spr/npcres/enemy/enemy095",
+    "root_path": "/spr/npcres/enemy/enemy095",
     "type": "NormalNpc"
   },
   "enemy096": {
-    "root_path": "spr/npcres/enemy/enemy096",
+    "root_path": "/spr/npcres/enemy/enemy096",
     "type": "NormalNpc"
   },
   "enemy097": {
-    "root_path": "spr/npcres/enemy/enemy097",
+    "root_path": "/spr/npcres/enemy/enemy097",
     "type": "NormalNpc"
   },
   "enemy098": {
-    "root_path": "spr/npcres/enemy/enemy098",
+    "root_path": "/spr/npcres/enemy/enemy098",
     "type": "NormalNpc"
   },
   "enemy099": {
-    "root_path": "spr/npcres/enemy/enemy099",
+    "root_path": "/spr/npcres/enemy/enemy099",
     "type": "NormalNpc"
   },
   "enemy100": {
-    "root_path": "spr/npcres/enemy/enemy100",
+    "root_path": "/spr/npcres/enemy/enemy100",
     "type": "NormalNpc"
   },
   "enemy101": {
-    "root_path": "spr/npcres/enemy/enemy101",
+    "root_path": "/spr/npcres/enemy/enemy101",
     "type": "NormalNpc"
   },
   "enemy102": {
-    "root_path": "spr/npcres/enemy/enemy102",
+    "root_path": "/spr/npcres/enemy/enemy102",
     "type": "NormalNpc"
   },
   "enemy103": {
-    "root_path": "spr/npcres/enemy/enemy103",
+    "root_path": "/spr/npcres/enemy/enemy103",
     "type": "NormalNpc"
   },
   "enemy104": {
-    "root_path": "spr/npcres/enemy/enemy104",
+    "root_path": "/spr/npcres/enemy/enemy104",
     "type": "NormalNpc"
   },
   "enemy105": {
-    "root_path": "spr/npcres/enemy/enemy105",
+    "root_path": "/spr/npcres/enemy/enemy105",
     "type": "NormalNpc"
   },
   "enemy106": {
-    "root_path": "spr/npcres/enemy/enemy106",
+    "root_path": "/spr/npcres/enemy/enemy106",
     "type": "NormalNpc"
   },
   "enemy107": {
-    "root_path": "spr/npcres/enemy/enemy107",
+    "root_path": "/spr/npcres/enemy/enemy107",
     "type": "NormalNpc"
   },
   "enemy108": {
-    "root_path": "spr/npcres/enemy/enemy108",
+    "root_path": "/spr/npcres/enemy/enemy108",
     "type": "NormalNpc"
   },
   "enemy109": {
-    "root_path": "spr/npcres/enemy/enemy109",
+    "root_path": "/spr/npcres/enemy/enemy109",
     "type": "NormalNpc"
   },
   "enemy110": {
-    "root_path": "spr/npcres/enemy/enemy110",
+    "root_path": "/spr/npcres/enemy/enemy110",
     "type": "NormalNpc"
   },
   "enemy111": {
-    "root_path": "spr/npcres/enemy/enemy111",
+    "root_path": "/spr/npcres/enemy/enemy111",
     "type": "NormalNpc"
   },
   "enemy112": {
-    "root_path": "spr/npcres/enemy/enemy112",
+    "root_path": "/spr/npcres/enemy/enemy112",
     "type": "NormalNpc"
   },
   "enemy115": {
-    "root_path": "spr/npcres/enemy/enemy115",
+    "root_path": "/spr/npcres/enemy/enemy115",
     "type": "NormalNpc"
   },
   "enemy121": {
-    "root_path": "spr/npcres/enemy/enemy121",
+    "root_path": "/spr/npcres/enemy/enemy121",
     "type": "NormalNpc"
   },
   "enemy122": {
-    "root_path": "spr/npcres/enemy/enemy122",
+    "root_path": "/spr/npcres/enemy/enemy122",
     "type": "NormalNpc"
   },
   "enemy123": {
-    "root_path": "spr/npcres/enemy/enemy123",
+    "root_path": "/spr/npcres/enemy/enemy123",
     "type": "NormalNpc"
   },
   "enemy124": {
-    "root_path": "spr/npcres/enemy/enemy124",
+    "root_path": "/spr/npcres/enemy/enemy124",
     "type": "NormalNpc"
   },
   "enemy125": {
-    "root_path": "spr/npcres/enemy/enemy125",
+    "root_path": "/spr/npcres/enemy/enemy125",
     "type": "NormalNpc"
   },
   "enemy126": {
-    "root_path": "spr/npcres/enemy/enemy126",
+    "root_path": "/spr/npcres/enemy/enemy126",
     "type": "NormalNpc"
   },
   "enemy127": {
-    "root_path": "spr/npcres/enemy/enemy127",
+    "root_path": "/spr/npcres/enemy/enemy127",
     "type": "NormalNpc"
   },
   "enemy128": {
-    "root_path": "spr/npcres/enemy/enemy128",
+    "root_path": "/spr/npcres/enemy/enemy128",
     "type": "NormalNpc"
   },
   "enemy129": {
-    "root_path": "spr/npcres/enemy/enemy129",
+    "root_path": "/spr/npcres/enemy/enemy129",
     "type": "NormalNpc"
   },
   "enemy130": {
-    "root_path": "spr/npcres/enemy/enemy130",
+    "root_path": "/spr/npcres/enemy/enemy130",
     "type": "NormalNpc"
   },
   "enemy131": {
-    "root_path": "spr/npcres/enemy/enemy131",
+    "root_path": "/spr/npcres/enemy/enemy131",
     "type": "NormalNpc"
   },
   "enemy132": {
-    "root_path": "spr/npcres/enemy/enemy132",
+    "root_path": "/spr/npcres/enemy/enemy132",
     "type": "NormalNpc"
   },
   "enemy133": {
-    "root_path": "spr/npcres/enemy/enemy133",
+    "root_path": "/spr/npcres/enemy/enemy133",
     "type": "NormalNpc"
   },
   "enemy134": {
-    "root_path": "spr/npcres/enemy/enemy134",
+    "root_path": "/spr/npcres/enemy/enemy134",
     "type": "NormalNpc"
   },
   "enemy135": {
-    "root_path": "spr/npcres/enemy/enemy135",
+    "root_path": "/spr/npcres/enemy/enemy135",
     "type": "NormalNpc"
   },
   "enemy136": {
-    "root_path": "spr/npcres/enemy/enemy136",
+    "root_path": "/spr/npcres/enemy/enemy136",
     "type": "NormalNpc"
   },
   "enemy137": {
-    "root_path": "spr/npcres/enemy/enemy137",
+    "root_path": "/spr/npcres/enemy/enemy137",
     "type": "NormalNpc"
   },
   "enemy138": {
-    "root_path": "spr/npcres/enemy/enemy138",
+    "root_path": "/spr/npcres/enemy/enemy138",
     "type": "NormalNpc"
   },
   "enemy139": {
-    "root_path": "spr/npcres/enemy/enemy139",
+    "root_path": "/spr/npcres/enemy/enemy139",
     "type": "NormalNpc"
   },
   "enemy140": {
-    "root_path": "spr/npcres/enemy/enemy140",
+    "root_path": "/spr/npcres/enemy/enemy140",
     "type": "NormalNpc"
   },
   "enemy141": {
-    "root_path": "spr/npcres/enemy/enemy141",
+    "root_path": "/spr/npcres/enemy/enemy141",
     "type": "NormalNpc"
   },
   "enemy142": {
-    "root_path": "spr/npcres/enemy/enemy142",
+    "root_path": "/spr/npcres/enemy/enemy142",
     "type": "NormalNpc"
   },
   "enemy143": {
-    "root_path": "spr/npcres/enemy/enemy143",
+    "root_path": "/spr/npcres/enemy/enemy143",
     "type": "NormalNpc"
   },
   "enemy144": {
-    "root_path": "spr/npcres/enemy/enemy144",
+    "root_path": "/spr/npcres/enemy/enemy144",
     "type": "NormalNpc"
   },
   "enemy145": {
-    "root_path": "spr/npcres/enemy/enemy145",
+    "root_path": "/spr/npcres/enemy/enemy145",
     "type": "NormalNpc"
   },
   "enemy146": {
-    "root_path": "spr/npcres/enemy/enemy146",
+    "root_path": "/spr/npcres/enemy/enemy146",
     "type": "NormalNpc"
   },
   "enemy147": {
-    "root_path": "spr/npcres/enemy/enemy147",
+    "root_path": "/spr/npcres/enemy/enemy147",
     "type": "NormalNpc"
   },
   "enemy148": {
-    "root_path": "spr/npcres/enemy/enemy148",
+    "root_path": "/spr/npcres/enemy/enemy148",
     "type": "NormalNpc"
   },
   "enemy149": {
-    "root_path": "spr/npcres/enemy/enemy149",
+    "root_path": "/spr/npcres/enemy/enemy149",
     "type": "NormalNpc"
   },
   "enemy150": {
-    "root_path": "spr/npcres/enemy/enemy150",
+    "root_path": "/spr/npcres/enemy/enemy150",
     "type": "NormalNpc"
   },
   "enemy151": {
-    "root_path": "spr/npcres/enemy/enemy151",
+    "root_path": "/spr/npcres/enemy/enemy151",
     "type": "NormalNpc"
   },
   "enemy152": {
-    "root_path": "spr/npcres/enemy/enemy152",
+    "root_path": "/spr/npcres/enemy/enemy152",
     "type": "NormalNpc"
   },
   "enemy153": {
-    "root_path": "spr/npcres/enemy/enemy153",
+    "root_path": "/spr/npcres/enemy/enemy153",
     "type": "NormalNpc"
   },
   "enemy154": {
-    "root_path": "spr/npcres/enemy/enemy154",
+    "root_path": "/spr/npcres/enemy/enemy154",
     "type": "NormalNpc"
   },
   "enemy155": {
-    "root_path": "spr/npcres/enemy/enemy155",
+    "root_path": "/spr/npcres/enemy/enemy155",
     "type": "NormalNpc"
   },
   "enemy156": {
-    "root_path": "spr/npcres/enemy/enemy156",
+    "root_path": "/spr/npcres/enemy/enemy156",
     "type": "NormalNpc"
   },
   "enemy157": {
-    "root_path": "spr/npcres/enemy/enemy157",
+    "root_path": "/spr/npcres/enemy/enemy157",
     "type": "NormalNpc"
   },
   "enemy158": {
-    "root_path": "spr/npcres/enemy/enemy158",
+    "root_path": "/spr/npcres/enemy/enemy158",
     "type": "NormalNpc"
   },
   "enemy159": {
-    "root_path": "spr/npcres/enemy/enemy159",
+    "root_path": "/spr/npcres/enemy/enemy159",
     "type": "NormalNpc"
   },
   "enemy160": {
-    "root_path": "spr/npcres/enemy/enemy160",
+    "root_path": "/spr/npcres/enemy/enemy160",
     "type": "NormalNpc"
   },
   "enemy161": {
-    "root_path": "spr/npcres/enemy/enemy161",
+    "root_path": "/spr/npcres/enemy/enemy161",
     "type": "NormalNpc"
   },
   "enemy162": {
-    "root_path": "spr/npcres/enemy/enemy162",
+    "root_path": "/spr/npcres/enemy/enemy162",
     "type": "NormalNpc"
   },
   "enemy163": {
-    "root_path": "spr/npcres/enemy/enemy163",
+    "root_path": "/spr/npcres/enemy/enemy163",
     "type": "NormalNpc"
   },
   "enemy164": {
-    "root_path": "spr/npcres/enemy/enemy164",
+    "root_path": "/spr/npcres/enemy/enemy164",
     "type": "NormalNpc"
   },
   "enemy165": {
-    "root_path": "spr/npcres/enemy/enemy165",
+    "root_path": "/spr/npcres/enemy/enemy165",
     "type": "NormalNpc"
   },
   "enemy166": {
-    "root_path": "spr/npcres/enemy/enemy166",
+    "root_path": "/spr/npcres/enemy/enemy166",
     "type": "NormalNpc"
   },
   "enemy167": {
-    "root_path": "spr/npcres/enemy/enemy167",
+    "root_path": "/spr/npcres/enemy/enemy167",
     "type": "NormalNpc"
   },
   "enemy168": {
-    "root_path": "spr/npcres/enemy/enemy168",
+    "root_path": "/spr/npcres/enemy/enemy168",
     "type": "NormalNpc"
   },
   "enemy169": {
-    "root_path": "spr/npcres/enemy/enemy169",
+    "root_path": "/spr/npcres/enemy/enemy169",
     "type": "NormalNpc"
   },
   "enemy170": {
-    "root_path": "spr/npcres/enemy/enemy170",
+    "root_path": "/spr/npcres/enemy/enemy170",
     "type": "NormalNpc"
   },
   "enemy171": {
-    "root_path": "spr/npcres/enemy/enemy171",
+    "root_path": "/spr/npcres/enemy/enemy171",
     "type": "NormalNpc"
   },
   "enemy172": {
-    "root_path": "spr/npcres/enemy/enemy172",
+    "root_path": "/spr/npcres/enemy/enemy172",
     "type": "NormalNpc"
   },
   "enemy173": {
-    "root_path": "spr/npcres/enemy/enemy173",
+    "root_path": "/spr/npcres/enemy/enemy173",
     "type": "NormalNpc"
   },
   "enemy174": {
-    "root_path": "spr/npcres/enemy/enemy174",
+    "root_path": "/spr/npcres/enemy/enemy174",
     "type": "NormalNpc"
   },
   "enemy175": {
-    "root_path": "spr/npcres/enemy/enemy175",
+    "root_path": "/spr/npcres/enemy/enemy175",
     "type": "NormalNpc"
   },
   "enemy176": {
-    "root_path": "spr/npcres/enemy/enemy176",
+    "root_path": "/spr/npcres/enemy/enemy176",
     "type": "NormalNpc"
   },
   "enemy177": {
-    "root_path": "spr/npcres/enemy/enemy177",
+    "root_path": "/spr/npcres/enemy/enemy177",
     "type": "NormalNpc"
   },
   "enemy178": {
-    "root_path": "spr/npcres/enemy/enemy178",
+    "root_path": "/spr/npcres/enemy/enemy178",
     "type": "NormalNpc"
   },
   "enemy179": {
-    "root_path": "spr/npcres/enemy/enemy179",
+    "root_path": "/spr/npcres/enemy/enemy179",
     "type": "NormalNpc"
   },
   "enemy180": {
-    "root_path": "spr/npcres/enemy/enemy180",
+    "root_path": "/spr/npcres/enemy/enemy180",
     "type": "NormalNpc"
   },
   "enemy181": {
-    "root_path": "spr/npcres/enemy/enemy181",
+    "root_path": "/spr/npcres/enemy/enemy181",
     "type": "NormalNpc"
   },
   "enemy182": {
-    "root_path": "spr/npcres/enemy/enemy182",
+    "root_path": "/spr/npcres/enemy/enemy182",
     "type": "NormalNpc"
   },
   "enemy183": {
-    "root_path": "spr/npcres/enemy/enemy183",
+    "root_path": "/spr/npcres/enemy/enemy183",
     "type": "NormalNpc"
   },
   "enemy184": {
-    "root_path": "spr/npcres/enemy/enemy184",
+    "root_path": "/spr/npcres/enemy/enemy184",
     "type": "NormalNpc"
   },
   "enemy185": {
-    "root_path": "spr/npcres/enemy/enemy185",
+    "root_path": "/spr/npcres/enemy/enemy185",
     "type": "NormalNpc"
   },
   "enemy186": {
-    "root_path": "spr/npcres/enemy/enemy186",
+    "root_path": "/spr/npcres/enemy/enemy186",
     "type": "NormalNpc"
   },
   "enemy187": {
-    "root_path": "spr/npcres/enemy/enemy187",
+    "root_path": "/spr/npcres/enemy/enemy187",
     "type": "NormalNpc"
   },
   "enemy188": {
-    "root_path": "spr/npcres/enemy/enemy188",
+    "root_path": "/spr/npcres/enemy/enemy188",
     "type": "NormalNpc"
   },
   "enemy189": {
-    "root_path": "spr/npcres/enemy/enemy189",
+    "root_path": "/spr/npcres/enemy/enemy189",
     "type": "NormalNpc"
   },
   "enemy190": {
-    "root_path": "spr/npcres/enemy/enemy190",
+    "root_path": "/spr/npcres/enemy/enemy190",
     "type": "NormalNpc"
   },
   "enemy191": {
-    "root_path": "spr/npcres/enemy/enemy191",
+    "root_path": "/spr/npcres/enemy/enemy191",
     "type": "NormalNpc"
   },
   "enemy192": {
-    "root_path": "spr/npcres/enemy/enemy192",
+    "root_path": "/spr/npcres/enemy/enemy192",
     "type": "NormalNpc"
   },
   "enemy193": {
-    "root_path": "spr/npcres/enemy/enemy193",
+    "root_path": "/spr/npcres/enemy/enemy193",
     "type": "NormalNpc"
   },
   "enemy194": {
-    "root_path": "spr/npcres/enemy/enemy194",
+    "root_path": "/spr/npcres/enemy/enemy194",
     "type": "NormalNpc"
   },
   "enemy195": {
-    "root_path": "spr/npcres/enemy/enemy195",
+    "root_path": "/spr/npcres/enemy/enemy195",
     "type": "NormalNpc"
   },
   "enemy196": {
-    "root_path": "spr/npcres/enemy/enemy196",
+    "root_path": "/spr/npcres/enemy/enemy196",
     "type": "NormalNpc"
   },
   "enemy197": {
-    "root_path": "spr/npcres/enemy/enemy197",
+    "root_path": "/spr/npcres/enemy/enemy197",
     "type": "NormalNpc"
   },
   "enemy198": {
-    "root_path": "spr/npcres/enemy/enemy198",
+    "root_path": "/spr/npcres/enemy/enemy198",
     "type": "NormalNpc"
   },
   "enemy199": {
-    "root_path": "spr/npcres/enemy/enemy199",
+    "root_path": "/spr/npcres/enemy/enemy199",
     "type": "NormalNpc"
   },
   "enemy200": {
-    "root_path": "spr/npcres/enemy/enemy200",
+    "root_path": "/spr/npcres/enemy/enemy200",
     "type": "NormalNpc"
   },
   "enemy201": {
-    "root_path": "spr/npcres/enemy/enemy201",
+    "root_path": "/spr/npcres/enemy/enemy201",
     "type": "NormalNpc"
   },
   "enemy202": {
-    "root_path": "spr/npcres/enemy/enemy202",
+    "root_path": "/spr/npcres/enemy/enemy202",
     "type": "NormalNpc"
   },
   "enemy203": {
-    "root_path": "spr/npcres/enemy/enemy203",
+    "root_path": "/spr/npcres/enemy/enemy203",
     "type": "NormalNpc"
   },
   "enemy204": {
-    "root_path": "spr/npcres/enemy/enemy204",
+    "root_path": "/spr/npcres/enemy/enemy204",
     "type": "NormalNpc"
   },
   "enemy205": {
-    "root_path": "spr/npcres/enemy/enemy205",
+    "root_path": "/spr/npcres/enemy/enemy205",
     "type": "NormalNpc"
   },
   "enemy206": {
-    "root_path": "spr/npcres/enemy/enemy206",
+    "root_path": "/spr/npcres/enemy/enemy206",
     "type": "NormalNpc"
   },
   "enemy207": {
-    "root_path": "spr/npcres/enemy/enemy207",
+    "root_path": "/spr/npcres/enemy/enemy207",
     "type": "NormalNpc"
   },
   "enemy208": {
-    "root_path": "spr/npcres/enemy/enemy208",
+    "root_path": "/spr/npcres/enemy/enemy208",
     "type": "NormalNpc"
   },
   "enemy209": {
-    "root_path": "spr/npcres/enemy/enemy209",
+    "root_path": "/spr/npcres/enemy/enemy209",
     "type": "NormalNpc"
   },
   "enemy210": {
-    "root_path": "spr/npcres/enemy/enemy210",
+    "root_path": "/spr/npcres/enemy/enemy210",
     "type": "NormalNpc"
   },
   "enemy211": {
-    "root_path": "spr/npcres/enemy/enemy211",
+    "root_path": "/spr/npcres/enemy/enemy211",
     "type": "NormalNpc"
   },
   "enemy212": {
-    "root_path": "spr/npcres/enemy/enemy212",
+    "root_path": "/spr/npcres/enemy/enemy212",
     "type": "NormalNpc"
   },
   "enemy213": {
-    "root_path": "spr/npcres/enemy/enemy213",
+    "root_path": "/spr/npcres/enemy/enemy213",
     "type": "NormalNpc"
   },
   "enemy214": {
-    "root_path": "spr/npcres/enemy/enemy214",
+    "root_path": "/spr/npcres/enemy/enemy214",
     "type": "NormalNpc"
   },
   "enemy215": {
-    "root_path": "spr/npcres/enemy/enemy215",
+    "root_path": "/spr/npcres/enemy/enemy215",
     "type": "NormalNpc"
   },
   "enemy216": {
-    "root_path": "spr/npcres/enemy/enemy216",
+    "root_path": "/spr/npcres/enemy/enemy216",
     "type": "NormalNpc"
   },
   "enemy217": {
-    "root_path": "spr/npcres/enemy/enemy217",
+    "root_path": "/spr/npcres/enemy/enemy217",
     "type": "NormalNpc"
   },
   "enemy218": {
-    "root_path": "spr/npcres/enemy/enemy218",
+    "root_path": "/spr/npcres/enemy/enemy218",
     "type": "NormalNpc"
   },
   "enemy219": {
-    "root_path": "spr/npcres/enemy/enemy219",
+    "root_path": "/spr/npcres/enemy/enemy219",
     "type": "NormalNpc"
   },
   "enemy220": {
-    "root_path": "spr/npcres/enemy/enemy220",
+    "root_path": "/spr/npcres/enemy/enemy220",
     "type": "NormalNpc"
   },
   "enemy221": {
-    "root_path": "spr/npcres/enemy/enemy221",
+    "root_path": "/spr/npcres/enemy/enemy221",
     "type": "NormalNpc"
   },
   "enemy222": {
-    "root_path": "spr/npcres/enemy/enemy222",
+    "root_path": "/spr/npcres/enemy/enemy222",
     "type": "NormalNpc"
   },
   "enemy223": {
-    "root_path": "spr/npcres/enemy/enemy223",
+    "root_path": "/spr/npcres/enemy/enemy223",
     "type": "NormalNpc"
   },
   "enemy224": {
-    "root_path": "spr/npcres/enemy/enemy224",
+    "root_path": "/spr/npcres/enemy/enemy224",
     "type": "NormalNpc"
   },
   "npc050111001": {
-    "root_path": "spr/npcres/event/npc050111001",
+    "root_path": "/spr/npcres/event/npc050111001",
     "type": "NormalNpc"
   },
   "npc050111002": {
-    "root_path": "spr/npcres/event/npc050111002",
+    "root_path": "/spr/npcres/event/npc050111002",
     "type": "NormalNpc"
   },
   "npc050111003": {
-    "root_path": "spr/npcres/event/npc050111003",
+    "root_path": "/spr/npcres/event/npc050111003",
     "type": "NormalNpc"
   },
   "npc050111004": {
-    "root_path": "spr/npcres/event/npc050111004",
+    "root_path": "/spr/npcres/event/npc050111004",
     "type": "NormalNpc"
   },
   "npc050111005": {
-    "root_path": "spr/npcres/event/npc050111005",
+    "root_path": "/spr/npcres/event/npc050111005",
     "type": "NormalNpc"
   },
   "npc050111006": {
-    "root_path": "spr/npcres/event/npc050111006",
+    "root_path": "/spr/npcres/event/npc050111006",
     "type": "NormalNpc"
   },
   "npc050111007": {
-    "root_path": "spr/npcres/event/npc050111007",
+    "root_path": "/spr/npcres/event/npc050111007",
     "type": "NormalNpc"
   },
   "npc050111008": {
-    "root_path": "spr/npcres/event/npc050111008",
+    "root_path": "/spr/npcres/event/npc050111008",
     "type": "NormalNpc"
   },
   "npc050111009": {
-    "root_path": "spr/npcres/event/npc050111009",
+    "root_path": "/spr/npcres/event/npc050111009",
     "type": "NormalNpc"
   },
   "npc050111010": {
-    "root_path": "spr/npcres/event/npc050111010",
+    "root_path": "/spr/npcres/event/npc050111010",
     "type": "NormalNpc"
   },
   "npc050111011": {
-    "root_path": "spr/npcres/event/npc050111011",
+    "root_path": "/spr/npcres/event/npc050111011",
     "type": "NormalNpc"
   },
   "npc050111012": {
-    "root_path": "spr/npcres/event/npc050111012",
+    "root_path": "/spr/npcres/event/npc050111012",
     "type": "NormalNpc"
   },
   "passerby001": {
-    "root_path": "spr/npcres/passerby/passerby001",
+    "root_path": "/spr/npcres/passerby/passerby001",
     "type": "NormalNpc"
   },
   "passerby002": {
-    "root_path": "spr/npcres/passerby/passerby002",
+    "root_path": "/spr/npcres/passerby/passerby002",
     "type": "NormalNpc"
   },
   "passerby004_1": {
-    "root_path": "spr/npcres/passerby/passerby004",
+    "root_path": "/spr/npcres/passerby/passerby004",
     "type": "NormalNpc"
   },
   "passerby004_2": {
-    "root_path": "spr/npcres/passerby/passerby004",
+    "root_path": "/spr/npcres/passerby/passerby004",
     "type": "NormalNpc"
   },
   "passerby004_3": {
-    "root_path": "spr/npcres/passerby/passerby004",
+    "root_path": "/spr/npcres/passerby/passerby004",
     "type": "NormalNpc"
   },
   "passerby004_4": {
-    "root_path": "spr/npcres/passerby/passerby004",
+    "root_path": "/spr/npcres/passerby/passerby004",
     "type": "NormalNpc"
   },
   "passerby006_1": {
-    "root_path": "spr/npcres/passerby/passerby006",
+    "root_path": "/spr/npcres/passerby/passerby006",
     "type": "NormalNpc"
   },
   "passerby006_2": {
-    "root_path": "spr/npcres/passerby/passerby006",
+    "root_path": "/spr/npcres/passerby/passerby006",
     "type": "NormalNpc"
   },
   "passerby006_3": {
-    "root_path": "spr/npcres/passerby/passerby006",
+    "root_path": "/spr/npcres/passerby/passerby006",
     "type": "NormalNpc"
   },
   "passerby006_4": {
-    "root_path": "spr/npcres/passerby/passerby006",
+    "root_path": "/spr/npcres/passerby/passerby006",
     "type": "NormalNpc"
   },
   "passerby007": {
-    "root_path": "spr/npcres/passerby/passerby007",
+    "root_path": "/spr/npcres/passerby/passerby007",
     "type": "NormalNpc"
   },
   "passerby007_1": {
-    "root_path": "spr/npcres/passerby/passerby007",
+    "root_path": "/spr/npcres/passerby/passerby007",
     "type": "NormalNpc"
   },
   "passerby008": {
-    "root_path": "spr/npcres/passerby/passerby008",
+    "root_path": "/spr/npcres/passerby/passerby008",
     "type": "NormalNpc"
   },
   "passerby010": {
-    "root_path": "spr/npcres/passerby/passerby010",
+    "root_path": "/spr/npcres/passerby/passerby010",
     "type": "NormalNpc"
   },
   "passerby011_1": {
-    "root_path": "spr/npcres/passerby/passerby011",
+    "root_path": "/spr/npcres/passerby/passerby011",
     "type": "NormalNpc"
   },
   "passerby011_2": {
-    "root_path": "spr/npcres/passerby/passerby011",
+    "root_path": "/spr/npcres/passerby/passerby011",
     "type": "NormalNpc"
   },
   "passerby011_3": {
-    "root_path": "spr/npcres/passerby/passerby011",
+    "root_path": "/spr/npcres/passerby/passerby011",
     "type": "NormalNpc"
   },
   "passerby011_4": {
-    "root_path": "spr/npcres/passerby/passerby011",
+    "root_path": "/spr/npcres/passerby/passerby011",
     "type": "NormalNpc"
   },
   "passerby013": {
-    "root_path": "spr/npcres/passerby/passerby013",
+    "root_path": "/spr/npcres/passerby/passerby013",
     "type": "NormalNpc"
   },
   "passerby014": {
-    "root_path": "spr/npcres/passerby/passerby014",
+    "root_path": "/spr/npcres/passerby/passerby014",
     "type": "NormalNpc"
   },
   "passerby015": {
-    "root_path": "spr/npcres/passerby/passerby015",
+    "root_path": "/spr/npcres/passerby/passerby015",
     "type": "NormalNpc"
   },
   "passerby018": {
-    "root_path": "spr/npcres/passerby/passerby018",
+    "root_path": "/spr/npcres/passerby/passerby018",
     "type": "NormalNpc"
   },
   "passerby019": {
-    "root_path": "spr/npcres/passerby/passerby019",
+    "root_path": "/spr/npcres/passerby/passerby019",
     "type": "NormalNpc"
   },
   "passerby020": {
-    "root_path": "spr/npcres/passerby/passerby020",
+    "root_path": "/spr/npcres/passerby/passerby020",
     "type": "NormalNpc"
   },
   "passerby023": {
-    "root_path": "spr/npcres/passerby/passerby023",
+    "root_path": "/spr/npcres/passerby/passerby023",
     "type": "NormalNpc"
   },
   "passerby024": {
-    "root_path": "spr/npcres/passerby/passerby024",
+    "root_path": "/spr/npcres/passerby/passerby024",
     "type": "NormalNpc"
   },
   "passerby025": {
-    "root_path": "spr/npcres/passerby/passerby025",
+    "root_path": "/spr/npcres/passerby/passerby025",
     "type": "NormalNpc"
   },
   "passerby027": {
-    "root_path": "spr/npcres/passerby/passerby027",
+    "root_path": "/spr/npcres/passerby/passerby027",
     "type": "NormalNpc"
   },
   "passerby028": {
-    "root_path": "spr/npcres/passerby/passerby028",
+    "root_path": "/spr/npcres/passerby/passerby028",
     "type": "NormalNpc"
   },
   "passerby029": {
-    "root_path": "spr/npcres/passerby/passerby029",
+    "root_path": "/spr/npcres/passerby/passerby029",
     "type": "NormalNpc"
   },
   "passerby030": {
-    "root_path": "spr/npcres/passerby/passerby030",
+    "root_path": "/spr/npcres/passerby/passerby030",
     "type": "NormalNpc"
   },
   "passerby031": {
-    "root_path": "spr/npcres/passerby/passerby031",
+    "root_path": "/spr/npcres/passerby/passerby031",
     "type": "NormalNpc"
   },
   "passerby032": {
-    "root_path": "spr/npcres/passerby/passerby032",
+    "root_path": "/spr/npcres/passerby/passerby032",
     "type": "NormalNpc"
   },
   "passerby033": {
-    "root_path": "spr/npcres/passerby/passerby033",
+    "root_path": "/spr/npcres/passerby/passerby033",
     "type": "NormalNpc"
   },
   "passerby034": {
-    "root_path": "spr/npcres/passerby/passerby034",
+    "root_path": "/spr/npcres/passerby/passerby034",
     "type": "NormalNpc"
   },
   "passerby036_1": {
-    "root_path": "spr/npcres/passerby/passerby036",
+    "root_path": "/spr/npcres/passerby/passerby036",
     "type": "NormalNpc"
   },
   "passerby036_2": {
-    "root_path": "spr/npcres/passerby/passerby036",
+    "root_path": "/spr/npcres/passerby/passerby036",
     "type": "NormalNpc"
   },
   "passerby036_3": {
-    "root_path": "spr/npcres/passerby/passerby036",
+    "root_path": "/spr/npcres/passerby/passerby036",
     "type": "NormalNpc"
   },
   "passerby036_4": {
-    "root_path": "spr/npcres/passerby/passerby036",
+    "root_path": "/spr/npcres/passerby/passerby036",
     "type": "NormalNpc"
   },
   "passerby037_1": {
-    "root_path": "spr/npcres/passerby/passerby037",
+    "root_path": "/spr/npcres/passerby/passerby037",
     "type": "NormalNpc"
   },
   "passerby037_2": {
-    "root_path": "spr/npcres/passerby/passerby037",
+    "root_path": "/spr/npcres/passerby/passerby037",
     "type": "NormalNpc"
   },
   "passerby037_3": {
-    "root_path": "spr/npcres/passerby/passerby037",
+    "root_path": "/spr/npcres/passerby/passerby037",
     "type": "NormalNpc"
   },
   "passerby037_4": {
-    "root_path": "spr/npcres/passerby/passerby037",
+    "root_path": "/spr/npcres/passerby/passerby037",
     "type": "NormalNpc"
   },
   "passerby038_1": {
-    "root_path": "spr/npcres/passerby/passerby038",
+    "root_path": "/spr/npcres/passerby/passerby038",
     "type": "NormalNpc"
   },
   "passerby038_2": {
-    "root_path": "spr/npcres/passerby/passerby038",
+    "root_path": "/spr/npcres/passerby/passerby038",
     "type": "NormalNpc"
   },
   "passerby038_3": {
-    "root_path": "spr/npcres/passerby/passerby038",
+    "root_path": "/spr/npcres/passerby/passerby038",
     "type": "NormalNpc"
   },
   "passerby040_1": {
-    "root_path": "spr/npcres/passerby/passerby040",
+    "root_path": "/spr/npcres/passerby/passerby040",
     "type": "NormalNpc"
   },
   "passerby040_2": {
-    "root_path": "spr/npcres/passerby/passerby040",
+    "root_path": "/spr/npcres/passerby/passerby040",
     "type": "NormalNpc"
   },
   "passerby040_3": {
-    "root_path": "spr/npcres/passerby/passerby040",
+    "root_path": "/spr/npcres/passerby/passerby040",
     "type": "NormalNpc"
   },
   "passerby040_4": {
-    "root_path": "spr/npcres/passerby/passerby040",
+    "root_path": "/spr/npcres/passerby/passerby040",
     "type": "NormalNpc"
   },
   "passerby041": {
-    "root_path": "spr/npcres/passerby/passerby041",
+    "root_path": "/spr/npcres/passerby/passerby041",
     "type": "NormalNpc"
   },
   "passerby042": {
-    "root_path": "spr/npcres/passerby/passerby042",
+    "root_path": "/spr/npcres/passerby/passerby042",
     "type": "NormalNpc"
   },
   "passerby043": {
-    "root_path": "spr/npcres/passerby/passerby043",
+    "root_path": "/spr/npcres/passerby/passerby043",
     "type": "NormalNpc"
   },
   "passerby043_1": {
-    "root_path": "spr/npcres/passerby/passerby043",
+    "root_path": "/spr/npcres/passerby/passerby043",
     "type": "NormalNpc"
   },
   "passerby044": {
-    "root_path": "spr/npcres/passerby/passerby044",
+    "root_path": "/spr/npcres/passerby/passerby044",
     "type": "NormalNpc"
   },
   "passerby044_1": {
-    "root_path": "spr/npcres/passerby/passerby044",
+    "root_path": "/spr/npcres/passerby/passerby044",
     "type": "NormalNpc"
   },
   "passerby045": {
-    "root_path": "spr/npcres/passerby/passerby045",
+    "root_path": "/spr/npcres/passerby/passerby045",
     "type": "NormalNpc"
   },
   "passerby045_1": {
-    "root_path": "spr/npcres/passerby/passerby045",
+    "root_path": "/spr/npcres/passerby/passerby045",
     "type": "NormalNpc"
   },
   "passerby047": {
-    "root_path": "spr/npcres/passerby/passerby047",
+    "root_path": "/spr/npcres/passerby/passerby047",
     "type": "NormalNpc"
   },
   "passerby048": {
-    "root_path": "spr/npcres/passerby/passerby048",
+    "root_path": "/spr/npcres/passerby/passerby048",
     "type": "NormalNpc"
   },
   "passerby049": {
-    "root_path": "spr/npcres/passerby/passerby049",
+    "root_path": "/spr/npcres/passerby/passerby049",
     "type": "NormalNpc"
   },
   "passerby050": {
-    "root_path": "spr/npcres/passerby/passerby050",
+    "root_path": "/spr/npcres/passerby/passerby050",
     "type": "NormalNpc"
   },
   "passerby051": {
-    "root_path": "spr/npcres/passerby/passerby051",
+    "root_path": "/spr/npcres/passerby/passerby051",
     "type": "NormalNpc"
   },
   "passerby052": {
-    "root_path": "spr/npcres/passerby/passerby052",
+    "root_path": "/spr/npcres/passerby/passerby052",
     "type": "NormalNpc"
   },
   "passerby058": {
-    "root_path": "spr/npcres/passerby/passerby058",
+    "root_path": "/spr/npcres/passerby/passerby058",
     "type": "NormalNpc"
   },
   "passerby059": {
-    "root_path": "spr/npcres/passerby/passerby059",
+    "root_path": "/spr/npcres/passerby/passerby059",
     "type": "NormalNpc"
   },
   "passerby059_1": {
-    "root_path": "spr/npcres/passerby/passerby059",
+    "root_path": "/spr/npcres/passerby/passerby059",
     "type": "NormalNpc"
   },
   "passerby060": {
-    "root_path": "spr/npcres/passerby/passerby060",
+    "root_path": "/spr/npcres/passerby/passerby060",
     "type": "NormalNpc"
   },
   "passerby061_1": {
-    "root_path": "spr/npcres/passerby/passerby061",
+    "root_path": "/spr/npcres/passerby/passerby061",
     "type": "NormalNpc"
   },
   "passerby061_2": {
-    "root_path": "spr/npcres/passerby/passerby061",
+    "root_path": "/spr/npcres/passerby/passerby061",
     "type": "NormalNpc"
   },
   "passerby061_3": {
-    "root_path": "spr/npcres/passerby/passerby061",
+    "root_path": "/spr/npcres/passerby/passerby061",
     "type": "NormalNpc"
   },
   "passerby062_1": {
-    "root_path": "spr/npcres/passerby/passerby062",
+    "root_path": "/spr/npcres/passerby/passerby062",
     "type": "NormalNpc"
   },
   "passerby062_2": {
-    "root_path": "spr/npcres/passerby/passerby062",
+    "root_path": "/spr/npcres/passerby/passerby062",
     "type": "NormalNpc"
   },
   "passerby062_3": {
-    "root_path": "spr/npcres/passerby/passerby062",
+    "root_path": "/spr/npcres/passerby/passerby062",
     "type": "NormalNpc"
   },
   "passerby063_1": {
-    "root_path": "spr/npcres/passerby/passerby063",
+    "root_path": "/spr/npcres/passerby/passerby063",
     "type": "NormalNpc"
   },
   "passerby063_2": {
-    "root_path": "spr/npcres/passerby/passerby063",
+    "root_path": "/spr/npcres/passerby/passerby063",
     "type": "NormalNpc"
   },
   "passerby063_3": {
-    "root_path": "spr/npcres/passerby/passerby063",
+    "root_path": "/spr/npcres/passerby/passerby063",
     "type": "NormalNpc"
   },
   "passerby064_1": {
-    "root_path": "spr/npcres/passerby/passerby064",
+    "root_path": "/spr/npcres/passerby/passerby064",
     "type": "NormalNpc"
   },
   "passerby064_2": {
-    "root_path": "spr/npcres/passerby/passerby064",
+    "root_path": "/spr/npcres/passerby/passerby064",
     "type": "NormalNpc"
   },
   "passerby064_3": {
-    "root_path": "spr/npcres/passerby/passerby064",
+    "root_path": "/spr/npcres/passerby/passerby064",
     "type": "NormalNpc"
   },
   "passerby065_1": {
-    "root_path": "spr/npcres/passerby/passerby065",
+    "root_path": "/spr/npcres/passerby/passerby065",
     "type": "NormalNpc"
   },
   "passerby065_2": {
-    "root_path": "spr/npcres/passerby/passerby065",
+    "root_path": "/spr/npcres/passerby/passerby065",
     "type": "NormalNpc"
   },
   "passerby065_3": {
-    "root_path": "spr/npcres/passerby/passerby065",
+    "root_path": "/spr/npcres/passerby/passerby065",
     "type": "NormalNpc"
   },
   "passerby066_1": {
-    "root_path": "spr/npcres/passerby/passerby066",
+    "root_path": "/spr/npcres/passerby/passerby066",
     "type": "NormalNpc"
   },
   "passerby066_2": {
-    "root_path": "spr/npcres/passerby/passerby066",
+    "root_path": "/spr/npcres/passerby/passerby066",
     "type": "NormalNpc"
   },
   "passerby066_3": {
-    "root_path": "spr/npcres/passerby/passerby066",
+    "root_path": "/spr/npcres/passerby/passerby066",
     "type": "NormalNpc"
   },
   "passerby067_1": {
-    "root_path": "spr/npcres/passerby/passerby067",
+    "root_path": "/spr/npcres/passerby/passerby067",
     "type": "NormalNpc"
   },
   "passerby067_2": {
-    "root_path": "spr/npcres/passerby/passerby067",
+    "root_path": "/spr/npcres/passerby/passerby067",
     "type": "NormalNpc"
   },
   "passerby067_3": {
-    "root_path": "spr/npcres/passerby/passerby067",
+    "root_path": "/spr/npcres/passerby/passerby067",
     "type": "NormalNpc"
   },
   "passerby067_4": {
-    "root_path": "spr/npcres/passerby/passerby067",
+    "root_path": "/spr/npcres/passerby/passerby067",
     "type": "NormalNpc"
   },
   "passerby067_5": {
-    "root_path": "spr/npcres/passerby/passerby067",
+    "root_path": "/spr/npcres/passerby/passerby067",
     "type": "NormalNpc"
   },
   "passerby067_6": {
-    "root_path": "spr/npcres/passerby/passerby067",
+    "root_path": "/spr/npcres/passerby/passerby067",
     "type": "NormalNpc"
   },
   "passerby068_1": {
-    "root_path": "spr/npcres/passerby/passerby068",
+    "root_path": "/spr/npcres/passerby/passerby068",
     "type": "NormalNpc"
   },
   "passerby068_2": {
-    "root_path": "spr/npcres/passerby/passerby068",
+    "root_path": "/spr/npcres/passerby/passerby068",
     "type": "NormalNpc"
   },
   "passerby068_3": {
-    "root_path": "spr/npcres/passerby/passerby068",
+    "root_path": "/spr/npcres/passerby/passerby068",
     "type": "NormalNpc"
   },
   "passerby068_4": {
-    "root_path": "spr/npcres/passerby/passerby068",
+    "root_path": "/spr/npcres/passerby/passerby068",
     "type": "NormalNpc"
   },
   "passerby068_5": {
-    "root_path": "spr/npcres/passerby/passerby068",
+    "root_path": "/spr/npcres/passerby/passerby068",
     "type": "NormalNpc"
   },
   "passerby068_6": {
-    "root_path": "spr/npcres/passerby/passerby068",
+    "root_path": "/spr/npcres/passerby/passerby068",
     "type": "NormalNpc"
   },
   "passerby069_1": {
-    "root_path": "spr/npcres/passerby/passerby069",
+    "root_path": "/spr/npcres/passerby/passerby069",
     "type": "NormalNpc"
   },
   "passerby069_2": {
-    "root_path": "spr/npcres/passerby/passerby069",
+    "root_path": "/spr/npcres/passerby/passerby069",
     "type": "NormalNpc"
   },
   "passerby069_3": {
-    "root_path": "spr/npcres/passerby/passerby069",
+    "root_path": "/spr/npcres/passerby/passerby069",
     "type": "NormalNpc"
   },
   "passerby070_1": {
-    "root_path": "spr/npcres/passerby/passerby070",
+    "root_path": "/spr/npcres/passerby/passerby070",
     "type": "NormalNpc"
   },
   "passerby070_2": {
-    "root_path": "spr/npcres/passerby/passerby070",
+    "root_path": "/spr/npcres/passerby/passerby070",
     "type": "NormalNpc"
   },
   "passerby070_3": {
-    "root_path": "spr/npcres/passerby/passerby070",
+    "root_path": "/spr/npcres/passerby/passerby070",
     "type": "NormalNpc"
   },
   "passerby071_1": {
-    "root_path": "spr/npcres/passerby/passerby071",
+    "root_path": "/spr/npcres/passerby/passerby071",
     "type": "NormalNpc"
   },
   "passerby071_2": {
-    "root_path": "spr/npcres/passerby/passerby071",
+    "root_path": "/spr/npcres/passerby/passerby071",
     "type": "NormalNpc"
   },
   "passerby071_3": {
-    "root_path": "spr/npcres/passerby/passerby071",
+    "root_path": "/spr/npcres/passerby/passerby071",
     "type": "NormalNpc"
   },
   "passerby072_1": {
-    "root_path": "spr/npcres/passerby/passerby072",
+    "root_path": "/spr/npcres/passerby/passerby072",
     "type": "NormalNpc"
   },
   "passerby072_2": {
-    "root_path": "spr/npcres/passerby/passerby072",
+    "root_path": "/spr/npcres/passerby/passerby072",
     "type": "NormalNpc"
   },
   "passerby072_3": {
-    "root_path": "spr/npcres/passerby/passerby072",
+    "root_path": "/spr/npcres/passerby/passerby072",
     "type": "NormalNpc"
   },
   "passerby072_4": {
-    "root_path": "spr/npcres/passerby/passerby072",
+    "root_path": "/spr/npcres/passerby/passerby072",
     "type": "NormalNpc"
   },
   "passerby073_1": {
-    "root_path": "spr/npcres/passerby/passerby073",
+    "root_path": "/spr/npcres/passerby/passerby073",
     "type": "NormalNpc"
   },
   "passerby073_2": {
-    "root_path": "spr/npcres/passerby/passerby073",
+    "root_path": "/spr/npcres/passerby/passerby073",
     "type": "NormalNpc"
   },
   "passerby073_3": {
-    "root_path": "spr/npcres/passerby/passerby073",
+    "root_path": "/spr/npcres/passerby/passerby073",
     "type": "NormalNpc"
   },
   "passerby074_1": {
-    "root_path": "spr/npcres/passerby/passerby074",
+    "root_path": "/spr/npcres/passerby/passerby074",
     "type": "NormalNpc"
   },
   "passerby074_2": {
-    "root_path": "spr/npcres/passerby/passerby074",
+    "root_path": "/spr/npcres/passerby/passerby074",
     "type": "NormalNpc"
   },
   "passerby074_3": {
-    "root_path": "spr/npcres/passerby/passerby074",
+    "root_path": "/spr/npcres/passerby/passerby074",
     "type": "NormalNpc"
   },
   "passerby074_4": {
-    "root_path": "spr/npcres/passerby/passerby074",
+    "root_path": "/spr/npcres/passerby/passerby074",
     "type": "NormalNpc"
   },
   "passerby074_5": {
-    "root_path": "spr/npcres/passerby/passerby074",
+    "root_path": "/spr/npcres/passerby/passerby074",
     "type": "NormalNpc"
   },
   "passerby074_6": {
-    "root_path": "spr/npcres/passerby/passerby074",
+    "root_path": "/spr/npcres/passerby/passerby074",
     "type": "NormalNpc"
   },
   "passerby075_1": {
-    "root_path": "spr/npcres/passerby/passerby075",
+    "root_path": "/spr/npcres/passerby/passerby075",
     "type": "NormalNpc"
   },
   "passerby075_2": {
-    "root_path": "spr/npcres/passerby/passerby075",
+    "root_path": "/spr/npcres/passerby/passerby075",
     "type": "NormalNpc"
   },
   "passerby075_3": {
-    "root_path": "spr/npcres/passerby/passerby075",
+    "root_path": "/spr/npcres/passerby/passerby075",
     "type": "NormalNpc"
   },
   "passerby075_4": {
-    "root_path": "spr/npcres/passerby/passerby075",
+    "root_path": "/spr/npcres/passerby/passerby075",
     "type": "NormalNpc"
   },
   "passerby076_1": {
-    "root_path": "spr/npcres/passerby/passerby076",
+    "root_path": "/spr/npcres/passerby/passerby076",
     "type": "NormalNpc"
   },
   "passerby076_2": {
-    "root_path": "spr/npcres/passerby/passerby076",
+    "root_path": "/spr/npcres/passerby/passerby076",
     "type": "NormalNpc"
   },
   "passerby076_3": {
-    "root_path": "spr/npcres/passerby/passerby076",
+    "root_path": "/spr/npcres/passerby/passerby076",
     "type": "NormalNpc"
   },
   "passerby076_4": {
-    "root_path": "spr/npcres/passerby/passerby076",
+    "root_path": "/spr/npcres/passerby/passerby076",
     "type": "NormalNpc"
   },
   "passerby077_1": {
-    "root_path": "spr/npcres/passerby/passerby077",
+    "root_path": "/spr/npcres/passerby/passerby077",
     "type": "NormalNpc"
   },
   "passerby077_2": {
-    "root_path": "spr/npcres/passerby/passerby077",
+    "root_path": "/spr/npcres/passerby/passerby077",
     "type": "NormalNpc"
   },
   "passerby077_3": {
-    "root_path": "spr/npcres/passerby/passerby077",
+    "root_path": "/spr/npcres/passerby/passerby077",
     "type": "NormalNpc"
   },
   "passerby079_1": {
-    "root_path": "spr/npcres/passerby/passerby079",
+    "root_path": "/spr/npcres/passerby/passerby079",
     "type": "NormalNpc"
   },
   "passerby079_2": {
-    "root_path": "spr/npcres/passerby/passerby079",
+    "root_path": "/spr/npcres/passerby/passerby079",
     "type": "NormalNpc"
   },
   "passerby079_3": {
-    "root_path": "spr/npcres/passerby/passerby079",
+    "root_path": "/spr/npcres/passerby/passerby079",
     "type": "NormalNpc"
   },
   "passerby080": {
-    "root_path": "spr/npcres/passerby/passerby080",
+    "root_path": "/spr/npcres/passerby/passerby080",
     "type": "NormalNpc"
   },
   "passerby088": {
-    "root_path": "spr/npcres/passerby/passerby088",
+    "root_path": "/spr/npcres/passerby/passerby088",
     "type": "NormalNpc"
   },
   "passerby092": {
-    "root_path": "spr/npcres/passerby/passerby092",
+    "root_path": "/spr/npcres/passerby/passerby092",
     "type": "NormalNpc"
   },
   "passerby094": {
-    "root_path": "spr/npcres/passerby/passerby094",
+    "root_path": "/spr/npcres/passerby/passerby094",
     "type": "NormalNpc"
   },
   "passerby095": {
-    "root_path": "spr/npcres/passerby/passerby095",
+    "root_path": "/spr/npcres/passerby/passerby095",
     "type": "NormalNpc"
   },
   "passerby097": {
-    "root_path": "spr/npcres/passerby/passerby097",
+    "root_path": "/spr/npcres/passerby/passerby097",
     "type": "NormalNpc"
   },
   "passerby099": {
-    "root_path": "spr/npcres/passerby/passerby099",
+    "root_path": "/spr/npcres/passerby/passerby099",
     "type": "NormalNpc"
   },
   "passerby100": {
-    "root_path": "spr/npcres/passerby/passerby100",
+    "root_path": "/spr/npcres/passerby/passerby100",
     "type": "NormalNpc"
   },
   "passerby101": {
-    "root_path": "spr/npcres/passerby/passerby101",
+    "root_path": "/spr/npcres/passerby/passerby101",
     "type": "NormalNpc"
   },
   "passerby102": {
-    "root_path": "spr/npcres/passerby/passerby102",
+    "root_path": "/spr/npcres/passerby/passerby102",
     "type": "NormalNpc"
   },
   "passerby103": {
-    "root_path": "spr/npcres/passerby/passerby103",
+    "root_path": "/spr/npcres/passerby/passerby103",
     "type": "NormalNpc"
   },
   "passerby104": {
-    "root_path": "spr/npcres/passerby/passerby104",
+    "root_path": "/spr/npcres/passerby/passerby104",
     "type": "NormalNpc"
   },
   "passerby105": {
-    "root_path": "spr/npcres/passerby/passerby105",
+    "root_path": "/spr/npcres/passerby/passerby105",
     "type": "NormalNpc"
   },
   "passerby108": {
-    "root_path": "spr/npcres/passerby/passerby108",
+    "root_path": "/spr/npcres/passerby/passerby108",
     "type": "NormalNpc"
   },
   "passerby110": {
-    "root_path": "spr/npcres/passerby/passerby110",
+    "root_path": "/spr/npcres/passerby/passerby110",
     "type": "NormalNpc"
   },
   "passerby112": {
-    "root_path": "spr/npcres/passerby/passerby112",
+    "root_path": "/spr/npcres/passerby/passerby112",
     "type": "NormalNpc"
   },
   "passerby117": {
-    "root_path": "spr/npcres/passerby/passerby117",
+    "root_path": "/spr/npcres/passerby/passerby117",
     "type": "NormalNpc"
   },
   "passerby118": {
-    "root_path": "spr/npcres/passerby/passerby118",
+    "root_path": "/spr/npcres/passerby/passerby118",
     "type": "NormalNpc"
   },
   "passerby119": {
-    "root_path": "spr/npcres/passerby/passerby119",
+    "root_path": "/spr/npcres/passerby/passerby119",
     "type": "NormalNpc"
   },
   "passerby120": {
-    "root_path": "spr/npcres/passerby/passerby120",
+    "root_path": "/spr/npcres/passerby/passerby120",
     "type": "NormalNpc"
   },
   "passerby121": {
-    "root_path": "spr/npcres/passerby/passerby121",
+    "root_path": "/spr/npcres/passerby/passerby121",
     "type": "NormalNpc"
   },
   "passerby122": {
-    "root_path": "spr/npcres/passerby/passerby122",
+    "root_path": "/spr/npcres/passerby/passerby122",
     "type": "NormalNpc"
   },
   "passerby123": {
-    "root_path": "spr/npcres/passerby/passerby123",
+    "root_path": "/spr/npcres/passerby/passerby123",
     "type": "NormalNpc"
   },
   "passerby124": {
-    "root_path": "spr/npcres/passerby/passerby124",
+    "root_path": "/spr/npcres/passerby/passerby124",
     "type": "NormalNpc"
   },
   "passerby125": {
-    "root_path": "spr/npcres/passerby/passerby125",
+    "root_path": "/spr/npcres/passerby/passerby125",
     "type": "NormalNpc"
   },
   "passerby127": {
-    "root_path": "spr/npcres/passerby/passerby127",
+    "root_path": "/spr/npcres/passerby/passerby127",
     "type": "NormalNpc"
   },
   "passerby128": {
-    "root_path": "spr/npcres/passerby/passerby128",
+    "root_path": "/spr/npcres/passerby/passerby128",
     "type": "NormalNpc"
   },
   "passerby129": {
-    "root_path": "spr/npcres/passerby/passerby129",
+    "root_path": "/spr/npcres/passerby/passerby129",
     "type": "NormalNpc"
   },
   "passerby130": {
-    "root_path": "spr/npcres/passerby/passerby130",
+    "root_path": "/spr/npcres/passerby/passerby130",
     "type": "NormalNpc"
   },
   "passerby131": {
-    "root_path": "spr/npcres/passerby/passerby131",
+    "root_path": "/spr/npcres/passerby/passerby131",
     "type": "NormalNpc"
   },
   "passerby132": {
-    "root_path": "spr/npcres/passerby/passerby132",
+    "root_path": "/spr/npcres/passerby/passerby132",
     "type": "NormalNpc"
   },
   "passerby133": {
-    "root_path": "spr/npcres/passerby/passerby133",
+    "root_path": "/spr/npcres/passerby/passerby133",
     "type": "NormalNpc"
   },
   "passerby134": {
-    "root_path": "spr/npcres/passerby/passerby134",
+    "root_path": "/spr/npcres/passerby/passerby134",
     "type": "NormalNpc"
   },
   "passerby135": {
-    "root_path": "spr/npcres/passerby/passerby135",
+    "root_path": "/spr/npcres/passerby/passerby135",
     "type": "NormalNpc"
   },
   "passerby136": {
-    "root_path": "spr/npcres/passerby/passerby136",
+    "root_path": "/spr/npcres/passerby/passerby136",
     "type": "NormalNpc"
   },
   "passerby137": {
-    "root_path": "spr/npcres/passerby/passerby137",
+    "root_path": "/spr/npcres/passerby/passerby137",
     "type": "NormalNpc"
   },
   "passerby138": {
-    "root_path": "spr/npcres/passerby/passerby138",
+    "root_path": "/spr/npcres/passerby/passerby138",
     "type": "NormalNpc"
   },
   "passerby139": {
-    "root_path": "spr/npcres/passerby/passerby139",
+    "root_path": "/spr/npcres/passerby/passerby139",
     "type": "NormalNpc"
   },
   "passerby140": {
-    "root_path": "spr/npcres/passerby/passerby140",
+    "root_path": "/spr/npcres/passerby/passerby140",
     "type": "NormalNpc"
   },
   "passerby141": {
-    "root_path": "spr/npcres/passerby/passerby141",
+    "root_path": "/spr/npcres/passerby/passerby141",
     "type": "NormalNpc"
   },
   "passerby142": {
-    "root_path": "spr/npcres/passerby/passerby142",
+    "root_path": "/spr/npcres/passerby/passerby142",
     "type": "NormalNpc"
   },
   "passerby144": {
-    "root_path": "spr/npcres/passerby/passerby144",
+    "root_path": "/spr/npcres/passerby/passerby144",
     "type": "NormalNpc"
   },
   "passerby145": {
-    "root_path": "spr/npcres/passerby/passerby145",
+    "root_path": "/spr/npcres/passerby/passerby145",
     "type": "NormalNpc"
   },
   "passerby146": {
-    "root_path": "spr/npcres/passerby/passerby146",
+    "root_path": "/spr/npcres/passerby/passerby146",
     "type": "NormalNpc"
   },
   "passerby147": {
-    "root_path": "spr/npcres/passerby/passerby147",
+    "root_path": "/spr/npcres/passerby/passerby147",
     "type": "NormalNpc"
   },
   "passerby148": {
-    "root_path": "spr/npcres/passerby/passerby148",
+    "root_path": "/spr/npcres/passerby/passerby148",
     "type": "NormalNpc"
   },
   "passerby149": {
-    "root_path": "spr/npcres/passerby/passerby149",
+    "root_path": "/spr/npcres/passerby/passerby149",
     "type": "NormalNpc"
   },
   "passerby150": {
-    "root_path": "spr/npcres/passerby/passerby150",
+    "root_path": "/spr/npcres/passerby/passerby150",
     "type": "NormalNpc"
   },
   "passerby151": {
-    "root_path": "spr/npcres/passerby/passerby151",
+    "root_path": "/spr/npcres/passerby/passerby151",
     "type": "NormalNpc"
   },
   "passerby152": {
-    "root_path": "spr/npcres/passerby/passerby152",
+    "root_path": "/spr/npcres/passerby/passerby152",
     "type": "NormalNpc"
   },
   "passerby153": {
-    "root_path": "spr/npcres/passerby/passerby153",
+    "root_path": "/spr/npcres/passerby/passerby153",
     "type": "NormalNpc"
   },
   "passerby154": {
-    "root_path": "spr/npcres/passerby/passerby154",
+    "root_path": "/spr/npcres/passerby/passerby154",
     "type": "NormalNpc"
   },
   "passerby157": {
-    "root_path": "spr/npcres/passerby/passerby157",
+    "root_path": "/spr/npcres/passerby/passerby157",
     "type": "NormalNpc"
   },
   "passerby159": {
-    "root_path": "spr/npcres/passerby/passerby159",
+    "root_path": "/spr/npcres/passerby/passerby159",
     "type": "NormalNpc"
   },
   "passerby163": {
-    "root_path": "spr/npcres/passerby/passerby163",
+    "root_path": "/spr/npcres/passerby/passerby163",
     "type": "NormalNpc"
   },
   "passerby164": {
-    "root_path": "spr/npcres/passerby/passerby164",
+    "root_path": "/spr/npcres/passerby/passerby164",
     "type": "NormalNpc"
   },
   "passerby165": {
-    "root_path": "spr/npcres/passerby/passerby165",
+    "root_path": "/spr/npcres/passerby/passerby165",
     "type": "NormalNpc"
   },
   "passerby167": {
-    "root_path": "spr/npcres/passerby/passerby167",
+    "root_path": "/spr/npcres/passerby/passerby167",
     "type": "NormalNpc"
   },
   "passerby168": {
-    "root_path": "spr/npcres/passerby/passerby168",
+    "root_path": "/spr/npcres/passerby/passerby168",
     "type": "NormalNpc"
   },
   "passerby169": {
-    "root_path": "spr/npcres/passerby/passerby169",
+    "root_path": "/spr/npcres/passerby/passerby169",
     "type": "NormalNpc"
   },
   "passerby170": {
-    "root_path": "spr/npcres/passerby/passerby170",
+    "root_path": "/spr/npcres/passerby/passerby170",
     "type": "NormalNpc"
   },
   "passerby171": {
-    "root_path": "spr/npcres/passerby/passerby171",
+    "root_path": "/spr/npcres/passerby/passerby171",
     "type": "NormalNpc"
   },
   "passerby172": {
-    "root_path": "spr/npcres/passerby/passerby172",
+    "root_path": "/spr/npcres/passerby/passerby172",
     "type": "NormalNpc"
   },
   "passerby173": {
-    "root_path": "spr/npcres/passerby/passerby173",
+    "root_path": "/spr/npcres/passerby/passerby173",
     "type": "NormalNpc"
   },
   "passerby174": {
-    "root_path": "spr/npcres/passerby/passerby174",
+    "root_path": "/spr/npcres/passerby/passerby174",
     "type": "NormalNpc"
   },
   "passerby175": {
-    "root_path": "spr/npcres/passerby/passerby175",
+    "root_path": "/spr/npcres/passerby/passerby175",
     "type": "NormalNpc"
   },
   "passerby176": {
-    "root_path": "spr/npcres/passerby/passerby176",
+    "root_path": "/spr/npcres/passerby/passerby176",
     "type": "NormalNpc"
   },
   "passerby177": {
-    "root_path": "spr/npcres/passerby/passerby177",
+    "root_path": "/spr/npcres/passerby/passerby177",
     "type": "NormalNpc"
   },
   "passerby178": {
-    "root_path": "spr/npcres/passerby/passerby178",
+    "root_path": "/spr/npcres/passerby/passerby178",
     "type": "NormalNpc"
   },
   "passerby179": {
-    "root_path": "spr/npcres/passerby/passerby179",
+    "root_path": "/spr/npcres/passerby/passerby179",
     "type": "NormalNpc"
   },
   "passerby180": {
-    "root_path": "spr/npcres/passerby/passerby180",
+    "root_path": "/spr/npcres/passerby/passerby180",
     "type": "NormalNpc"
   },
   "passerby181": {
-    "root_path": "spr/npcres/passerby/passerby181",
+    "root_path": "/spr/npcres/passerby/passerby181",
     "type": "NormalNpc"
   },
   "passerby182": {
-    "root_path": "spr/npcres/passerby/passerby182",
+    "root_path": "/spr/npcres/passerby/passerby182",
     "type": "NormalNpc"
   },
   "passerby183": {
-    "root_path": "spr/npcres/passerby/passerby183",
+    "root_path": "/spr/npcres/passerby/passerby183",
     "type": "NormalNpc"
   },
   "passerby184": {
-    "root_path": "spr/npcres/passerby/passerby184",
+    "root_path": "/spr/npcres/passerby/passerby184",
     "type": "NormalNpc"
   },
   "passerby185": {
-    "root_path": "spr/npcres/passerby/passerby185",
+    "root_path": "/spr/npcres/passerby/passerby185",
     "type": "NormalNpc"
   },
   "passerby186": {
-    "root_path": "spr/npcres/passerby/passerby186",
+    "root_path": "/spr/npcres/passerby/passerby186",
     "type": "NormalNpc"
   },
   "passerby187": {
-    "root_path": "spr/npcres/passerby/passerby187",
+    "root_path": "/spr/npcres/passerby/passerby187",
     "type": "NormalNpc"
   },
   "passerby188": {
-    "root_path": "spr/npcres/passerby/passerby188",
+    "root_path": "/spr/npcres/passerby/passerby188",
     "type": "NormalNpc"
   },
   "passerby189": {
-    "root_path": "spr/npcres/passerby/passerby189",
+    "root_path": "/spr/npcres/passerby/passerby189",
     "type": "NormalNpc"
   },
   "passerby190": {
-    "root_path": "spr/npcres/passerby/passerby190",
+    "root_path": "/spr/npcres/passerby/passerby190",
     "type": "NormalNpc"
   },
   "passerby191": {
-    "root_path": "spr/npcres/passerby/passerby191",
+    "root_path": "/spr/npcres/passerby/passerby191",
     "type": "NormalNpc"
   },
   "passerby192": {
-    "root_path": "spr/npcres/passerby/passerby192",
+    "root_path": "/spr/npcres/passerby/passerby192",
     "type": "NormalNpc"
   },
   "passerby193": {
-    "root_path": "spr/npcres/passerby/passerby193",
+    "root_path": "/spr/npcres/passerby/passerby193",
     "type": "NormalNpc"
   },
   "passerby194": {
-    "root_path": "spr/npcres/passerby/passerby194",
+    "root_path": "/spr/npcres/passerby/passerby194",
     "type": "NormalNpc"
   },
   "passerby195": {
-    "root_path": "spr/npcres/passerby/passerby195",
+    "root_path": "/spr/npcres/passerby/passerby195",
     "type": "NormalNpc"
   },
   "passerby196": {
-    "root_path": "spr/npcres/passerby/passerby196",
+    "root_path": "/spr/npcres/passerby/passerby196",
     "type": "NormalNpc"
   },
   "passerby197": {
-    "root_path": "spr/npcres/passerby/passerby197",
+    "root_path": "/spr/npcres/passerby/passerby197",
     "type": "NormalNpc"
   },
   "passerby198": {
-    "root_path": "spr/npcres/passerby/passerby198",
+    "root_path": "/spr/npcres/passerby/passerby198",
     "type": "NormalNpc"
   },
   "passerby199": {
-    "root_path": "spr/npcres/passerby/passerby199",
+    "root_path": "/spr/npcres/passerby/passerby199",
     "type": "NormalNpc"
   },
   "passerby200": {
-    "root_path": "spr/npcres/passerby/passerby200",
+    "root_path": "/spr/npcres/passerby/passerby200",
     "type": "NormalNpc"
   },
   "passerby201": {
-    "root_path": "spr/skill/gongcheng",
+    "root_path": "/spr/skill/gongcheng",
     "type": "NormalNpc"
   },
   "passerby202": {
-    "root_path": "spr/obj/box",
+    "root_path": "/spr/obj/box",
     "type": "NormalNpc"
   },
   "passerby203": {
-    "root_path": "spr/item/mid_autumn",
+    "root_path": "/spr/item/mid_autumn",
     "type": "NormalNpc"
   },
   "passerby204": {
-    "root_path": "spr/npcres/passerby/passerby204",
+    "root_path": "/spr/npcres/passerby/passerby204",
     "type": "NormalNpc"
   },
   "passerby205": {
-    "root_path": "spr/npcres/passerby/passerby205",
+    "root_path": "/spr/npcres/passerby/passerby205",
     "type": "NormalNpc"
   },
   "passerby206": {
-    "root_path": "spr/npcres/passerby/passerby206",
+    "root_path": "/spr/npcres/passerby/passerby206",
     "type": "NormalNpc"
   },
   "passerby207": {
-    "root_path": "spr/npcres/passerby/passerby207",
+    "root_path": "/spr/npcres/passerby/passerby207",
     "type": "NormalNpc"
   },
   "passerby208": {
-    "root_path": "spr/npcres/passerby/passerby208",
+    "root_path": "/spr/npcres/passerby/passerby208",
     "type": "NormalNpc"
   }
 }

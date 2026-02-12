@@ -1,5 +1,0 @@
-ả¯ìữ±àºÅ(ìÂềõÊơÄ¿ầ°³èéũệĐ³ệìợ´úệệÀàấầ20Êơ³ơạýàÄằ°±ỉéởÍăệê³èéũéịáÄ)	ả¯ìữÃỷ	ìấễ´ẻÄẳỵ
-1	Upgrade	\spr\skill\²ạ³ọ\mag_spe_ẫýẳả.spr
-2	ReNew	\spr\skill\²ạ³ọ\mag_spe_ệỉẫỳ.spr
-3	Group	\spr\skill\²ạ³ọ\mag_spe_ìộảể.spr
-
