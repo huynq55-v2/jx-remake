@@ -54,11 +54,17 @@ pub enum ActionId {
     RideStand2 = 47,
 }
 
+#[derive(Copy, Clone, Debug, PartialEq, Eq, Hash)]
+pub enum Sex {
+    Man,
+    Lady,
+}
+
 #[derive(Debug)]
 pub enum NpcKind {
     // Loại 1: Special (Main Man/Lady - Người chơi)
     // Đặc điểm: Render phức tạp (nhiều layers), Logic phức tạp (Input)
-    Special,
+    Special(Sex),
     // Loại 2: Normal (Quái, NPC Bán hàng, NPC Nhiệm vụ)
     // Đặc điểm: Render đơn giản (thường là 1-2 layers), Logic tự động (AI/Script)
     Normal,
