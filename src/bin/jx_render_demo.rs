@@ -602,22 +602,36 @@ async fn main() {
     let center_x = screen_width() / 2.0;
     let center_y = screen_height() / 2.0;
 
+    // Tìm base_interval từ layer body (nếu có), nếu không thì lấy mặc định 0.055 (18 FPS)
+    let base_interval = render_layers
+        .iter()
+        .find(|l| l.slot_name == "body" && l.spr_data.is_some())
+        .and_then(|l| l.spr_data.as_ref())
+        .map(|s| s.interval)
+        .unwrap_or(0.055);
+
     loop {
         clear_background(DARKGRAY); // Đổi màu nền tối để dễ nhìn
         global_timer += get_frame_time();
+
+        // Tính master frame dựa trên base_interval
+        let master_frame = (global_timer / base_interval) as usize;
 
         for layer in &render_layers {
             if let Some(anim) = &layer.spr_data {
                 if anim.total_frames == 0 {
                     continue;
                 }
-                let frame_idx = (global_timer / anim.interval) as usize % anim.total_frames;
+
+                // Đồng bộ frame index
+                let frame_idx = master_frame % anim.total_frames;
+
                 let texture = &anim.textures[frame_idx];
                 let (off_x, off_y) = anim.offsets[frame_idx];
 
-                // Công thức vẽ: Center - Offset
-                let draw_x = center_x - off_x;
-                let draw_y = center_y - off_y;
+                // Công thức vẽ chuẩn: Center - Anchor + Offset
+                let draw_x = center_x - anim.anchor.0 + off_x;
+                let draw_y = center_y - anim.anchor.1 + off_y;
 
                 draw_texture(texture, draw_x, draw_y, WHITE);
             }
